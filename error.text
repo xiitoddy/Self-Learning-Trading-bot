@@ -1,0 +1,447 @@
+
+
+Data:
+                             open      high      low   close    volume  \
+timestamp                                                                
+2020-01-02 05:00:00+00:00  296.24  300.6000  295.190  300.35  33912668   
+2020-01-03 05:00:00+00:00  297.15  300.5800  296.500  297.43  36633895   
+2020-01-06 05:00:00+00:00  293.79  299.9600  292.750  299.80  29644774   
+2020-01-07 05:00:00+00:00  299.84  300.9000  297.480  298.39  27877668   
+2020-01-08 05:00:00+00:00  297.16  304.4399  297.156  303.19  33090947   
+
+                           trade_count        vwap   returns  sma  ema  ...  \
+timestamp                                                               ...   
+2020-01-02 05:00:00+00:00       283487  298.439523       NaN  NaN  NaN  ...   
+2020-01-03 05:00:00+00:00       280941  298.810385 -0.009722  NaN  NaN  ...   
+2020-01-06 05:00:00+00:00       242866  297.799601  0.007968  NaN  NaN  ...   
+2020-01-07 05:00:00+00:00       227869  298.924297 -0.004703  NaN  NaN  ...   
+2020-01-08 05:00:00+00:00       261771  301.165488  0.016086  NaN  NaN  ...   
+
+                           middle_bb  lower_bb  rsi  stoch_k  stoch_d  macd  \
+timestamp                                                                     
+2020-01-02 05:00:00+00:00        NaN       NaN  NaN      NaN      NaN   NaN   
+2020-01-03 05:00:00+00:00        NaN       NaN  NaN      NaN      NaN   NaN   
+2020-01-06 05:00:00+00:00        NaN       NaN  NaN      NaN      NaN   NaN   
+2020-01-07 05:00:00+00:00        NaN       NaN  NaN      NaN      NaN   NaN   
+2020-01-08 05:00:00+00:00        NaN       NaN  NaN      NaN      NaN   NaN   
+
+                           macd_signal  macd_histogram  adx  atr  
+timestamp                                                         
+2020-01-02 05:00:00+00:00          NaN             NaN  0.0  0.0  
+2020-01-03 05:00:00+00:00          NaN             NaN  0.0  0.0  
+2020-01-06 05:00:00+00:00          NaN             NaN  0.0  0.0  
+2020-01-07 05:00:00+00:00          NaN             NaN  0.0  0.0  
+2020-01-08 05:00:00+00:00          NaN             NaN  0.0  0.0  
+
+[5 rows x 21 columns]
+Missing values in the data:
+open               0
+high               0
+low                0
+close              0
+volume             0
+trade_count        0
+vwap               0
+sma               13
+ema               13
+upper_bb          13
+middle_bb         13
+lower_bb          13
+rsi               13
+stoch_k           13
+stoch_d           15
+macd              25
+macd_signal       33
+macd_histogram    33
+adx                0
+atr                0
+dtype: int64
+Infinite values in the data:
+open              0
+high              0
+low               0
+close             0
+volume            0
+trade_count       0
+vwap              0
+sma               0
+ema               0
+upper_bb          0
+middle_bb         0
+lower_bb          0
+rsi               0
+stoch_k           0
+stoch_d           0
+macd              0
+macd_signal       0
+macd_histogram    0
+adx               0
+atr               0
+dtype: int64
+
+Preprocessed data:
+X: [[2.96240000e+02 3.00600000e+02 2.95190000e+02 3.00350000e+02
+  3.39126680e+07 2.83487000e+05 2.98439523e+02 3.09167143e+02
+  3.11079126e+02 3.24194882e+02 3.09167143e+02 2.94139404e+02
+  7.08206344e+01 9.15932452e+01 9.07957575e+01 3.88168371e+00]
+ [2.97150000e+02 3.00580000e+02 2.96500000e+02 2.97430000e+02
+  3.66338950e+07 2.80941000e+05 2.98810385e+02 3.09167143e+02
+  3.11079126e+02 3.24194882e+02 3.09167143e+02 2.94139404e+02
+  7.08206344e+01 9.15932452e+01 9.07957575e+01 3.88168371e+00]
+ [2.93790000e+02 2.99960000e+02 2.92750000e+02 2.99800000e+02
+  2.96447740e+07 2.42866000e+05 2.97799601e+02 3.09167143e+02
+  3.11079126e+02 3.24194882e+02 3.09167143e+02 2.94139404e+02
+  7.08206344e+01 9.15932452e+01 9.07957575e+01 3.88168371e+00]
+ [2.99840000e+02 3.00900000e+02 2.97480000e+02 2.98390000e+02
+  2.78776680e+07 2.27869000e+05 2.98924297e+02 3.09167143e+02
+  3.11079126e+02 3.24194882e+02 3.09167143e+02 2.94139404e+02
+  7.08206344e+01 9.15932452e+01 9.07957575e+01 3.88168371e+00]
+ [2.97160000e+02 3.04439900e+02 2.97156000e+02 3.03190000e+02
+  3.30909470e+07 2.61771000e+05 3.01165488e+02 3.09167143e+02
+  3.11079126e+02 3.24194882e+02 3.09167143e+02 2.94139404e+02
+  7.08206344e+01 9.15932452e+01 9.07957575e+01 3.88168371e+00]]
+Y: [1 1 1 1 1]
+Data:
+                             open      high      low   close     volume  \
+timestamp                                                                 
+2021-01-04 05:00:00+00:00  133.52  133.6116  126.760  129.41  143302685   
+2021-01-05 05:00:00+00:00  128.89  131.7400  128.430  131.01   97666310   
+2021-01-06 05:00:00+00:00  127.72  131.0499  126.382  126.66  155088164   
+2021-01-07 05:00:00+00:00  128.36  131.6300  127.860  130.92  109578109   
+2021-01-08 05:00:00+00:00  132.43  132.6300  130.230  132.05  105158275   
+
+                           trade_count        vwap   returns  sma  ema  ...  \
+timestamp                                                               ...   
+2021-01-04 05:00:00+00:00      1310227  129.732580       NaN  NaN  NaN  ...   
+2021-01-05 05:00:00+00:00       707581  130.717947  0.012364  NaN  NaN  ...   
+2021-01-06 05:00:00+00:00      1202577  128.350213 -0.033204  NaN  NaN  ...   
+2021-01-07 05:00:00+00:00       718358  130.153869  0.033633  NaN  NaN  ...   
+2021-01-08 05:00:00+00:00       800070  131.565744  0.008631  NaN  NaN  ...   
+
+                           middle_bb  lower_bb  rsi  stoch_k  stoch_d  macd  \
+timestamp                                                                     
+2021-01-04 05:00:00+00:00        NaN       NaN  NaN      NaN      NaN   NaN   
+2021-01-05 05:00:00+00:00        NaN       NaN  NaN      NaN      NaN   NaN   
+2021-01-06 05:00:00+00:00        NaN       NaN  NaN      NaN      NaN   NaN   
+2021-01-07 05:00:00+00:00        NaN       NaN  NaN      NaN      NaN   NaN   
+2021-01-08 05:00:00+00:00        NaN       NaN  NaN      NaN      NaN   NaN   
+
+                           macd_signal  macd_histogram  adx  atr  
+timestamp                                                         
+2021-01-04 05:00:00+00:00          NaN             NaN  0.0  0.0  
+2021-01-05 05:00:00+00:00          NaN             NaN  0.0  0.0  
+2021-01-06 05:00:00+00:00          NaN             NaN  0.0  0.0  
+2021-01-07 05:00:00+00:00          NaN             NaN  0.0  0.0  
+2021-01-08 05:00:00+00:00          NaN             NaN  0.0  0.0  
+
+[5 rows x 21 columns]
+Raw data:
+                             open      high      low   close     volume  \
+timestamp                                                                 
+2021-01-04 05:00:00+00:00  133.52  133.6116  126.760  129.41  143302685   
+2021-01-05 05:00:00+00:00  128.89  131.7400  128.430  131.01   97666310   
+2021-01-06 05:00:00+00:00  127.72  131.0499  126.382  126.66  155088164   
+2021-01-07 05:00:00+00:00  128.36  131.6300  127.860  130.92  109578109   
+2021-01-08 05:00:00+00:00  132.43  132.6300  130.230  132.05  105158275   
+
+                           trade_count        vwap   returns  sma  ema  ...  \
+timestamp                                                               ...   
+2021-01-04 05:00:00+00:00      1310227  129.732580       NaN  NaN  NaN  ...   
+2021-01-05 05:00:00+00:00       707581  130.717947  0.012364  NaN  NaN  ...   
+2021-01-06 05:00:00+00:00      1202577  128.350213 -0.033204  NaN  NaN  ...   
+2021-01-07 05:00:00+00:00       718358  130.153869  0.033633  NaN  NaN  ...   
+2021-01-08 05:00:00+00:00       800070  131.565744  0.008631  NaN  NaN  ...   
+
+                           middle_bb  lower_bb  rsi  stoch_k  stoch_d  macd  \
+timestamp                                                                     
+2021-01-04 05:00:00+00:00        NaN       NaN  NaN      NaN      NaN   NaN   
+2021-01-05 05:00:00+00:00        NaN       NaN  NaN      NaN      NaN   NaN   
+2021-01-06 05:00:00+00:00        NaN       NaN  NaN      NaN      NaN   NaN   
+2021-01-07 05:00:00+00:00        NaN       NaN  NaN      NaN      NaN   NaN   
+2021-01-08 05:00:00+00:00        NaN       NaN  NaN      NaN      NaN   NaN   
+
+                           macd_signal  macd_histogram  adx  atr  
+timestamp                                                         
+2021-01-04 05:00:00+00:00          NaN             NaN  0.0  0.0  
+2021-01-05 05:00:00+00:00          NaN             NaN  0.0  0.0  
+2021-01-06 05:00:00+00:00          NaN             NaN  0.0  0.0  
+2021-01-07 05:00:00+00:00          NaN             NaN  0.0  0.0  
+2021-01-08 05:00:00+00:00          NaN             NaN  0.0  0.0  
+
+[5 rows x 21 columns]
+
+Preprocessed data:
+X: [[2.96240000e+02 3.00600000e+02 2.95190000e+02 3.00350000e+02
+  3.39126680e+07 2.83487000e+05 2.98439523e+02 3.09167143e+02
+  3.11079126e+02 3.24194882e+02 3.09167143e+02 2.94139404e+02
+  7.08206344e+01 9.15932452e+01 9.07957575e+01 3.88168371e+00]
+ [2.97150000e+02 3.00580000e+02 2.96500000e+02 2.97430000e+02
+  3.66338950e+07 2.80941000e+05 2.98810385e+02 3.09167143e+02
+  3.11079126e+02 3.24194882e+02 3.09167143e+02 2.94139404e+02
+  7.08206344e+01 9.15932452e+01 9.07957575e+01 3.88168371e+00]
+ [2.93790000e+02 2.99960000e+02 2.92750000e+02 2.99800000e+02
+  2.96447740e+07 2.42866000e+05 2.97799601e+02 3.09167143e+02
+  3.11079126e+02 3.24194882e+02 3.09167143e+02 2.94139404e+02
+  7.08206344e+01 9.15932452e+01 9.07957575e+01 3.88168371e+00]
+ [2.99840000e+02 3.00900000e+02 2.97480000e+02 2.98390000e+02
+  2.78776680e+07 2.27869000e+05 2.98924297e+02 3.09167143e+02
+  3.11079126e+02 3.24194882e+02 3.09167143e+02 2.94139404e+02
+  7.08206344e+01 9.15932452e+01 9.07957575e+01 3.88168371e+00]
+ [2.97160000e+02 3.04439900e+02 2.97156000e+02 3.03190000e+02
+  3.30909470e+07 2.61771000e+05 3.01165488e+02 3.09167143e+02
+  3.11079126e+02 3.24194882e+02 3.09167143e+02 2.94139404e+02
+  7.08206344e+01 9.15932452e+01 9.07957575e+01 3.88168371e+00]]
+Y: [1 1 1 1 1]
+Model input shape: (None, 27)
+Data shape: (756, 16)
+Data:
+                             open      high      low   close     volume  \
+timestamp                                                                 
+2021-01-04 05:00:00+00:00  133.52  133.6116  126.760  129.41  143302685   
+2021-01-05 05:00:00+00:00  128.89  131.7400  128.430  131.01   97666310   
+2021-01-06 05:00:00+00:00  127.72  131.0499  126.382  126.66  155088164   
+2021-01-07 05:00:00+00:00  128.36  131.6300  127.860  130.92  109578109   
+2021-01-08 05:00:00+00:00  132.43  132.6300  130.230  132.05  105158275   
+
+                           trade_count        vwap   returns  sma  ema  ...  \
+timestamp                                                               ...   
+2021-01-04 05:00:00+00:00      1310227  129.732580       NaN  NaN  NaN  ...   
+2021-01-05 05:00:00+00:00       707581  130.717947  0.012364  NaN  NaN  ...   
+2021-01-06 05:00:00+00:00      1202577  128.350213 -0.033204  NaN  NaN  ...   
+2021-01-07 05:00:00+00:00       718358  130.153869  0.033633  NaN  NaN  ...   
+2021-01-08 05:00:00+00:00       800070  131.565744  0.008631  NaN  NaN  ...   
+
+                           middle_bb  lower_bb  rsi  stoch_k  stoch_d  macd  \
+timestamp                                                                     
+2021-01-04 05:00:00+00:00        NaN       NaN  NaN      NaN      NaN   NaN   
+2021-01-05 05:00:00+00:00        NaN       NaN  NaN      NaN      NaN   NaN   
+2021-01-06 05:00:00+00:00        NaN       NaN  NaN      NaN      NaN   NaN   
+2021-01-07 05:00:00+00:00        NaN       NaN  NaN      NaN      NaN   NaN   
+2021-01-08 05:00:00+00:00        NaN       NaN  NaN      NaN      NaN   NaN   
+
+                           macd_signal  macd_histogram  adx  atr  
+timestamp                                                         
+2021-01-04 05:00:00+00:00          NaN             NaN  0.0  0.0  
+2021-01-05 05:00:00+00:00          NaN             NaN  0.0  0.0  
+2021-01-06 05:00:00+00:00          NaN             NaN  0.0  0.0  
+2021-01-07 05:00:00+00:00          NaN             NaN  0.0  0.0  
+2021-01-08 05:00:00+00:00          NaN             NaN  0.0  0.0  
+
+[5 rows x 21 columns]
+Creating TradingEnvironment...
+Index: 0, Data shape: (252, 21)
+Observation shape: (24,)
+State shape: (21,)
+Observation space: Box(-inf, inf, (24,), float32)
+Action space: Discrete(3)
+State shape: (21,)
+Observation space: Box(-inf, inf, (24,), float32)
+Action space: Discrete(3)
+Creating TradingEnvironment...
+Index: 0, Data shape: (252, 21)
+Observation shape: (24,)
+State shape: (21,)
+Observation space: Box(-inf, inf, (24,), float32)
+Action space: Discrete(3)
+Index: 0, Data shape: (252, 21)
+Observation shape: (24,)
+Initial observation shape: (24,)
+State shape: (21,)
+Observation space: Box(-inf, inf, (24,), float32)
+Action space: Discrete(3)
+Observation space shape: (24,)
+Index: 0, Data shape: (252, 21)
+Observation shape: (24,)
+Index: 0, Data shape: (252, 21)
+Index: 0, Data shape: (252, 21)
+Observation shape: (24,)
+Index: 1, Data shape: (252, 21)
+Index: 1, Data shape: (252, 21)
+Index: 0, Data shape: (252, 21)
+Observation shape: (24,)
+Index: 1, Data shape: (252, 21)
+Index: 2, Data shape: (252, 21)
+Index: 3, Data shape: (252, 21)
+Index: 4, Data shape: (252, 21)
+Index: 5, Data shape: (252, 21)
+Index: 5, Data shape: (252, 21)
+Index: 0, Data shape: (252, 21)
+Observation shape: (24,)
+Index: 1, Data shape: (252, 21)
+Index: 2, Data shape: (252, 21)
+Index: 3, Data shape: (252, 21)
+Index: 4, Data shape: (252, 21)
+Index: 5, Data shape: (252, 21)
+Index: 6, Data shape: (252, 21)
+Index: 7, Data shape: (252, 21)
+Index: 8, Data shape: (252, 21)
+Index: 9, Data shape: (252, 21)
+Index: 10, Data shape: (252, 21)
+Index: 11, Data shape: (252, 21)
+Index: 12, Data shape: (252, 21)
+Index: 13, Data shape: (252, 21)
+Index: 14, Data shape: (252, 21)
+Index: 15, Data shape: (252, 21)
+Index: 16, Data shape: (252, 21)
+Index: 17, Data shape: (252, 21)
+Index: 18, Data shape: (252, 21)
+Index: 19, Data shape: (252, 21)
+Index: 20, Data shape: (252, 21)
+Index: 21, Data shape: (252, 21)
+Index: 22, Data shape: (252, 21)
+Index: 23, Data shape: (252, 21)
+Index: 24, Data shape: (252, 21)
+Index: 25, Data shape: (252, 21)
+Index: 26, Data shape: (252, 21)
+Index: 27, Data shape: (252, 21)
+Index: 28, Data shape: (252, 21)
+Index: 29, Data shape: (252, 21)
+Index: 30, Data shape: (252, 21)
+Index: 31, Data shape: (252, 21)
+Index: 32, Data shape: (252, 21)
+Index: 32, Data shape: (252, 21)
+Index: 0, Data shape: (252, 21)
+Observation shape: (24,)
+Index: 1, Data shape: (252, 21)
+Index: 2, Data shape: (252, 21)
+1/1 [==============================] - 0s 83ms/step
+Index: 3, Data shape: (252, 21)
+Index: 4, Data shape: (252, 21)
+Index: 5, Data shape: (252, 21)
+Index: 5, Data shape: (252, 21)
+Training complete.
+Model saved.
+dense_3
+Weights shape: (27, 32)
+Biases shape: (32,)
+dense_4
+Weights shape: (32, 16)
+Biases shape: (16,)
+dense_5
+Weights shape: (16, 3)
+Biases shape: (3,)
+Input data shape: (756, 16)
+
+---------------------------------------------------------------------------
+
+InvalidArgumentError                      Traceback (most recent call last)
+
+<ipython-input-12-cafa6a9a5764> in <cell line: 397>()
+    396 
+    397 if __name__ == '__main__':
+--> 398     main()
+
+2 frames
+
+/usr/local/lib/python3.9/dist-packages/tensorflow/python/eager/execute.py in quick_execute(op_name, num_outputs, inputs, attrs, ctx, name)
+     50   try:
+     51     ctx.ensure_initialized()
+---> 52     tensors = pywrap_tfe.TFE_Py_Execute(ctx._handle, device_name, op_name,
+     53                                         inputs, attrs, num_outputs)
+     54   except core._NotOkStatusException as e:
+
+InvalidArgumentError: Graph execution error:
+
+Detected at node 'sequential_1/dense_3/Relu' defined at (most recent call last):
+    File "/usr/lib/python3.9/runpy.py", line 197, in _run_module_as_main
+      return _run_code(code, main_globals, None,
+    File "/usr/lib/python3.9/runpy.py", line 87, in _run_code
+      exec(code, run_globals)
+    File "/usr/local/lib/python3.9/dist-packages/ipykernel_launcher.py", line 16, in <module>
+      app.launch_new_instance()
+    File "/usr/local/lib/python3.9/dist-packages/traitlets/config/application.py", line 992, in launch_instance
+      app.start()
+    File "/usr/local/lib/python3.9/dist-packages/ipykernel/kernelapp.py", line 619, in start
+      self.io_loop.start()
+    File "/usr/local/lib/python3.9/dist-packages/tornado/platform/asyncio.py", line 215, in start
+      self.asyncio_loop.run_forever()
+    File "/usr/lib/python3.9/asyncio/base_events.py", line 601, in run_forever
+      self._run_once()
+    File "/usr/lib/python3.9/asyncio/base_events.py", line 1905, in _run_once
+      handle._run()
+    File "/usr/lib/python3.9/asyncio/events.py", line 80, in _run
+      self._context.run(self._callback, *self._args)
+    File "/usr/local/lib/python3.9/dist-packages/tornado/ioloop.py", line 687, in <lambda>
+      lambda f: self._run_callback(functools.partial(callback, future))
+    File "/usr/local/lib/python3.9/dist-packages/tornado/ioloop.py", line 740, in _run_callback
+      ret = callback()
+    File "/usr/local/lib/python3.9/dist-packages/tornado/gen.py", line 821, in inner
+      self.ctx_run(self.run)
+    File "/usr/local/lib/python3.9/dist-packages/tornado/gen.py", line 782, in run
+      yielded = self.gen.send(value)
+    File "/usr/local/lib/python3.9/dist-packages/ipykernel/kernelbase.py", line 361, in process_one
+      yield gen.maybe_future(dispatch(*args))
+    File "/usr/local/lib/python3.9/dist-packages/tornado/gen.py", line 234, in wrapper
+      yielded = ctx_run(next, result)
+    File "/usr/local/lib/python3.9/dist-packages/ipykernel/kernelbase.py", line 261, in dispatch_shell
+      yield gen.maybe_future(handler(stream, idents, msg))
+    File "/usr/local/lib/python3.9/dist-packages/tornado/gen.py", line 234, in wrapper
+      yielded = ctx_run(next, result)
+    File "/usr/local/lib/python3.9/dist-packages/ipykernel/kernelbase.py", line 539, in execute_request
+      self.do_execute(
+    File "/usr/local/lib/python3.9/dist-packages/tornado/gen.py", line 234, in wrapper
+      yielded = ctx_run(next, result)
+    File "/usr/local/lib/python3.9/dist-packages/ipykernel/ipkernel.py", line 302, in do_execute
+      res = shell.run_cell(code, store_history=store_history, silent=silent)
+    File "/usr/local/lib/python3.9/dist-packages/ipykernel/zmqshell.py", line 539, in run_cell
+      return super(ZMQInteractiveShell, self).run_cell(*args, **kwargs)
+    File "/usr/local/lib/python3.9/dist-packages/IPython/core/interactiveshell.py", line 2975, in run_cell
+      result = self._run_cell(
+    File "/usr/local/lib/python3.9/dist-packages/IPython/core/interactiveshell.py", line 3030, in _run_cell
+      return runner(coro)
+    File "/usr/local/lib/python3.9/dist-packages/IPython/core/async_helpers.py", line 78, in _pseudo_sync_runner
+      coro.send(None)
+    File "/usr/local/lib/python3.9/dist-packages/IPython/core/interactiveshell.py", line 3257, in run_cell_async
+      has_raised = await self.run_ast_nodes(code_ast.body, cell_name,
+    File "/usr/local/lib/python3.9/dist-packages/IPython/core/interactiveshell.py", line 3473, in run_ast_nodes
+      if (await self.run_code(code, result,  async_=asy)):
+    File "/usr/local/lib/python3.9/dist-packages/IPython/core/interactiveshell.py", line 3553, in run_code
+      exec(code_obj, self.user_global_ns, self.user_ns)
+    File "<ipython-input-12-cafa6a9a5764>", line 398, in <cell line: 397>
+      main()
+    File "<ipython-input-12-cafa6a9a5764>", line 394, in main
+      predictions = model.predict(x)
+    File "/usr/local/lib/python3.9/dist-packages/keras/utils/traceback_utils.py", line 65, in error_handler
+      return fn(*args, **kwargs)
+    File "/usr/local/lib/python3.9/dist-packages/keras/engine/training.py", line 2382, in predict
+      tmp_batch_outputs = self.predict_function(iterator)
+    File "/usr/local/lib/python3.9/dist-packages/keras/engine/training.py", line 2169, in predict_function
+      return step_function(self, iterator)
+    File "/usr/local/lib/python3.9/dist-packages/keras/engine/training.py", line 2155, in step_function
+      outputs = model.distribute_strategy.run(run_step, args=(data,))
+    File "/usr/local/lib/python3.9/dist-packages/keras/engine/training.py", line 2143, in run_step
+      outputs = model.predict_step(data)
+    File "/usr/local/lib/python3.9/dist-packages/keras/engine/training.py", line 2111, in predict_step
+      return self(x, training=False)
+    File "/usr/local/lib/python3.9/dist-packages/keras/utils/traceback_utils.py", line 65, in error_handler
+      return fn(*args, **kwargs)
+    File "/usr/local/lib/python3.9/dist-packages/keras/engine/training.py", line 558, in __call__
+      return super().__call__(*args, **kwargs)
+    File "/usr/local/lib/python3.9/dist-packages/keras/utils/traceback_utils.py", line 65, in error_handler
+      return fn(*args, **kwargs)
+    File "/usr/local/lib/python3.9/dist-packages/keras/engine/base_layer.py", line 1145, in __call__
+      outputs = call_fn(inputs, *args, **kwargs)
+    File "/usr/local/lib/python3.9/dist-packages/keras/utils/traceback_utils.py", line 96, in error_handler
+      return fn(*args, **kwargs)
+    File "/usr/local/lib/python3.9/dist-packages/keras/engine/sequential.py", line 412, in call
+      return super().call(inputs, training=training, mask=mask)
+    File "/usr/local/lib/python3.9/dist-packages/keras/engine/functional.py", line 512, in call
+      return self._run_internal_graph(inputs, training=training, mask=mask)
+    File "/usr/local/lib/python3.9/dist-packages/keras/engine/functional.py", line 669, in _run_internal_graph
+      outputs = node.layer(*args, **kwargs)
+    File "/usr/local/lib/python3.9/dist-packages/keras/utils/traceback_utils.py", line 65, in error_handler
+      return fn(*args, **kwargs)
+    File "/usr/local/lib/python3.9/dist-packages/keras/engine/base_layer.py", line 1145, in __call__
+      outputs = call_fn(inputs, *args, **kwargs)
+    File "/usr/local/lib/python3.9/dist-packages/keras/utils/traceback_utils.py", line 96, in error_handler
+      return fn(*args, **kwargs)
+    File "/usr/local/lib/python3.9/dist-packages/keras/layers/core/dense.py", line 255, in call
+      outputs = self.activation(outputs)
+    File "/usr/local/lib/python3.9/dist-packages/keras/activations.py", line 317, in relu
+      return backend.relu(
+    File "/usr/local/lib/python3.9/dist-packages/keras/backend.py", line 5396, in relu
+      x = tf.nn.relu(x)
+Node: 'sequential_1/dense_3/Relu'
+Matrix size-incompatible: In[0]: [32,16], In[1]: [27,32]
+	 [[{{node sequential_1/dense_3/Relu}}]] [Op:__inference_predict_function_937160]
+
