@@ -1,21 +1,19 @@
-
-
 Data:
-                             open      high      low   close    volume  \
+                             open     high       low   close    volume  \
 timestamp                                                                
-2020-01-02 05:00:00+00:00  296.24  300.6000  295.190  300.35  33912668   
-2020-01-03 05:00:00+00:00  297.15  300.5800  296.500  297.43  36633895   
-2020-01-06 05:00:00+00:00  293.79  299.9600  292.750  299.80  29644774   
-2020-01-07 05:00:00+00:00  299.84  300.9000  297.480  298.39  27877668   
-2020-01-08 05:00:00+00:00  297.16  304.4399  297.156  303.19  33090947   
+2020-01-02 05:00:00+00:00  158.78  160.730  158.3300  160.62  22634631   
+2020-01-03 05:00:00+00:00  158.32  159.945  158.0600  158.62  21121681   
+2020-01-06 05:00:00+00:00  157.08  159.100  156.5100  159.03  20827120   
+2020-01-07 05:00:00+00:00  159.32  159.670  157.3200  157.58  21881740   
+2020-01-08 05:00:00+00:00  158.93  160.800  157.9491  160.09  27762026   
 
                            trade_count        vwap   returns  sma  ema  ...  \
 timestamp                                                               ...   
-2020-01-02 05:00:00+00:00       283487  298.439523       NaN  NaN  NaN  ...   
-2020-01-03 05:00:00+00:00       280941  298.810385 -0.009722  NaN  NaN  ...   
-2020-01-06 05:00:00+00:00       242866  297.799601  0.007968  NaN  NaN  ...   
-2020-01-07 05:00:00+00:00       227869  298.924297 -0.004703  NaN  NaN  ...   
-2020-01-08 05:00:00+00:00       261771  301.165488  0.016086  NaN  NaN  ...   
+2020-01-02 05:00:00+00:00       175505  159.776455       NaN  NaN  NaN  ...   
+2020-01-03 05:00:00+00:00       166450  159.179016 -0.012452  NaN  NaN  ...   
+2020-01-06 05:00:00+00:00       148393  158.483594  0.002585  NaN  NaN  ...   
+2020-01-07 05:00:00+00:00       167836  158.298698 -0.009118  NaN  NaN  ...   
+2020-01-08 05:00:00+00:00       198630  159.600002  0.015928  NaN  NaN  ...   
 
                            middle_bb  lower_bb  rsi  stoch_k  stoch_d  macd  \
 timestamp                                                                     
@@ -80,156 +78,2261 @@ atr               0
 dtype: int64
 
 Preprocessed data:
-X: [[2.96240000e+02 3.00600000e+02 2.95190000e+02 3.00350000e+02
-  3.39126680e+07 2.83487000e+05 2.98439523e+02 3.09167143e+02
-  3.11079126e+02 3.24194882e+02 3.09167143e+02 2.94139404e+02
-  7.08206344e+01 9.15932452e+01 9.07957575e+01 3.88168371e+00]
- [2.97150000e+02 3.00580000e+02 2.96500000e+02 2.97430000e+02
-  3.66338950e+07 2.80941000e+05 2.98810385e+02 3.09167143e+02
-  3.11079126e+02 3.24194882e+02 3.09167143e+02 2.94139404e+02
-  7.08206344e+01 9.15932452e+01 9.07957575e+01 3.88168371e+00]
- [2.93790000e+02 2.99960000e+02 2.92750000e+02 2.99800000e+02
-  2.96447740e+07 2.42866000e+05 2.97799601e+02 3.09167143e+02
-  3.11079126e+02 3.24194882e+02 3.09167143e+02 2.94139404e+02
-  7.08206344e+01 9.15932452e+01 9.07957575e+01 3.88168371e+00]
- [2.99840000e+02 3.00900000e+02 2.97480000e+02 2.98390000e+02
-  2.78776680e+07 2.27869000e+05 2.98924297e+02 3.09167143e+02
-  3.11079126e+02 3.24194882e+02 3.09167143e+02 2.94139404e+02
-  7.08206344e+01 9.15932452e+01 9.07957575e+01 3.88168371e+00]
- [2.97160000e+02 3.04439900e+02 2.97156000e+02 3.03190000e+02
-  3.30909470e+07 2.61771000e+05 3.01165488e+02 3.09167143e+02
-  3.11079126e+02 3.24194882e+02 3.09167143e+02 2.94139404e+02
-  7.08206344e+01 9.15932452e+01 9.07957575e+01 3.88168371e+00]]
+X: [[1.58780000e+02 1.60730000e+02 1.58330000e+02 1.60620000e+02
+  2.26346310e+07 1.75505000e+05 1.59776455e+02 1.62387857e+02
+  1.63438210e+02 1.68341450e+02 1.62387857e+02 1.56434264e+02
+  6.54751356e+01 7.86815068e+01 7.97089041e+01 5.16055221e+00]
+ [1.58320000e+02 1.59945000e+02 1.58060000e+02 1.58620000e+02
+  2.11216810e+07 1.66450000e+05 1.59179016e+02 1.62387857e+02
+  1.63438210e+02 1.68341450e+02 1.62387857e+02 1.56434264e+02
+  6.54751356e+01 7.86815068e+01 7.97089041e+01 5.16055221e+00]
+ [1.57080000e+02 1.59100000e+02 1.56510000e+02 1.59030000e+02
+  2.08271200e+07 1.48393000e+05 1.58483594e+02 1.62387857e+02
+  1.63438210e+02 1.68341450e+02 1.62387857e+02 1.56434264e+02
+  6.54751356e+01 7.86815068e+01 7.97089041e+01 5.16055221e+00]
+ [1.59320000e+02 1.59670000e+02 1.57320000e+02 1.57580000e+02
+  2.18817400e+07 1.67836000e+05 1.58298698e+02 1.62387857e+02
+  1.63438210e+02 1.68341450e+02 1.62387857e+02 1.56434264e+02
+  6.54751356e+01 7.86815068e+01 7.97089041e+01 5.16055221e+00]
+ [1.58930000e+02 1.60800000e+02 1.57949100e+02 1.60090000e+02
+  2.77620260e+07 1.98630000e+05 1.59600002e+02 1.62387857e+02
+  1.63438210e+02 1.68341450e+02 1.62387857e+02 1.56434264e+02
+  6.54751356e+01 7.86815068e+01 7.97089041e+01 5.16055221e+00]]
 Y: [1 1 1 1 1]
 Data:
-                             open      high      low   close     volume  \
-timestamp                                                                 
-2021-01-04 05:00:00+00:00  133.52  133.6116  126.760  129.41  143302685   
-2021-01-05 05:00:00+00:00  128.89  131.7400  128.430  131.01   97666310   
-2021-01-06 05:00:00+00:00  127.72  131.0499  126.382  126.66  155088164   
-2021-01-07 05:00:00+00:00  128.36  131.6300  127.860  130.92  109578109   
-2021-01-08 05:00:00+00:00  132.43  132.6300  130.230  132.05  105158275   
+                             open     high       low   close    volume  \
+timestamp                                                                
+2020-01-02 05:00:00+00:00  158.78  160.730  158.3300  160.62  22634631   
+2020-01-03 05:00:00+00:00  158.32  159.945  158.0600  158.62  21121681   
+2020-01-06 05:00:00+00:00  157.08  159.100  156.5100  159.03  20827120   
+2020-01-07 05:00:00+00:00  159.32  159.670  157.3200  157.58  21881740   
+2020-01-08 05:00:00+00:00  158.93  160.800  157.9491  160.09  27762026   
 
                            trade_count        vwap   returns  sma  ema  ...  \
 timestamp                                                               ...   
-2021-01-04 05:00:00+00:00      1310227  129.732580       NaN  NaN  NaN  ...   
-2021-01-05 05:00:00+00:00       707581  130.717947  0.012364  NaN  NaN  ...   
-2021-01-06 05:00:00+00:00      1202577  128.350213 -0.033204  NaN  NaN  ...   
-2021-01-07 05:00:00+00:00       718358  130.153869  0.033633  NaN  NaN  ...   
-2021-01-08 05:00:00+00:00       800070  131.565744  0.008631  NaN  NaN  ...   
+2020-01-02 05:00:00+00:00       175505  159.776455       NaN  NaN  NaN  ...   
+2020-01-03 05:00:00+00:00       166450  159.179016 -0.012452  NaN  NaN  ...   
+2020-01-06 05:00:00+00:00       148393  158.483594  0.002585  NaN  NaN  ...   
+2020-01-07 05:00:00+00:00       167836  158.298698 -0.009118  NaN  NaN  ...   
+2020-01-08 05:00:00+00:00       198630  159.600002  0.015928  NaN  NaN  ...   
 
                            middle_bb  lower_bb  rsi  stoch_k  stoch_d  macd  \
 timestamp                                                                     
-2021-01-04 05:00:00+00:00        NaN       NaN  NaN      NaN      NaN   NaN   
-2021-01-05 05:00:00+00:00        NaN       NaN  NaN      NaN      NaN   NaN   
-2021-01-06 05:00:00+00:00        NaN       NaN  NaN      NaN      NaN   NaN   
-2021-01-07 05:00:00+00:00        NaN       NaN  NaN      NaN      NaN   NaN   
-2021-01-08 05:00:00+00:00        NaN       NaN  NaN      NaN      NaN   NaN   
+2020-01-02 05:00:00+00:00        NaN       NaN  NaN      NaN      NaN   NaN   
+2020-01-03 05:00:00+00:00        NaN       NaN  NaN      NaN      NaN   NaN   
+2020-01-06 05:00:00+00:00        NaN       NaN  NaN      NaN      NaN   NaN   
+2020-01-07 05:00:00+00:00        NaN       NaN  NaN      NaN      NaN   NaN   
+2020-01-08 05:00:00+00:00        NaN       NaN  NaN      NaN      NaN   NaN   
 
                            macd_signal  macd_histogram  adx  atr  
 timestamp                                                         
-2021-01-04 05:00:00+00:00          NaN             NaN  0.0  0.0  
-2021-01-05 05:00:00+00:00          NaN             NaN  0.0  0.0  
-2021-01-06 05:00:00+00:00          NaN             NaN  0.0  0.0  
-2021-01-07 05:00:00+00:00          NaN             NaN  0.0  0.0  
-2021-01-08 05:00:00+00:00          NaN             NaN  0.0  0.0  
+2020-01-02 05:00:00+00:00          NaN             NaN  0.0  0.0  
+2020-01-03 05:00:00+00:00          NaN             NaN  0.0  0.0  
+2020-01-06 05:00:00+00:00          NaN             NaN  0.0  0.0  
+2020-01-07 05:00:00+00:00          NaN             NaN  0.0  0.0  
+2020-01-08 05:00:00+00:00          NaN             NaN  0.0  0.0  
 
 [5 rows x 21 columns]
 Raw data:
-                             open      high      low   close     volume  \
-timestamp                                                                 
-2021-01-04 05:00:00+00:00  133.52  133.6116  126.760  129.41  143302685   
-2021-01-05 05:00:00+00:00  128.89  131.7400  128.430  131.01   97666310   
-2021-01-06 05:00:00+00:00  127.72  131.0499  126.382  126.66  155088164   
-2021-01-07 05:00:00+00:00  128.36  131.6300  127.860  130.92  109578109   
-2021-01-08 05:00:00+00:00  132.43  132.6300  130.230  132.05  105158275   
+                             open     high       low   close    volume  \
+timestamp                                                                
+2020-01-02 05:00:00+00:00  158.78  160.730  158.3300  160.62  22634631   
+2020-01-03 05:00:00+00:00  158.32  159.945  158.0600  158.62  21121681   
+2020-01-06 05:00:00+00:00  157.08  159.100  156.5100  159.03  20827120   
+2020-01-07 05:00:00+00:00  159.32  159.670  157.3200  157.58  21881740   
+2020-01-08 05:00:00+00:00  158.93  160.800  157.9491  160.09  27762026   
 
                            trade_count        vwap   returns  sma  ema  ...  \
 timestamp                                                               ...   
-2021-01-04 05:00:00+00:00      1310227  129.732580       NaN  NaN  NaN  ...   
-2021-01-05 05:00:00+00:00       707581  130.717947  0.012364  NaN  NaN  ...   
-2021-01-06 05:00:00+00:00      1202577  128.350213 -0.033204  NaN  NaN  ...   
-2021-01-07 05:00:00+00:00       718358  130.153869  0.033633  NaN  NaN  ...   
-2021-01-08 05:00:00+00:00       800070  131.565744  0.008631  NaN  NaN  ...   
+2020-01-02 05:00:00+00:00       175505  159.776455       NaN  NaN  NaN  ...   
+2020-01-03 05:00:00+00:00       166450  159.179016 -0.012452  NaN  NaN  ...   
+2020-01-06 05:00:00+00:00       148393  158.483594  0.002585  NaN  NaN  ...   
+2020-01-07 05:00:00+00:00       167836  158.298698 -0.009118  NaN  NaN  ...   
+2020-01-08 05:00:00+00:00       198630  159.600002  0.015928  NaN  NaN  ...   
 
                            middle_bb  lower_bb  rsi  stoch_k  stoch_d  macd  \
 timestamp                                                                     
-2021-01-04 05:00:00+00:00        NaN       NaN  NaN      NaN      NaN   NaN   
-2021-01-05 05:00:00+00:00        NaN       NaN  NaN      NaN      NaN   NaN   
-2021-01-06 05:00:00+00:00        NaN       NaN  NaN      NaN      NaN   NaN   
-2021-01-07 05:00:00+00:00        NaN       NaN  NaN      NaN      NaN   NaN   
-2021-01-08 05:00:00+00:00        NaN       NaN  NaN      NaN      NaN   NaN   
+2020-01-02 05:00:00+00:00        NaN       NaN  NaN      NaN      NaN   NaN   
+2020-01-03 05:00:00+00:00        NaN       NaN  NaN      NaN      NaN   NaN   
+2020-01-06 05:00:00+00:00        NaN       NaN  NaN      NaN      NaN   NaN   
+2020-01-07 05:00:00+00:00        NaN       NaN  NaN      NaN      NaN   NaN   
+2020-01-08 05:00:00+00:00        NaN       NaN  NaN      NaN      NaN   NaN   
 
                            macd_signal  macd_histogram  adx  atr  
 timestamp                                                         
-2021-01-04 05:00:00+00:00          NaN             NaN  0.0  0.0  
-2021-01-05 05:00:00+00:00          NaN             NaN  0.0  0.0  
-2021-01-06 05:00:00+00:00          NaN             NaN  0.0  0.0  
-2021-01-07 05:00:00+00:00          NaN             NaN  0.0  0.0  
-2021-01-08 05:00:00+00:00          NaN             NaN  0.0  0.0  
+2020-01-02 05:00:00+00:00          NaN             NaN  0.0  0.0  
+2020-01-03 05:00:00+00:00          NaN             NaN  0.0  0.0  
+2020-01-06 05:00:00+00:00          NaN             NaN  0.0  0.0  
+2020-01-07 05:00:00+00:00          NaN             NaN  0.0  0.0  
+2020-01-08 05:00:00+00:00          NaN             NaN  0.0  0.0  
 
 [5 rows x 21 columns]
 
 Preprocessed data:
-X: [[2.96240000e+02 3.00600000e+02 2.95190000e+02 3.00350000e+02
-  3.39126680e+07 2.83487000e+05 2.98439523e+02 3.09167143e+02
-  3.11079126e+02 3.24194882e+02 3.09167143e+02 2.94139404e+02
-  7.08206344e+01 9.15932452e+01 9.07957575e+01 3.88168371e+00]
- [2.97150000e+02 3.00580000e+02 2.96500000e+02 2.97430000e+02
-  3.66338950e+07 2.80941000e+05 2.98810385e+02 3.09167143e+02
-  3.11079126e+02 3.24194882e+02 3.09167143e+02 2.94139404e+02
-  7.08206344e+01 9.15932452e+01 9.07957575e+01 3.88168371e+00]
- [2.93790000e+02 2.99960000e+02 2.92750000e+02 2.99800000e+02
-  2.96447740e+07 2.42866000e+05 2.97799601e+02 3.09167143e+02
-  3.11079126e+02 3.24194882e+02 3.09167143e+02 2.94139404e+02
-  7.08206344e+01 9.15932452e+01 9.07957575e+01 3.88168371e+00]
- [2.99840000e+02 3.00900000e+02 2.97480000e+02 2.98390000e+02
-  2.78776680e+07 2.27869000e+05 2.98924297e+02 3.09167143e+02
-  3.11079126e+02 3.24194882e+02 3.09167143e+02 2.94139404e+02
-  7.08206344e+01 9.15932452e+01 9.07957575e+01 3.88168371e+00]
- [2.97160000e+02 3.04439900e+02 2.97156000e+02 3.03190000e+02
-  3.30909470e+07 2.61771000e+05 3.01165488e+02 3.09167143e+02
-  3.11079126e+02 3.24194882e+02 3.09167143e+02 2.94139404e+02
-  7.08206344e+01 9.15932452e+01 9.07957575e+01 3.88168371e+00]]
+X: [[1.58780000e+02 1.60730000e+02 1.58330000e+02 1.60620000e+02
+  2.26346310e+07 1.75505000e+05 1.59776455e+02 1.62387857e+02
+  1.63438210e+02 1.68341450e+02 1.62387857e+02 1.56434264e+02
+  6.54751356e+01 7.86815068e+01 7.97089041e+01 5.16055221e+00]
+ [1.58320000e+02 1.59945000e+02 1.58060000e+02 1.58620000e+02
+  2.11216810e+07 1.66450000e+05 1.59179016e+02 1.62387857e+02
+  1.63438210e+02 1.68341450e+02 1.62387857e+02 1.56434264e+02
+  6.54751356e+01 7.86815068e+01 7.97089041e+01 5.16055221e+00]
+ [1.57080000e+02 1.59100000e+02 1.56510000e+02 1.59030000e+02
+  2.08271200e+07 1.48393000e+05 1.58483594e+02 1.62387857e+02
+  1.63438210e+02 1.68341450e+02 1.62387857e+02 1.56434264e+02
+  6.54751356e+01 7.86815068e+01 7.97089041e+01 5.16055221e+00]
+ [1.59320000e+02 1.59670000e+02 1.57320000e+02 1.57580000e+02
+  2.18817400e+07 1.67836000e+05 1.58298698e+02 1.62387857e+02
+  1.63438210e+02 1.68341450e+02 1.62387857e+02 1.56434264e+02
+  6.54751356e+01 7.86815068e+01 7.97089041e+01 5.16055221e+00]
+ [1.58930000e+02 1.60800000e+02 1.57949100e+02 1.60090000e+02
+  2.77620260e+07 1.98630000e+05 1.59600002e+02 1.62387857e+02
+  1.63438210e+02 1.68341450e+02 1.62387857e+02 1.56434264e+02
+  6.54751356e+01 7.86815068e+01 7.97089041e+01 5.16055221e+00]]
 Y: [1 1 1 1 1]
-Model input shape: (None, 27)
-Data shape: (756, 16)
+Creating TradingEnvironment...
+Index: 0, Data shape: (505, 21)
+Observation shape: (24,)
+State shape: (21,)
+Observation space: Box(-inf, inf, (24,), float32)
+Action space: Discrete(3)
+State shape: (21,)
+Observation space: Box(-inf, inf, (24,), float32)
+Action space: Discrete(3)
+Creating TradingEnvironment...
+Index: 0, Data shape: (505, 21)
+Observation shape: (24,)
+State shape: (21,)
+Observation space: Box(-inf, inf, (24,), float32)
+Action space: Discrete(3)
+Original x shape: (504, 16)
+Model's input shape: (24,)
+Index: 0, Data shape: (505, 21)
+Observation shape: (24,)
+Buy: 6225.8747354003235 shares at 160.62
+Index: 1, Data shape: (505, 21)
+Sell: 6225.8747354003235 shares at 158.62, Profit: -12451.749470800647
+Index: 2, Data shape: (505, 21)
+Buy: 6209.823621512918 shares at 159.03
+Index: 3, Data shape: (505, 21)
+Sell: 6209.823621512918 shares at 157.58, Profit: -9004.24425119366
+Index: 4, Data shape: (505, 21)
+Buy: 6112.461779486574 shares at 160.09
+Index: 5, Data shape: (505, 21)
+Sell: 6112.461779486574 shares at 162.09, Profit: 12224.923558973149
+Index: 6, Data shape: (505, 21)
+Index: 6, Data shape: (505, 21)
+Index: 0, Data shape: (505, 21)
+Observation shape: (24,)
+Index: 0, Data shape: (505, 21)
+Index: 0, Data shape: (505, 21)
+Observation shape: (24,)
+Buy: 6225.8747354003235 shares at 160.62
+Index: 1, Data shape: (505, 21)
+Buy: 0.0 shares at 158.62
+Index: 2, Data shape: (505, 21)
+Buy: 0.0 shares at 159.03
+Index: 3, Data shape: (505, 21)
+Sell: 6225.8747354003235 shares at 157.58, Profit: -18926.659195616932
+Index: 4, Data shape: (505, 21)
+Index: 5, Data shape: (505, 21)
+Buy: 6052.64569562825 shares at 162.09
+Index: 6, Data shape: (505, 21)
+Buy: 0.0 shares at 161.34
+Index: 7, Data shape: (505, 21)
+Buy: 0.0 shares at 163.28
+Index: 8, Data shape: (505, 21)
+Sell: 0.0 shares at 162.13, Profit: 0.0
+Index: 9, Data shape: (505, 21)
+Sell: 0.0 shares at 163.18, Profit: 0.0
+Index: 10, Data shape: (505, 21)
+Sell: 6052.64569562825 shares at 166.17, Profit: 24694.794438163164
+Index: 11, Data shape: (505, 21)
+Index: 12, Data shape: (505, 21)
+Sell: 0.0 shares at 166.5, Profit: 0.0
+Index: 13, Data shape: (505, 21)
+Buy: 6069.813731095633 shares at 165.7
+Index: 14, Data shape: (505, 21)
+Sell: 0.0 shares at 166.72, Profit: 0.0
+Index: 15, Data shape: (505, 21)
+Sell: 6069.813731095633 shares at 165.04, Profit: -4006.0770625230966
+Index: 16, Data shape: (505, 21)
+Index: 17, Data shape: (505, 21)
+Index: 17, Data shape: (505, 21)
+Index: 0, Data shape: (505, 21)
+Observation shape: (24,)
+Index: 1, Data shape: (505, 21)
+1/1 [==============================] - 0s 226ms/step
+Buy: 6304.375236414071 shares at 158.62
+Index: 2, Data shape: (505, 21)
+Index: 3, Data shape: (505, 21)
+Index: 4, Data shape: (505, 21)
+Buy: 0.0 shares at 160.09
+Index: 5, Data shape: (505, 21)
+Buy: 0.0 shares at 162.09
+Index: 6, Data shape: (505, 21)
+Buy: 0.0 shares at 161.34
+Index: 7, Data shape: (505, 21)
+Sell: 6304.375236414071 shares at 163.28, Profit: 29378.38860168955
+Index: 8, Data shape: (505, 21)
+Sell: 0.0 shares at 162.13, Profit: 0.0
+Index: 9, Data shape: (505, 21)
+Sell: 0.0 shares at 163.18, Profit: 0.0
+Index: 10, Data shape: (505, 21)
+Sell: 0.0 shares at 166.17, Profit: 0.0
+Index: 11, Data shape: (505, 21)
+Index: 11, Data shape: (505, 21)
+Index: 0, Data shape: (505, 21)
+Observation shape: (24,)
+Index: 1, Data shape: (505, 21)
+Buy: 6304.375236414071 shares at 158.62
+Index: 2, Data shape: (505, 21)
+Buy: 0.0 shares at 159.03
+Index: 3, Data shape: (505, 21)
+Index: 4, Data shape: (505, 21)
+Sell: 6304.375236414071 shares at 160.09, Profit: 9267.431597528677
+Index: 5, Data shape: (505, 21)
+Index: 6, Data shape: (505, 21)
+Index: 7, Data shape: (505, 21)
+Index: 8, Data shape: (505, 21)
+Sell: 0.0 shares at 162.13, Profit: 0.0
+Index: 9, Data shape: (505, 21)
+Index: 9, Data shape: (505, 21)
+Index: 0, Data shape: (505, 21)
+Observation shape: (24,)
+Index: 0, Data shape: (505, 21)
+Index: 0, Data shape: (505, 21)
+Observation shape: (24,)
+Index: 1, Data shape: (505, 21)
+Index: 2, Data shape: (505, 21)
+Index: 2, Data shape: (505, 21)
+Index: 0, Data shape: (505, 21)
+Observation shape: (24,)
+Index: 1, Data shape: (505, 21)
+Index: 1, Data shape: (505, 21)
+Index: 0, Data shape: (505, 21)
+Observation shape: (24,)
+Buy: 6225.8747354003235 shares at 160.62
+Index: 1, Data shape: (505, 21)
+Buy: 0.0 shares at 158.62
+Index: 2, Data shape: (505, 21)
+Index: 3, Data shape: (505, 21)
+Sell: 6225.8747354003235 shares at 157.58, Profit: -18926.659195616932
+Index: 4, Data shape: (505, 21)
+Buy: 6128.261233083785 shares at 160.09
+Index: 5, Data shape: (505, 21)
+Sell: 0.0 shares at 162.09, Profit: 0.0
+Index: 6, Data shape: (505, 21)
+Buy: -7.215527570778159e-13 shares at 161.34
+Index: 7, Data shape: (505, 21)
+Buy: 0.0 shares at 163.28
+Index: 8, Data shape: (505, 21)
+Buy: 0.0 shares at 162.13
+Index: 9, Data shape: (505, 21)
+Sell: 6128.261233083785 shares at 163.18, Profit: 18936.327210228916
+Index: 10, Data shape: (505, 21)
+Index: 11, Data shape: (505, 21)
+Buy: 5984.498312475237 shares at 167.1
+Index: 12, Data shape: (505, 21)
+Index: 13, Data shape: (505, 21)
+Index: 14, Data shape: (505, 21)
+Buy: 0.0 shares at 166.72
+Index: 15, Data shape: (505, 21)
+Index: 16, Data shape: (505, 21)
+Buy: 0.0 shares at 162.28
+Index: 17, Data shape: (505, 21)
+Buy: 0.0 shares at 165.46
+Index: 18, Data shape: (505, 21)
+Index: 19, Data shape: (505, 21)
+Sell: -7.215527570778159e-13 shares at 172.78, Profit: -8.254563540970212e-12
+Index: 20, Data shape: (505, 21)
+Index: 21, Data shape: (505, 21)
+Sell: 0.0 shares at 174.38, Profit: 0.0
+Index: 22, Data shape: (505, 21)
+Buy: -6.92149041571758e-13 shares at 180.12
+Index: 23, Data shape: (505, 21)
+Buy: 0.0 shares at 179.9
+Index: 24, Data shape: (505, 21)
+Buy: 0.0 shares at 183.63
+Index: 25, Data shape: (505, 21)
+Sell: 0.0 shares at 183.89, Profit: 0.0
+Index: 26, Data shape: (505, 21)
+Sell: 5984.498312475237 shares at 188.7, Profit: 129265.16354946508
+Index: 27, Data shape: (505, 21)
+Sell: 0.0 shares at 184.44, Profit: 0.0
+Index: 28, Data shape: (505, 21)
+Buy: 6113.7720294736455 shares at 184.71
+Index: 29, Data shape: (505, 21)
+Sell: 0.0 shares at 183.71, Profit: 0.0
+Index: 30, Data shape: (505, 21)
+Index: 31, Data shape: (505, 21)
+Buy: 0.0 shares at 187.23
+Index: 32, Data shape: (505, 21)
+Index: 33, Data shape: (505, 21)
+Index: 34, Data shape: (505, 21)
+Index: 35, Data shape: (505, 21)
+Index: 36, Data shape: (505, 21)
+Buy: 0.0 shares at 168.07
+Index: 37, Data shape: (505, 21)
+Buy: 0.0 shares at 170.17
+Index: 38, Data shape: (505, 21)
+Buy: 0.0 shares at 158.18
+Index: 39, Data shape: (505, 21)
+Buy: 0.0 shares at 162.01
+Index: 40, Data shape: (505, 21)
+Buy: 0.0 shares at 172.79
+Index: 41, Data shape: (505, 21)
+Buy: 0.0 shares at 164.51
+Index: 42, Data shape: (505, 21)
+Buy: 0.0 shares at 170.55
+Index: 43, Data shape: (505, 21)
+Buy: 0.0 shares at 166.27
+Index: 44, Data shape: (505, 21)
+Sell: 0.0 shares at 161.57, Profit: -0.0
+Index: 45, Data shape: (505, 21)
+Index: 46, Data shape: (505, 21)
+Buy: 0.0 shares at 160.92
+Index: 47, Data shape: (505, 21)
+1/1 [==============================] - 0s 115ms/step
+Buy: 0.0 shares at 153.63
+Index: 48, Data shape: (505, 21)
+Index: 49, Data shape: (505, 21)
+Buy: 0.0 shares at 158.8438
+Index: 50, Data shape: (505, 21)
+Index: 51, Data shape: (505, 21)
+Buy: 0.0 shares at 146.57
+Index: 52, Data shape: (505, 21)
+Index: 53, Data shape: (505, 21)
+Sell: -6.92149041571758e-13 shares at 143.0, Profit: 2.569257242314366e-11
+Index: 54, Data shape: (505, 21)
+Buy: -7.206211353823181e-13 shares at 137.35
+Index: 55, Data shape: (505, 21)
+Sell: 0.0 shares at 135.98, Profit: -0.0
+Index: 56, Data shape: (505, 21)
+Index: 57, Data shape: (505, 21)
+Buy: 0.0 shares at 146.92
+Index: 58, Data shape: (505, 21)
+Index: 59, Data shape: (505, 21)
+Sell: 0.0 shares at 149.7, Profit: -0.0
+Index: 60, Data shape: (505, 21)
+Buy: 0.0 shares at 160.23
+Index: 61, Data shape: (505, 21)
+Index: 62, Data shape: (505, 21)
+Index: 63, Data shape: (505, 21)
+Index: 64, Data shape: (505, 21)
+Buy: 0.0 shares at 153.9
+Index: 65, Data shape: (505, 21)
+Buy: 0.0 shares at 165.33
+Index: 66, Data shape: (505, 21)
+Index: 67, Data shape: (505, 21)
+Sell: 6113.7720294736455 shares at 165.13, Profit: -119707.65633709406
+Index: 68, Data shape: (505, 21)
+Index: 69, Data shape: (505, 21)
+Index: 70, Data shape: (505, 21)
+Buy: 5812.131118174917 shares at 173.7
+Index: 71, Data shape: (505, 21)
+Sell: 0.0 shares at 171.88, Profit: -0.0
+Index: 72, Data shape: (505, 21)
+Buy: 0.0 shares at 177.04
+Index: 73, Data shape: (505, 21)
+Index: 74, Data shape: (505, 21)
+Sell: 0.0 shares at 175.06, Profit: 0.0
+Index: 75, Data shape: (505, 21)
+Sell: 0.0 shares at 167.82, Profit: -0.0
+Index: 76, Data shape: (505, 21)
+Sell: 0.0 shares at 173.52, Profit: 0.0
+Index: 77, Data shape: (505, 21)
+Index: 78, Data shape: (505, 21)
+Sell: 0.0 shares at 174.55, Profit: 0.0
+Index: 79, Data shape: (505, 21)
+Index: 80, Data shape: (505, 21)
+Sell: 0.0 shares at 169.81, Profit: -0.0
+Index: 81, Data shape: (505, 21)
+Sell: 0.0 shares at 177.43, Profit: 0.0
+Index: 82, Data shape: (505, 21)
+Sell: 0.0 shares at 179.129, Profit: 0.0
+Index: 83, Data shape: (505, 21)
+Buy: 0.0 shares at 174.57
+Index: 84, Data shape: (505, 21)
+Sell: 0.0 shares at 178.84, Profit: 0.0
+Index: 85, Data shape: (505, 21)
+Sell: 0.0 shares at 180.76, Profit: 0.0
+Index: 86, Data shape: (505, 21)
+Index: 87, Data shape: (505, 21)
+Index: 88, Data shape: (505, 21)
+Sell: 0.0 shares at 184.68, Profit: 0.0
+Index: 89, Data shape: (505, 21)
+Sell: 0.0 shares at 186.74, Profit: 0.0
+Index: 90, Data shape: (505, 21)
+Sell: 0.0 shares at 182.51, Profit: 0.0
+Index: 91, Data shape: (505, 21)
+Index: 92, Data shape: (505, 21)
+Sell: -7.206211353823181e-13 shares at 180.53, Profit: -3.11164206258085e-11
+Index: 93, Data shape: (505, 21)
+Index: 94, Data shape: (505, 21)
+Buy: -7.035516390166562e-13 shares at 184.91
+Index: 95, Data shape: (505, 21)
+Buy: 0.0 shares at 183.63
+Index: 96, Data shape: (505, 21)
+Index: 97, Data shape: (505, 21)
+Index: 98, Data shape: (505, 21)
+Sell: 0.0 shares at 183.51, Profit: 0.0
+Index: 99, Data shape: (505, 21)
+Buy: 0.0 shares at 181.57
+Index: 100, Data shape: (505, 21)
+Index: 101, Data shape: (505, 21)
+Buy: 0.0 shares at 181.4
+Index: 102, Data shape: (505, 21)
+Index: 103, Data shape: (505, 21)
+Buy: 0.0 shares at 182.83
+Index: 104, Data shape: (505, 21)
+Index: 105, Data shape: (505, 21)
+Sell: 0.0 shares at 185.36, Profit: 0.0
+Index: 106, Data shape: (505, 21)
+Sell: 0.0 shares at 182.92, Profit: 0.0
+Index: 107, Data shape: (505, 21)
+Index: 108, Data shape: (505, 21)
+Sell: 0.0 shares at 188.36, Profit: 0.0
+Index: 109, Data shape: (505, 21)
+Sell: 5812.131118174917 shares at 189.8, Profit: 93575.31100261629
+Index: 110, Data shape: (505, 21)
+Index: 111, Data shape: (505, 21)
+Sell: 0.0 shares at 186.27, Profit: 0.0
+Index: 112, Data shape: (505, 21)
+1/1 [==============================] - 0s 57ms/step
+Buy: 5875.905434268665 shares at 187.74
+Index: 113, Data shape: (505, 21)
+Sell: 0.0 shares at 188.94, Profit: 0.0
+Index: 114, Data shape: (505, 21)
+Buy: 0.0 shares at 193.57
+Index: 115, Data shape: (505, 21)
+Buy: 0.0 shares at 194.24
+Index: 116, Data shape: (505, 21)
+Buy: 0.0 shares at 196.32
+Index: 117, Data shape: (505, 21)
+Buy: 0.0 shares at 195.15
+Index: 118, Data shape: (505, 21)
+Index: 119, Data shape: (505, 21)
+Sell: -7.035516390166562e-13 shares at 201.91, Profit: -1.1960377863283154e-11
+Index: 120, Data shape: (505, 21)
+Buy: -7.180252296494796e-13 shares at 197.84
+Index: 121, Data shape: (505, 21)
+Sell: 0.0 shares at 200.34, Profit: 0.0
+Index: 122, Data shape: (505, 21)
+Sell: 0.0 shares at 196.33, Profit: 0.0
+Index: 123, Data shape: (505, 21)
+Sell: 0.0 shares at 198.44, Profit: 0.0
+Index: 124, Data shape: (505, 21)
+Buy: 0.0 shares at 203.48
+Index: 125, Data shape: (505, 21)
+Sell: 0.0 shares at 204.7, Profit: 0.0
+Index: 126, Data shape: (505, 21)
+Buy: 0.0 shares at 206.26
+Index: 127, Data shape: (505, 21)
+Sell: 5875.905434268665 shares at 210.7, Profit: 134910.78877080843
+Index: 128, Data shape: (505, 21)
+Sell: 0.0 shares at 208.25, Profit: 0.0
+Index: 129, Data shape: (505, 21)
+Index: 130, Data shape: (505, 21)
+Index: 131, Data shape: (505, 21)
+Sell: 0.0 shares at 213.67, Profit: 0.0
+Index: 132, Data shape: (505, 21)
+Buy: 5978.911841408256 shares at 207.07
+Index: 133, Data shape: (505, 21)
+Index: 134, Data shape: (505, 21)
+Index: 135, Data shape: (505, 21)
+Index: 136, Data shape: (505, 21)
+Index: 137, Data shape: (505, 21)
+Index: 138, Data shape: (505, 21)
+Buy: 0.0 shares at 208.75
+Index: 139, Data shape: (505, 21)
+Sell: 0.0 shares at 211.75, Profit: 0.0
+Index: 140, Data shape: (505, 21)
+Buy: 0.0 shares at 202.54
+Index: 141, Data shape: (505, 21)
+Index: 142, Data shape: (505, 21)
+Index: 143, Data shape: (505, 21)
+Buy: 0.0 shares at 202.02
+Index: 144, Data shape: (505, 21)
+Buy: 0.0 shares at 204.06
+Index: 145, Data shape: (505, 21)
+Buy: 0.0 shares at 203.9
+Index: 146, Data shape: (505, 21)
+Index: 147, Data shape: (505, 21)
+Index: 148, Data shape: (505, 21)
+Index: 149, Data shape: (505, 21)
+Sell: 0.0 shares at 212.94, Profit: 0.0
+Index: 150, Data shape: (505, 21)
+Buy: 0.0 shares at 216.35
+Index: 151, Data shape: (505, 21)
+Buy: 0.0 shares at 212.48
+Index: 152, Data shape: (505, 21)
+Sell: -7.180252296494796e-13 shares at 208.25, Profit: -7.474642640651081e-12
+Index: 153, Data shape: (505, 21)
+Sell: 0.0 shares at 203.38, Profit: -0.0
+Index: 154, Data shape: (505, 21)
+Index: 155, Data shape: (505, 21)
+Buy: -7.164770200024156e-13 shares at 208.7
+Index: 156, Data shape: (505, 21)
+Sell: 0.0 shares at 208.9, Profit: 0.0
+Index: 157, Data shape: (505, 21)
+Index: 158, Data shape: (505, 21)
+Buy: 0.0 shares at 211.49
+Index: 159, Data shape: (505, 21)
+Buy: 0.0 shares at 209.7
+Index: 160, Data shape: (505, 21)
+Index: 161, Data shape: (505, 21)
+Sell: 5978.911841408256 shares at 213.02, Profit: 35574.525456379226
+Index: 162, Data shape: (505, 21)
+Buy: 5960.165662673905 shares at 213.69
+Index: 163, Data shape: (505, 21)
+Index: 164, Data shape: (505, 21)
+Buy: 0.0 shares at 221.15
+Index: 165, Data shape: (505, 21)
+Sell: 0.0 shares at 226.58, Profit: 0.0
+Index: 166, Data shape: (505, 21)
+Index: 167, Data shape: (505, 21)
+Buy: 0.0 shares at 225.53
+Index: 168, Data shape: (505, 21)
+Index: 169, Data shape: (505, 21)
+Index: 170, Data shape: (505, 21)
+Buy: 0.0 shares at 217.3
+Index: 171, Data shape: (505, 21)
+Sell: 0.0 shares at 214.25, Profit: 0.0
+Index: 172, Data shape: (505, 21)
+Sell: 0.0 shares at 202.66, Profit: 0.0
+Index: 173, Data shape: (505, 21)
+Buy: 0.0 shares at 211.29
+Index: 174, Data shape: (505, 21)
+Buy: 0.0 shares at 205.37
+Index: 175, Data shape: (505, 21)
+Sell: 0.0 shares at 204.03, Profit: -0.0
+Index: 176, Data shape: (505, 21)
+Buy: 0.0 shares at 205.41
+Index: 177, Data shape: (505, 21)
+Buy: 0.0 shares at 208.78
+Index: 178, Data shape: (505, 21)
+Index: 179, Data shape: (505, 21)
+Sell: 0.0 shares at 202.91, Profit: -0.0
+Index: 180, Data shape: (505, 21)
+Buy: 0.0 shares at 200.39
+Index: 181, Data shape: (505, 21)
+Sell: 0.0 shares at 202.54, Profit: -0.0
+Index: 182, Data shape: (505, 21)
+Sell: 0.0 shares at 207.42, Profit: -0.0
+Index: 183, Data shape: (505, 21)
+Index: 184, Data shape: (505, 21)
+Index: 185, Data shape: (505, 21)
+1/1 [==============================] - 0s 52ms/step
+Buy: 0.0 shares at 207.82
+Index: 186, Data shape: (505, 21)
+Index: 187, Data shape: (505, 21)
+Index: 188, Data shape: (505, 21)
+1/1 [==============================] - 0s 112ms/step
+Buy: 0.0 shares at 210.33
+Index: 189, Data shape: (505, 21)
+Index: 190, Data shape: (505, 21)
+Index: 191, Data shape: (505, 21)
+Buy: 0.0 shares at 210.38
+Index: 192, Data shape: (505, 21)
+Buy: 0.0 shares at 205.91
+Index: 193, Data shape: (505, 21)
+Buy: 0.0 shares at 209.83
+Index: 194, Data shape: (505, 21)
+Sell: -7.164770200024156e-13 shares at 210.58, Profit: -1.3469767976045584e-12
+Index: 195, Data shape: (505, 21)
+Sell: 0.0 shares at 215.81, Profit: 0.0
+Index: 196, Data shape: (505, 21)
+Index: 197, Data shape: (505, 21)
+Buy: -6.769978052234975e-13 shares at 222.86
+Index: 198, Data shape: (505, 21)
+Index: 199, Data shape: (505, 21)
+Sell: 0.0 shares at 219.66, Profit: 0.0
+Index: 200, Data shape: (505, 21)
+Index: 201, Data shape: (505, 21)
+Index: 202, Data shape: (505, 21)
+1/1 [==============================] - 0s 50ms/step
+Buy: 0.0 shares at 214.65
+Index: 203, Data shape: (505, 21)
+Sell: 5960.165662673905 shares at 214.8, Profit: 6615.783885568116
+Index: 204, Data shape: (505, 21)
+Index: 205, Data shape: (505, 21)
+Index: 206, Data shape: (505, 21)
+Buy: 6094.076467737789 shares at 210.08
+Index: 207, Data shape: (505, 21)
+Index: 208, Data shape: (505, 21)
+Sell: 0.0 shares at 202.47, Profit: -0.0
+Index: 209, Data shape: (505, 21)
+Buy: 0.0 shares at 204.72
+Index: 210, Data shape: (505, 21)
+Sell: 0.0 shares at 202.47, Profit: -0.0
+Index: 211, Data shape: (505, 21)
+Sell: 0.0 shares at 202.33, Profit: -0.0
+Index: 212, Data shape: (505, 21)
+Index: 213, Data shape: (505, 21)
+Index: 214, Data shape: (505, 21)
+Sell: 0.0 shares at 223.29, Profit: 0.0
+Index: 215, Data shape: (505, 21)
+Index: 216, Data shape: (505, 21)
+Sell: 0.0 shares at 218.39, Profit: 0.0
+Index: 217, Data shape: (505, 21)
+Index: 218, Data shape: (505, 21)
+Buy: 0.0 shares at 216.55
+Index: 219, Data shape: (505, 21)
+Sell: 0.0 shares at 215.44, Profit: 0.0
+Index: 220, Data shape: (505, 21)
+1/1 [==============================] - 0s 126ms/step
+Buy: 0.0 shares at 216.51
+Index: 221, Data shape: (505, 21)
+Index: 222, Data shape: (505, 21)
+Index: 223, Data shape: (505, 21)
+Sell: 0.0 shares at 211.08, Profit: 0.0
+Index: 224, Data shape: (505, 21)
+1/1 [==============================] - 0s 77ms/step
+Buy: 0.0 shares at 212.42
+Index: 225, Data shape: (505, 21)
+Buy: 0.0 shares at 210.39
+Index: 226, Data shape: (505, 21)
+Sell: 0.0 shares at 210.11, Profit: 0.0
+Index: 227, Data shape: (505, 21)
+Index: 228, Data shape: (505, 21)
+Sell: 0.0 shares at 213.87, Profit: 0.0
+Index: 229, Data shape: (505, 21)
+Buy: 0.0 shares at 215.23
+Index: 230, Data shape: (505, 21)
+Index: 231, Data shape: (505, 21)
+Sell: 0.0 shares at 216.21, Profit: 0.0
+Index: 232, Data shape: (505, 21)
+Sell: 0.0 shares at 215.37, Profit: 0.0
+Index: 233, Data shape: (505, 21)
+Buy: 0.0 shares at 214.24
+Index: 234, Data shape: (505, 21)
+Index: 235, Data shape: (505, 21)
+Sell: 0.0 shares at 214.29, Profit: 0.0
+Index: 236, Data shape: (505, 21)
+Sell: 0.0 shares at 216.01, Profit: 0.0
+Index: 237, Data shape: (505, 21)
+Buy: 0.0 shares at 211.8
+Index: 238, Data shape: (505, 21)
+Buy: 0.0 shares at 210.52
+Index: 239, Data shape: (505, 21)
+Sell: -6.769978052234975e-13 shares at 213.26, Profit: 6.499178930145591e-12
+Index: 240, Data shape: (505, 21)
+Index: 241, Data shape: (505, 21)
+Buy: -6.742471953577877e-13 shares at 214.13
+Index: 242, Data shape: (505, 21)
+Sell: 0.0 shares at 219.28, Profit: 0.0
+Index: 243, Data shape: (505, 21)
+Index: 244, Data shape: (505, 21)
+Sell: 6094.076467737789 shares at 218.59, Profit: 51860.59074044853
+Index: 245, Data shape: (505, 21)
+Index: 246, Data shape: (505, 21)
+Sell: 0.0 shares at 223.94, Profit: 0.0
+Index: 247, Data shape: (505, 21)
+1/1 [==============================] - 0s 119ms/step
+Buy: 6027.075265056571 shares at 221.02
+Index: 248, Data shape: (505, 21)
+Index: 249, Data shape: (505, 21)
+Index: 250, Data shape: (505, 21)
+Sell: 0.0 shares at 224.15, Profit: 0.0
+Index: 251, Data shape: (505, 21)
+Sell: 0.0 shares at 221.68, Profit: 0.0
+Index: 252, Data shape: (505, 21)
+Sell: 0.0 shares at 222.42, Profit: 0.0
+Index: 253, Data shape: (505, 21)
+Index: 254, Data shape: (505, 21)
+Index: 255, Data shape: (505, 21)
+Index: 256, Data shape: (505, 21)
+Index: 257, Data shape: (505, 21)
+Buy: 0.0 shares at 219.62
+Index: 258, Data shape: (505, 21)
+Sell: 0.0 shares at 217.49, Profit: 0.0
+Index: 259, Data shape: (505, 21)
+1/1 [==============================] - 0s 95ms/step
+Buy: 0.0 shares at 214.93
+Index: 260, Data shape: (505, 21)
+Buy: 0.0 shares at 216.34
+Index: 261, Data shape: (505, 21)
+Sell: 0.0 shares at 213.02, Profit: -0.0
+Index: 262, Data shape: (505, 21)
+Buy: 0.0 shares at 212.65
+Index: 263, Data shape: (505, 21)
+Buy: 0.0 shares at 216.44
+Index: 264, Data shape: (505, 21)
+Index: 265, Data shape: (505, 21)
+Sell: 0.0 shares at 224.97, Profit: 0.0
+Index: 266, Data shape: (505, 21)
+Index: 267, Data shape: (505, 21)
+Buy: 0.0 shares at 229.53
+Index: 268, Data shape: (505, 21)
+Index: 269, Data shape: (505, 21)
+Sell: 0.0 shares at 232.9, Profit: 0.0
+Index: 270, Data shape: (505, 21)
+Sell: 0.0 shares at 238.93, Profit: 0.0
+Index: 271, Data shape: (505, 21)
+Buy: 0.0 shares at 231.96
+Index: 272, Data shape: (505, 21)
+Index: 273, Data shape: (505, 21)
+Sell: -6.742471953577877e-13 shares at 239.51, Profit: -1.7112393818180646e-11
+Index: 274, Data shape: (505, 21)
+Index: 275, Data shape: (505, 21)
+Buy: -6.672821195824293e-13 shares at 242.01
+Index: 276, Data shape: (505, 21)
+Index: 277, Data shape: (505, 21)
+Index: 278, Data shape: (505, 21)
+Buy: 0.0 shares at 243.77
+Index: 279, Data shape: (505, 21)
+Index: 280, Data shape: (505, 21)
+Sell: 6027.075265056571 shares at 244.49, Profit: 141455.45647087772
+Index: 281, Data shape: (505, 21)
+Index: 282, Data shape: (505, 21)
+Buy: 6046.613178308088 shares at 243.7
+Index: 283, Data shape: (505, 21)
+Index: 284, Data shape: (505, 21)
+Buy: 0.0 shares at 243.79
+Index: 285, Data shape: (505, 21)
+Index: 286, Data shape: (505, 21)
+Buy: 0.0 shares at 234.51
+Index: 287, Data shape: (505, 21)
+Index: 288, Data shape: (505, 21)
+Sell: 0.0 shares at 234.55, Profit: 0.0
+Index: 289, Data shape: (505, 21)
+1/1 [==============================] - 0s 85ms/step
+Buy: 0.0 shares at 228.99
+Index: 290, Data shape: (505, 21)
+Buy: 0.0 shares at 232.38
+Index: 291, Data shape: (505, 21)
+Index: 292, Data shape: (505, 21)
+Index: 293, Data shape: (505, 21)
+Buy: 0.0 shares at 227.56
+Index: 294, Data shape: (505, 21)
+Buy: 0.0 shares at 226.73
+Index: 295, Data shape: (505, 21)
+Buy: 0.0 shares at 231.6
+Index: 296, Data shape: (505, 21)
+Buy: 0.0 shares at 227.39
+Index: 297, Data shape: (505, 21)
+Index: 298, Data shape: (505, 21)
+Buy: 0.0 shares at 232.42
+Index: 299, Data shape: (505, 21)
+1/1 [==============================] - 0s 53ms/step
+Buy: 0.0 shares at 237.13
+Index: 300, Data shape: (505, 21)
+Sell: 0.0 shares at 235.75, Profit: 0.0
+Index: 301, Data shape: (505, 21)
+Buy: 0.0 shares at 234.81
+Index: 302, Data shape: (505, 21)
+Sell: 0.0 shares at 237.71, Profit: 0.0
+Index: 303, Data shape: (505, 21)
+Sell: 0.0 shares at 237.04, Profit: 0.0
+Index: 304, Data shape: (505, 21)
+Buy: 0.0 shares at 230.72
+Index: 305, Data shape: (505, 21)
+Index: 306, Data shape: (505, 21)
+Index: 307, Data shape: (505, 21)
+Sell: 0.0 shares at 237.58, Profit: 0.0
+Index: 308, Data shape: (505, 21)
+Sell: 0.0 shares at 235.46, Profit: 0.0
+Index: 309, Data shape: (505, 21)
+1/1 [==============================] - 0s 65ms/step
+Buy: 0.0 shares at 232.34
+Index: 310, Data shape: (505, 21)
+Buy: 0.0 shares at 236.48
+Index: 311, Data shape: (505, 21)
+Index: 312, Data shape: (505, 21)
+Index: 313, Data shape: (505, 21)
+Sell: 0.0 shares at 235.77, Profit: 0.0
+Index: 314, Data shape: (505, 21)
+Index: 315, Data shape: (505, 21)
+Buy: 0.0 shares at 249.07
+Index: 316, Data shape: (505, 21)
+Index: 317, Data shape: (505, 21)
+Buy: 0.0 shares at 249.9
+Index: 318, Data shape: (505, 21)
+Sell: -6.672821195824293e-13 shares at 253.25, Profit: -7.500251024106511e-12
+Index: 319, Data shape: (505, 21)
+Sell: 0.0 shares at 255.85, Profit: 0.0
+Index: 320, Data shape: (505, 21)
+Index: 321, Data shape: (505, 21)
+Index: 322, Data shape: (505, 21)
+Index: 323, Data shape: (505, 21)
+Sell: 6046.613178308088 shares at 259.56, Profit: 95899.28500796636
+Index: 324, Data shape: (505, 21)
+1/1 [==============================] - 0s 30ms/step
+Buy: 6023.175793689401 shares at 260.57
+Index: 325, Data shape: (505, 21)
+Index: 326, Data shape: (505, 21)
+Sell: 0.0 shares at 258.28, Profit: 0.0
+Index: 327, Data shape: (505, 21)
+Sell: 0.0 shares at 260.62, Profit: 0.0
+Index: 328, Data shape: (505, 21)
+Buy: 0.0 shares at 257.17
+Index: 329, Data shape: (505, 21)
+Buy: 0.0 shares at 261.15
+Index: 330, Data shape: (505, 21)
+Index: 331, Data shape: (505, 21)
+Index: 332, Data shape: (505, 21)
+Index: 333, Data shape: (505, 21)
+Sell: 0.0 shares at 252.51, Profit: 0.0
+Index: 334, Data shape: (505, 21)
+Buy: 0.0 shares at 252.18
+Index: 335, Data shape: (505, 21)
+Index: 336, Data shape: (505, 21)
+Sell: 0.0 shares at 247.79, Profit: 0.0
+Index: 337, Data shape: (505, 21)
+Buy: 0.0 shares at 246.47
+Index: 338, Data shape: (505, 21)
+Sell: 0.0 shares at 249.71, Profit: 0.0
+Index: 339, Data shape: (505, 21)
+Buy: 0.0 shares at 252.46
+Index: 340, Data shape: (505, 21)
+Sell: 0.0 shares at 247.18, Profit: 0.0
+Index: 341, Data shape: (505, 21)
+Index: 342, Data shape: (505, 21)
+Buy: 0.0 shares at 239.03
+Index: 343, Data shape: (505, 21)
+1/1 [==============================] - 0s 25ms/step
+Buy: 0.0 shares at 242.98
+Index: 344, Data shape: (505, 21)
+Buy: 0.0 shares at 248.15
+Index: 345, Data shape: (505, 21)
+Index: 346, Data shape: (505, 21)
+Index: 347, Data shape: (505, 21)
+Buy: 0.0 shares at 243.12
+Index: 348, Data shape: (505, 21)
+Index: 349, Data shape: (505, 21)
+1/1 [==============================] - 0s 24ms/step
+Buy: 0.0 shares at 245.17
+Index: 350, Data shape: (505, 21)
+Index: 351, Data shape: (505, 21)
+Index: 352, Data shape: (505, 21)
+Sell: 0.0 shares at 251.49, Profit: 0.0
+Index: 353, Data shape: (505, 21)
+Index: 354, Data shape: (505, 21)
+Sell: 0.0 shares at 249.68, Profit: 0.0
+Index: 355, Data shape: (505, 21)
+Sell: 0.0 shares at 247.4, Profit: 0.0
+Index: 356, Data shape: (505, 21)
+Buy: 0.0 shares at 247.3
+Index: 357, Data shape: (505, 21)
+Buy: 0.0 shares at 245.71
+Index: 358, Data shape: (505, 21)
+Sell: 0.0 shares at 250.79, Profit: 0.0
+Index: 359, Data shape: (505, 21)
+Buy: 0.0 shares at 253.81
+Index: 360, Data shape: (505, 21)
+Index: 361, Data shape: (505, 21)
+Buy: 0.0 shares at 253.59
+Index: 362, Data shape: (505, 21)
+Sell: 0.0 shares at 257.24, Profit: 0.0
+Index: 363, Data shape: (505, 21)
+Sell: 0.0 shares at 257.89, Profit: 0.0
+Index: 364, Data shape: (505, 21)
+Buy: 0.0 shares at 259.89
+Index: 365, Data shape: (505, 21)
+Index: 366, Data shape: (505, 21)
+Index: 367, Data shape: (505, 21)
+Buy: 0.0 shares at 260.9
+Index: 368, Data shape: (505, 21)
+Buy: 0.0 shares at 259.43
+Index: 369, Data shape: (505, 21)
+Buy: 0.0 shares at 262.63
+Index: 370, Data shape: (505, 21)
+Buy: 0.0 shares at 265.51
+Index: 371, Data shape: (505, 21)
+Sell: 0.0 shares at 265.275, Profit: 0.0
+Index: 372, Data shape: (505, 21)
+Buy: 0.0 shares at 266.69
+Index: 373, Data shape: (505, 21)
+Buy: 0.0 shares at 265.02
+Index: 374, Data shape: (505, 21)
+Index: 375, Data shape: (505, 21)
+Buy: 0.0 shares at 271.4
+Index: 376, Data shape: (505, 21)
+Index: 377, Data shape: (505, 21)
+Buy: 0.0 shares at 271.6
+Index: 378, Data shape: (505, 21)
+Buy: 0.0 shares at 277.65
+Index: 379, Data shape: (505, 21)
+Buy: 0.0 shares at 277.66
+Index: 380, Data shape: (505, 21)
+Buy: 0.0 shares at 279.93
+Index: 381, Data shape: (505, 21)
+Buy: 0.0 shares at 277.42
+Index: 382, Data shape: (505, 21)
+Sell: 0.0 shares at 277.94, Profit: 0.0
+Index: 383, Data shape: (505, 21)
+Sell: 0.0 shares at 277.32, Profit: 0.0
+Index: 384, Data shape: (505, 21)
+Index: 385, Data shape: (505, 21)
+Sell: 0.0 shares at 282.51, Profit: 0.0
+Index: 386, Data shape: (505, 21)
+Index: 387, Data shape: (505, 21)
+Index: 388, Data shape: (505, 21)
+Index: 389, Data shape: (505, 21)
+Sell: 6023.175793689401 shares at 279.32, Profit: 112934.54613167627
+Index: 390, Data shape: (505, 21)
+Sell: 0.0 shares at 281.4, Profit: 0.0
+Index: 391, Data shape: (505, 21)
+1/1 [==============================] - 0s 34ms/step
+Buy: 5879.616490855258 shares at 286.14
+Index: 392, Data shape: (505, 21)
+Index: 393, Data shape: (505, 21)
+Sell: 0.0 shares at 289.05, Profit: 0.0
+Index: 394, Data shape: (505, 21)
+Buy: -8.125589574016528e-13 shares at 286.54
+Index: 395, Data shape: (505, 21)
+Sell: 0.0 shares at 286.22, Profit: 0.0
+Index: 396, Data shape: (505, 21)
+Index: 397, Data shape: (505, 21)
+Index: 398, Data shape: (505, 21)
+Sell: 0.0 shares at 284.82, Profit: 0.0
+Index: 399, Data shape: (505, 21)
+Buy: 0.0 shares at 287.12
+Index: 400, Data shape: (505, 21)
+Buy: 0.0 shares at 286.51
+Index: 401, Data shape: (505, 21)
+Sell: 0.0 shares at 289.52, Profit: 0.0
+Index: 402, Data shape: (505, 21)
+Index: 403, Data shape: (505, 21)
+Index: 404, Data shape: (505, 21)
+Sell: 0.0 shares at 286.44, Profit: 0.0
+Index: 405, Data shape: (505, 21)
+Sell: 0.0 shares at 286.95, Profit: 0.0
+Index: 406, Data shape: (505, 21)
+Buy: 0.0 shares at 289.81
+Index: 407, Data shape: (505, 21)
+Sell: 0.0 shares at 292.85, Profit: 0.0
+Index: 408, Data shape: (505, 21)
+Sell: 0.0 shares at 294.6, Profit: 0.0
+Index: 409, Data shape: (505, 21)
+Buy: 0.0 shares at 293.08
+Index: 410, Data shape: (505, 21)
+Sell: 0.0 shares at 290.73, Profit: 0.0
+Index: 411, Data shape: (505, 21)
+Sell: 0.0 shares at 296.77, Profit: 0.0
+Index: 412, Data shape: (505, 21)
+Index: 413, Data shape: (505, 21)
+Sell: 0.0 shares at 304.65, Profit: 0.0
+Index: 414, Data shape: (505, 21)
+Index: 415, Data shape: (505, 21)
+Sell: 0.0 shares at 302.01, Profit: 0.0
+Index: 416, Data shape: (505, 21)
+Buy: 0.0 shares at 299.09
+Index: 417, Data shape: (505, 21)
+Index: 418, Data shape: (505, 21)
+Buy: 0.0 shares at 303.59
+Index: 419, Data shape: (505, 21)
+Sell: 0.0 shares at 301.88, Profit: 0.0
+Index: 420, Data shape: (505, 21)
+Buy: 0.0 shares at 301.83
+Index: 421, Data shape: (505, 21)
+Sell: 0.0 shares at 301.15, Profit: 0.0
+Index: 422, Data shape: (505, 21)
+Sell: 0.0 shares at 301.14, Profit: 0.0
+Index: 423, Data shape: (505, 21)
+Index: 424, Data shape: (505, 21)
+Index: 425, Data shape: (505, 21)
+Index: 426, Data shape: (505, 21)
+Index: 427, Data shape: (505, 21)
+1/1 [==============================] - 0s 29ms/step
+Buy: 0.0 shares at 296.99
+Index: 428, Data shape: (505, 21)
+Index: 429, Data shape: (505, 21)
+Buy: 0.0 shares at 304.82
+Index: 430, Data shape: (505, 21)
+Index: 431, Data shape: (505, 21)
+Buy: 0.0 shares at 299.87
+Index: 432, Data shape: (505, 21)
+Index: 433, Data shape: (505, 21)
+Buy: 0.0 shares at 294.8
+Index: 434, Data shape: (505, 21)
+Sell: 0.0 shares at 298.58, Profit: 0.0
+Index: 435, Data shape: (505, 21)
+Index: 436, Data shape: (505, 21)
+Index: 437, Data shape: (505, 21)
+Index: 438, Data shape: (505, 21)
+Index: 439, Data shape: (505, 21)
+Index: 440, Data shape: (505, 21)
+Index: 441, Data shape: (505, 21)
+Index: 442, Data shape: (505, 21)
+Buy: 0.0 shares at 283.11
+Index: 443, Data shape: (505, 21)
+Buy: 0.0 shares at 288.76
+Index: 444, Data shape: (505, 21)
+Sell: 0.0 shares at 293.11, Profit: 0.0
+Index: 445, Data shape: (505, 21)
+Sell: 0.0 shares at 294.85, Profit: 0.0
+Index: 446, Data shape: (505, 21)
+Buy: 0.0 shares at 294.85
+Index: 447, Data shape: (505, 21)
+Index: 448, Data shape: (505, 21)
+1/1 [==============================] - 0s 34ms/step
+Buy: 0.0 shares at 292.88
+Index: 449, Data shape: (505, 21)
+Buy: 0.0 shares at 296.31
+Index: 450, Data shape: (505, 21)
+Sell: 0.0 shares at 302.75, Profit: 0.0
+Index: 451, Data shape: (505, 21)
+Buy: 0.0 shares at 304.21
+Index: 452, Data shape: (505, 21)
+Sell: 0.0 shares at 307.29, Profit: 0.0
+Index: 453, Data shape: (505, 21)
+Buy: 0.0 shares at 308.23
+Index: 454, Data shape: (505, 21)
+Buy: 0.0 shares at 307.41
+Index: 455, Data shape: (505, 21)
+Sell: 0.0 shares at 310.76, Profit: 0.0
+Index: 456, Data shape: (505, 21)
+Buy: 0.0 shares at 309.16
+Index: 457, Data shape: (505, 21)
+Index: 458, Data shape: (505, 21)
+Buy: 0.0 shares at 310.11
+Index: 459, Data shape: (505, 21)
+Sell: 0.0 shares at 323.17, Profit: 0.0
+Index: 460, Data shape: (505, 21)
+Index: 461, Data shape: (505, 21)
+Sell: 0.0 shares at 331.62, Profit: 0.0
+Index: 462, Data shape: (505, 21)
+Buy: 0.0 shares at 329.37
+Index: 463, Data shape: (505, 21)
+Buy: 0.0 shares at 333.13
+Index: 464, Data shape: (505, 21)
+1/1 [==============================] - 0s 30ms/step
+Buy: 0.0 shares at 334.0
+Index: 465, Data shape: (505, 21)
+Index: 466, Data shape: (505, 21)
+Index: 467, Data shape: (505, 21)
+Buy: 0.0 shares at 336.99
+Index: 468, Data shape: (505, 21)
+Buy: 0.0 shares at 335.95
+Index: 469, Data shape: (505, 21)
+Index: 470, Data shape: (505, 21)
+Index: 471, Data shape: (505, 21)
+Buy: 0.0 shares at 336.72
+Index: 472, Data shape: (505, 21)
+Index: 473, Data shape: (505, 21)
+Buy: 0.0 shares at 339.51
+Index: 474, Data shape: (505, 21)
+Index: 475, Data shape: (505, 21)
+Index: 476, Data shape: (505, 21)
+Buy: 0.0 shares at 343.11
+Index: 477, Data shape: (505, 21)
+Buy: 0.0 shares at 339.83
+Index: 478, Data shape: (505, 21)
+1/1 [==============================] - 0s 31ms/step
+Buy: 0.0 shares at 337.68
+Index: 479, Data shape: (505, 21)
+Buy: 0.0 shares at 337.91
+Index: 480, Data shape: (505, 21)
+Index: 481, Data shape: (505, 21)
+Index: 482, Data shape: (505, 21)
+Buy: 0.0 shares at 330.59
+Index: 483, Data shape: (505, 21)
+Index: 484, Data shape: (505, 21)
+Sell: 0.0 shares at 329.49, Profit: 0.0
+Index: 485, Data shape: (505, 21)
+Sell: 0.0 shares at 323.01, Profit: 0.0
+Index: 486, Data shape: (505, 21)
+Index: 487, Data shape: (505, 21)
+Buy: 0.0 shares at 334.92
+Index: 488, Data shape: (505, 21)
+Buy: 0.0 shares at 334.97
+Index: 489, Data shape: (505, 21)
+Index: 490, Data shape: (505, 21)
+Index: 491, Data shape: (505, 21)
+Buy: 0.0 shares at 339.4
+Index: 492, Data shape: (505, 21)
+Sell: 0.0 shares at 328.34, Profit: 0.0
+Index: 493, Data shape: (505, 21)
+Sell: 5879.616490855258 shares at 334.65, Profit: 285220.19597138854
+Index: 494, Data shape: (505, 21)
+Buy: 6056.059275668551 shares at 324.9
+Index: 495, Data shape: (505, 21)
+Sell: -8.125589574016528e-13 shares at 323.8, Profit: -3.0275946752785575e-11
+Index: 496, Data shape: (505, 21)
+Sell: 0.0 shares at 319.91, Profit: 0.0
+Index: 497, Data shape: (505, 21)
+Sell: 0.0 shares at 327.29, Profit: 0.0
+Index: 498, Data shape: (505, 21)
+Buy: -7.896356254701538e-13 shares at 333.2
+Index: 499, Data shape: (505, 21)
+Buy: 0.0 shares at 334.69
+Index: 500, Data shape: (505, 21)
+Index: 501, Data shape: (505, 21)
+Sell: 0.0 shares at 341.25, Profit: 0.0
+Index: 502, Data shape: (505, 21)
+Sell: 0.0 shares at 341.95, Profit: 0.0
+Index: 503, Data shape: (505, 21)
+Index: 504, Data shape: (505, 21)
+Buy: 0.0 shares at 336.32
+Index: 505, Data shape: (505, 21)
+1/1 [==============================] - 0s 33ms/step
+1/1 [==============================] - 0s 29ms/step
+1/1 [==============================] - 0s 28ms/step
+1/1 [==============================] - 0s 36ms/step
+1/1 [==============================] - 0s 34ms/step
+1/1 [==============================] - 0s 30ms/step
+1/1 [==============================] - 0s 30ms/step
+1/1 [==============================] - 0s 30ms/step
+1/1 [==============================] - 0s 32ms/step
+1/1 [==============================] - 0s 30ms/step
+1/1 [==============================] - 0s 29ms/step
+1/1 [==============================] - 0s 36ms/step
+1/1 [==============================] - 0s 30ms/step
+1/1 [==============================] - 0s 32ms/step
+1/1 [==============================] - 0s 29ms/step
+1/1 [==============================] - 0s 29ms/step
+1/1 [==============================] - 0s 31ms/step
+1/1 [==============================] - 0s 29ms/step
+1/1 [==============================] - 0s 32ms/step
+1/1 [==============================] - 0s 40ms/step
+1/1 [==============================] - 0s 27ms/step
+1/1 [==============================] - 0s 28ms/step
+1/1 [==============================] - 0s 31ms/step
+1/1 [==============================] - 0s 28ms/step
+1/1 [==============================] - 0s 24ms/step
+1/1 [==============================] - 0s 24ms/step
+1/1 [==============================] - 0s 24ms/step
+1/1 [==============================] - 0s 24ms/step
+1/1 [==============================] - 0s 24ms/step
+1/1 [==============================] - 0s 24ms/step
+1/1 [==============================] - 0s 46ms/step
+1/1 [==============================] - 0s 25ms/step
+1/1 [==============================] - 0s 26ms/step
+1/1 [==============================] - 0s 24ms/step
+1/1 [==============================] - 0s 23ms/step
+1/1 [==============================] - 0s 27ms/step
+1/1 [==============================] - 0s 23ms/step
+1/1 [==============================] - 0s 25ms/step
+1/1 [==============================] - 0s 23ms/step
+1/1 [==============================] - 0s 24ms/step
+1/1 [==============================] - 0s 26ms/step
+1/1 [==============================] - 0s 29ms/step
+1/1 [==============================] - 0s 26ms/step
+1/1 [==============================] - 0s 24ms/step
+1/1 [==============================] - 0s 25ms/step
+1/1 [==============================] - 0s 40ms/step
+1/1 [==============================] - 0s 39ms/step
+1/1 [==============================] - 0s 36ms/step
+1/1 [==============================] - 0s 35ms/step
+1/1 [==============================] - 0s 38ms/step
+1/1 [==============================] - 0s 34ms/step
+1/1 [==============================] - 0s 35ms/step
+1/1 [==============================] - 0s 35ms/step
+1/1 [==============================] - 0s 39ms/step
+1/1 [==============================] - 0s 34ms/step
+1/1 [==============================] - 0s 35ms/step
+1/1 [==============================] - 0s 36ms/step
+1/1 [==============================] - 0s 32ms/step
+1/1 [==============================] - 0s 36ms/step
+1/1 [==============================] - 0s 36ms/step
+1/1 [==============================] - 0s 34ms/step
+1/1 [==============================] - 0s 36ms/step
+1/1 [==============================] - 0s 35ms/step
+1/1 [==============================] - 0s 48ms/step
+1/1 [==============================] - 0s 40ms/step
+1/1 [==============================] - 0s 37ms/step
+1/1 [==============================] - 0s 36ms/step
+1/1 [==============================] - 0s 37ms/step
+1/1 [==============================] - 0s 35ms/step
+1/1 [==============================] - 0s 36ms/step
+1/1 [==============================] - 0s 40ms/step
+1/1 [==============================] - 0s 34ms/step
+1/1 [==============================] - 0s 25ms/step
+1/1 [==============================] - 0s 23ms/step
+1/1 [==============================] - 0s 26ms/step
+1/1 [==============================] - 0s 26ms/step
+1/1 [==============================] - 0s 26ms/step
+1/1 [==============================] - 0s 25ms/step
+1/1 [==============================] - 0s 24ms/step
+1/1 [==============================] - 0s 27ms/step
+1/1 [==============================] - 0s 23ms/step
+1/1 [==============================] - 0s 23ms/step
+1/1 [==============================] - 0s 24ms/step
+1/1 [==============================] - 0s 26ms/step
+1/1 [==============================] - 0s 26ms/step
+1/1 [==============================] - 0s 25ms/step
+1/1 [==============================] - 0s 23ms/step
+1/1 [==============================] - 0s 24ms/step
+1/1 [==============================] - 0s 32ms/step
+1/1 [==============================] - 0s 30ms/step
+1/1 [==============================] - 0s 29ms/step
+1/1 [==============================] - 0s 27ms/step
+1/1 [==============================] - 0s 29ms/step
+1/1 [==============================] - 0s 29ms/step
+1/1 [==============================] - 0s 38ms/step
+1/1 [==============================] - 0s 27ms/step
+1/1 [==============================] - 0s 29ms/step
+1/1 [==============================] - 0s 26ms/step
+1/1 [==============================] - 0s 25ms/step
+1/1 [==============================] - 0s 23ms/step
+1/1 [==============================] - 0s 27ms/step
+1/1 [==============================] - 0s 22ms/step
+1/1 [==============================] - 0s 25ms/step
+1/1 [==============================] - 0s 25ms/step
+1/1 [==============================] - 0s 25ms/step
+1/1 [==============================] - 0s 23ms/step
+1/1 [==============================] - 0s 28ms/step
+1/1 [==============================] - 0s 27ms/step
+1/1 [==============================] - 0s 23ms/step
+1/1 [==============================] - 0s 23ms/step
+1/1 [==============================] - 0s 24ms/step
+1/1 [==============================] - 0s 30ms/step
+1/1 [==============================] - 0s 25ms/step
+1/1 [==============================] - 0s 24ms/step
+1/1 [==============================] - 0s 26ms/step
+1/1 [==============================] - 0s 23ms/step
+1/1 [==============================] - 0s 23ms/step
+1/1 [==============================] - 0s 22ms/step
+1/1 [==============================] - 0s 30ms/step
+1/1 [==============================] - 0s 23ms/step
+1/1 [==============================] - 0s 22ms/step
+1/1 [==============================] - 0s 25ms/step
+1/1 [==============================] - 0s 26ms/step
+1/1 [==============================] - 0s 30ms/step
+1/1 [==============================] - 0s 29ms/step
+1/1 [==============================] - 0s 28ms/step
+1/1 [==============================] - 0s 26ms/step
+1/1 [==============================] - 0s 27ms/step
+Index: 0, Data shape: (505, 21)
+Observation shape: (24,)
+Buy: 6225.8747354003235 shares at 160.62
+Index: 1, Data shape: (505, 21)
+Buy: 0.0 shares at 158.62
+Index: 2, Data shape: (505, 21)
+Index: 3, Data shape: (505, 21)
+Buy: 0.0 shares at 157.58
+Index: 4, Data shape: (505, 21)
+Index: 5, Data shape: (505, 21)
+Index: 6, Data shape: (505, 21)
+Buy: 0.0 shares at 161.34
+Index: 7, Data shape: (505, 21)
+Buy: 0.0 shares at 163.28
+Index: 8, Data shape: (505, 21)
+Index: 9, Data shape: (505, 21)
+Sell: 6225.8747354003235 shares at 163.18, Profit: 15938.239322624842
+Index: 10, Data shape: (505, 21)
+Buy: 6113.848705076879 shares at 166.17
+Index: 11, Data shape: (505, 21)
+Index: 12, Data shape: (505, 21)
+Index: 13, Data shape: (505, 21)
+Sell: 0.0 shares at 165.7, Profit: 0.0
+Index: 14, Data shape: (505, 21)
+Sell: 0.0 shares at 166.72, Profit: 0.0
+Index: 15, Data shape: (505, 21)
+Sell: 0.0 shares at 165.04, Profit: 0.0
+Index: 16, Data shape: (505, 21)
+Sell: 0.0 shares at 162.28, Profit: -0.0
+Index: 17, Data shape: (505, 21)
+Sell: 6113.848705076879 shares at 165.46, Profit: -4340.832580604459
+Index: 18, Data shape: (505, 21)
+Buy: 6019.97980684373 shares at 168.04
+Index: 19, Data shape: (505, 21)
+Buy: 0.0 shares at 172.78
+Index: 20, Data shape: (505, 21)
+Sell: 6019.97980684373 shares at 170.23, Profit: 13183.755776987755
+Index: 21, Data shape: (505, 21)
+Buy: 5876.71271085565 shares at 174.38
+Index: 22, Data shape: (505, 21)
+Sell: 0.0 shares at 180.12, Profit: 0.0
+Index: 23, Data shape: (505, 21)
+Sell: 5876.71271085565 shares at 179.9, Profit: 32439.454163923245
+Index: 24, Data shape: (505, 21)
+Buy: 5757.341483869364 shares at 183.63
+Index: 25, Data shape: (505, 21)
+Index: 26, Data shape: (505, 21)
+Buy: 0.0 shares at 188.7
+Index: 27, Data shape: (505, 21)
+Index: 28, Data shape: (505, 21)
+Index: 29, Data shape: (505, 21)
+Buy: 0.0 shares at 183.71
+Index: 30, Data shape: (505, 21)
+Index: 31, Data shape: (505, 21)
+Index: 32, Data shape: (505, 21)
+Buy: 0.0 shares at 187.28
+Index: 33, Data shape: (505, 21)
+Buy: 0.0 shares at 184.42
+Index: 34, Data shape: (505, 21)
+Buy: 0.0 shares at 178.59
+Index: 35, Data shape: (505, 21)
+Buy: 0.0 shares at 170.89
+Index: 36, Data shape: (505, 21)
+Index: 37, Data shape: (505, 21)
+Buy: 0.0 shares at 170.17
+Index: 38, Data shape: (505, 21)
+Sell: 5757.341483869364 shares at 158.18, Profit: -146524.34076447526
+Index: 39, Data shape: (505, 21)
+Buy: 5621.234960301563 shares at 162.01
+Index: 40, Data shape: (505, 21)
+1/1 [==============================] - 0s 26ms/step
+Buy: 0.0 shares at 172.79
+Index: 41, Data shape: (505, 21)
+Index: 42, Data shape: (505, 21)
+Buy: 0.0 shares at 170.55
+Index: 43, Data shape: (505, 21)
+Index: 44, Data shape: (505, 21)
+Buy: 0.0 shares at 161.57
+Index: 45, Data shape: (505, 21)
+Sell: 0.0 shares at 150.58, Profit: -0.0
+Index: 46, Data shape: (505, 21)
+Sell: 0.0 shares at 160.92, Profit: -0.0
+Index: 47, Data shape: (505, 21)
+Sell: 0.0 shares at 153.63, Profit: -0.0
+Index: 48, Data shape: (505, 21)
+Index: 49, Data shape: (505, 21)
+Sell: 0.0 shares at 158.8438, Profit: -0.0
+Index: 50, Data shape: (505, 21)
+Sell: 0.0 shares at 135.42, Profit: -0.0
+Index: 51, Data shape: (505, 21)
+Index: 52, Data shape: (505, 21)
+Index: 53, Data shape: (505, 21)
+Index: 54, Data shape: (505, 21)
+Sell: 0.0 shares at 137.35, Profit: -0.0
+Index: 55, Data shape: (505, 21)
+Index: 56, Data shape: (505, 21)
+1/1 [==============================] - 0s 29ms/step
+Buy: 0.0 shares at 148.38
+Index: 57, Data shape: (505, 21)
+Sell: 0.0 shares at 146.92, Profit: -0.0
+Index: 58, Data shape: (505, 21)
+Buy: 0.0 shares at 155.88
+Index: 59, Data shape: (505, 21)
+1/1 [==============================] - 0s 36ms/step
+Buy: 0.0 shares at 149.7
+Index: 60, Data shape: (505, 21)
+Sell: 5621.234960301563 shares at 160.23, Profit: -10005.798229336788
+Index: 61, Data shape: (505, 21)
+Index: 62, Data shape: (505, 21)
+Buy: 5921.310089337448 shares at 152.11
+Index: 63, Data shape: (505, 21)
+Buy: 0.0 shares at 155.26
+Index: 64, Data shape: (505, 21)
+1/1 [==============================] - 0s 36ms/step
+Buy: 0.0 shares at 153.9
+Index: 65, Data shape: (505, 21)
+Index: 66, Data shape: (505, 21)
+Buy: 0.0 shares at 163.49
+Index: 67, Data shape: (505, 21)
+Buy: 0.0 shares at 165.13
+Index: 68, Data shape: (505, 21)
+1/1 [==============================] - 0s 39ms/step
+Buy: 0.0 shares at 165.14
+Index: 69, Data shape: (505, 21)
+Buy: 0.0 shares at 165.51
+Index: 70, Data shape: (505, 21)
+Index: 71, Data shape: (505, 21)
+Index: 72, Data shape: (505, 21)
+Index: 73, Data shape: (505, 21)
+Sell: 0.0 shares at 178.6, Profit: 0.0
+Index: 74, Data shape: (505, 21)
+Sell: 0.0 shares at 175.06, Profit: 0.0
+Index: 75, Data shape: (505, 21)
+1/1 [==============================] - 0s 32ms/step
+Buy: 0.0 shares at 167.82
+Index: 76, Data shape: (505, 21)
+Index: 77, Data shape: (505, 21)
+Index: 78, Data shape: (505, 21)
+Buy: 0.0 shares at 174.55
+Index: 79, Data shape: (505, 21)
+Buy: 0.0 shares at 174.05
+Index: 80, Data shape: (505, 21)
+Buy: 0.0 shares at 169.81
+Index: 81, Data shape: (505, 21)
+Index: 82, Data shape: (505, 21)
+Sell: 0.0 shares at 179.129, Profit: 0.0
+Index: 83, Data shape: (505, 21)
+1/1 [==============================] - 0s 35ms/step
+Buy: 0.0 shares at 174.57
+Index: 84, Data shape: (505, 21)
+Index: 85, Data shape: (505, 21)
+Index: 86, Data shape: (505, 21)
+Sell: 0.0 shares at 182.54, Profit: 0.0
+Index: 87, Data shape: (505, 21)
+Buy: 0.0 shares at 183.6
+Index: 88, Data shape: (505, 21)
+Buy: 0.0 shares at 184.68
+Index: 89, Data shape: (505, 21)
+Buy: 0.0 shares at 186.74
+Index: 90, Data shape: (505, 21)
+Sell: 0.0 shares at 182.51, Profit: 0.0
+Index: 91, Data shape: (505, 21)
+Sell: 0.0 shares at 179.75, Profit: 0.0
+Index: 92, Data shape: (505, 21)
+Buy: 0.0 shares at 180.53
+Index: 93, Data shape: (505, 21)
+Buy: 0.0 shares at 183.16
+Index: 94, Data shape: (505, 21)
+Index: 95, Data shape: (505, 21)
+Sell: 5921.310089337448 shares at 183.63, Profit: 186639.69401591623
+Index: 96, Data shape: (505, 21)
+Buy: 5856.566690213484 shares at 185.66
+Index: 97, Data shape: (505, 21)
+Buy: 0.0 shares at 183.43
+Index: 98, Data shape: (505, 21)
+Buy: 0.0 shares at 183.51
+Index: 99, Data shape: (505, 21)
+Buy: 0.0 shares at 181.57
+Index: 100, Data shape: (505, 21)
+Sell: 0.0 shares at 181.81, Profit: 0.0
+Index: 101, Data shape: (505, 21)
+Buy: 0.0 shares at 181.4
+Index: 102, Data shape: (505, 21)
+Buy: 0.0 shares at 183.25
+Index: 103, Data shape: (505, 21)
+Buy: 0.0 shares at 182.83
+Index: 104, Data shape: (505, 21)
+Index: 105, Data shape: (505, 21)
+Index: 106, Data shape: (505, 21)
+1/1 [==============================] - 0s 33ms/step
+Buy: 0.0 shares at 182.92
+Index: 107, Data shape: (505, 21)
+Sell: 0.0 shares at 187.2, Profit: 0.0
+Index: 108, Data shape: (505, 21)
+Index: 109, Data shape: (505, 21)
+Index: 110, Data shape: (505, 21)
+Buy: 0.0 shares at 196.84
+Index: 111, Data shape: (505, 21)
+Index: 112, Data shape: (505, 21)
+Index: 113, Data shape: (505, 21)
+Index: 114, Data shape: (505, 21)
+Buy: 0.0 shares at 193.57
+Index: 115, Data shape: (505, 21)
+Buy: 0.0 shares at 194.24
+Index: 116, Data shape: (505, 21)
+Sell: 0.0 shares at 196.32, Profit: 0.0
+Index: 117, Data shape: (505, 21)
+Sell: 0.0 shares at 195.15, Profit: 0.0
+Index: 118, Data shape: (505, 21)
+Sell: 0.0 shares at 200.57, Profit: 0.0
+Index: 119, Data shape: (505, 21)
+1/1 [==============================] - 0s 45ms/step
+Buy: 0.0 shares at 201.91
+Index: 120, Data shape: (505, 21)
+Index: 121, Data shape: (505, 21)
+Sell: 0.0 shares at 200.34, Profit: 0.0
+Index: 122, Data shape: (505, 21)
+Buy: 0.0 shares at 196.33
+Index: 123, Data shape: (505, 21)
+Sell: 0.0 shares at 198.44, Profit: 0.0
+Index: 124, Data shape: (505, 21)
+Buy: 0.0 shares at 203.48
+Index: 125, Data shape: (505, 21)
+Buy: 0.0 shares at 204.7
+Index: 126, Data shape: (505, 21)
+Buy: 0.0 shares at 206.26
+Index: 127, Data shape: (505, 21)
+Sell: 0.0 shares at 210.7, Profit: 0.0
+Index: 128, Data shape: (505, 21)
+Buy: 0.0 shares at 208.25
+Index: 129, Data shape: (505, 21)
+Sell: 0.0 shares at 212.83, Profit: 0.0
+Index: 130, Data shape: (505, 21)
+Index: 131, Data shape: (505, 21)
+Index: 132, Data shape: (505, 21)
+Index: 133, Data shape: (505, 21)
+Index: 134, Data shape: (505, 21)
+Buy: 0.0 shares at 208.04
+Index: 135, Data shape: (505, 21)
+Index: 136, Data shape: (505, 21)
+Index: 137, Data shape: (505, 21)
+Buy: 0.0 shares at 211.6
+Index: 138, Data shape: (505, 21)
+Index: 139, Data shape: (505, 21)
+Sell: 0.0 shares at 211.75, Profit: 0.0
+Index: 140, Data shape: (505, 21)
+Sell: 0.0 shares at 202.54, Profit: 0.0
+Index: 141, Data shape: (505, 21)
+Buy: 0.0 shares at 201.3
+Index: 142, Data shape: (505, 21)
+Buy: 0.0 shares at 203.85
+Index: 143, Data shape: (505, 21)
+Index: 144, Data shape: (505, 21)
+Sell: 0.0 shares at 204.06, Profit: 0.0
+Index: 145, Data shape: (505, 21)
+Index: 146, Data shape: (505, 21)
+Buy: 0.0 shares at 205.01
+Index: 147, Data shape: (505, 21)
+Sell: 0.0 shares at 216.54, Profit: 0.0
+Index: 148, Data shape: (505, 21)
+Sell: 0.0 shares at 213.29, Profit: 0.0
+Index: 149, Data shape: (505, 21)
+Buy: 0.0 shares at 212.94
+Index: 150, Data shape: (505, 21)
+1/1 [==============================] - 0s 32ms/step
+Buy: 0.0 shares at 216.35
+Index: 151, Data shape: (505, 21)
+Index: 152, Data shape: (505, 21)
+Index: 153, Data shape: (505, 21)
+Index: 154, Data shape: (505, 21)
+Buy: 0.0 shares at 209.19
+Index: 155, Data shape: (505, 21)
+Index: 156, Data shape: (505, 21)
+Index: 157, Data shape: (505, 21)
+Index: 158, Data shape: (505, 21)
+Sell: 0.0 shares at 211.49, Profit: 0.0
+Index: 159, Data shape: (505, 21)
+Buy: 0.0 shares at 209.7
+Index: 160, Data shape: (505, 21)
+Buy: 0.0 shares at 214.58
+Index: 161, Data shape: (505, 21)
+Index: 162, Data shape: (505, 21)
+Sell: 0.0 shares at 213.69, Profit: 0.0
+Index: 163, Data shape: (505, 21)
+Buy: 0.0 shares at 216.47
+Index: 164, Data shape: (505, 21)
+1/1 [==============================] - 0s 32ms/step
+Buy: 0.0 shares at 221.15
+Index: 165, Data shape: (505, 21)
+Buy: 0.0 shares at 226.58
+Index: 166, Data shape: (505, 21)
+Index: 167, Data shape: (505, 21)
+Index: 168, Data shape: (505, 21)
+Sell: 5856.566690213484 shares at 227.27, Profit: 243691.73997978316
+Index: 169, Data shape: (505, 21)
+Buy: 5745.831693005908 shares at 231.65
+Index: 170, Data shape: (505, 21)
+Index: 171, Data shape: (505, 21)
+Buy: 0.0 shares at 214.25
+Index: 172, Data shape: (505, 21)
+Index: 173, Data shape: (505, 21)
+Buy: 0.0 shares at 211.29
+Index: 174, Data shape: (505, 21)
+Buy: 0.0 shares at 205.37
+Index: 175, Data shape: (505, 21)
+Sell: 0.0 shares at 204.03, Profit: 0.0
+Index: 176, Data shape: (505, 21)
+Buy: 0.0 shares at 205.41
+Index: 177, Data shape: (505, 21)
+Sell: 0.0 shares at 208.78, Profit: 0.0
+Index: 178, Data shape: (505, 21)
+Buy: 0.0 shares at 205.05
+Index: 179, Data shape: (505, 21)
+Index: 180, Data shape: (505, 21)
+Buy: 0.0 shares at 200.39
+Index: 181, Data shape: (505, 21)
+Buy: 0.0 shares at 202.54
+Index: 182, Data shape: (505, 21)
+Sell: 0.0 shares at 207.42, Profit: 0.0
+Index: 183, Data shape: (505, 21)
+Buy: 0.0 shares at 200.59
+Index: 184, Data shape: (505, 21)
+Buy: 0.0 shares at 203.19
+Index: 185, Data shape: (505, 21)
+Buy: 0.0 shares at 207.82
+Index: 186, Data shape: (505, 21)
+Sell: 0.0 shares at 209.54, Profit: 0.0
+Index: 187, Data shape: (505, 21)
+Index: 188, Data shape: (505, 21)
+Sell: 0.0 shares at 210.33, Profit: 0.0
+Index: 189, Data shape: (505, 21)
+Index: 190, Data shape: (505, 21)
+1/1 [==============================] - 0s 38ms/step
+Buy: 0.0 shares at 206.19
+Index: 191, Data shape: (505, 21)
+Buy: 0.0 shares at 210.38
+Index: 192, Data shape: (505, 21)
+Sell: 0.0 shares at 205.91, Profit: 0.0
+Index: 193, Data shape: (505, 21)
+Sell: 0.0 shares at 209.83, Profit: 0.0
+Index: 194, Data shape: (505, 21)
+Sell: 0.0 shares at 210.58, Profit: 0.0
+Index: 195, Data shape: (505, 21)
+Index: 196, Data shape: (505, 21)
+Sell: 0.0 shares at 221.4, Profit: 0.0
+Index: 197, Data shape: (505, 21)
+Index: 198, Data shape: (505, 21)
+Sell: 0.0 shares at 220.86, Profit: 0.0
+Index: 199, Data shape: (505, 21)
+1/1 [==============================] - 0s 38ms/step
+Buy: 0.0 shares at 219.66
+Index: 200, Data shape: (505, 21)
+Index: 201, Data shape: (505, 21)
+Buy: 0.0 shares at 214.22
+Index: 202, Data shape: (505, 21)
+Index: 203, Data shape: (505, 21)
+Buy: 0.0 shares at 214.8
+Index: 204, Data shape: (505, 21)
+Index: 205, Data shape: (505, 21)
+Sell: 0.0 shares at 216.23, Profit: 0.0
+Index: 206, Data shape: (505, 21)
+Sell: 0.0 shares at 210.08, Profit: 0.0
+Index: 207, Data shape: (505, 21)
+Sell: 0.0 shares at 213.25, Profit: 0.0
+Index: 208, Data shape: (505, 21)
+Sell: 0.0 shares at 202.47, Profit: -0.0
+Index: 209, Data shape: (505, 21)
+1/1 [==============================] - 0s 40ms/step
+Buy: 0.0 shares at 204.72
+Index: 210, Data shape: (505, 21)
+Sell: 0.0 shares at 202.47, Profit: -0.0
+Index: 211, Data shape: (505, 21)
+Buy: 0.0 shares at 202.33
+Index: 212, Data shape: (505, 21)
+Buy: 0.0 shares at 206.43
+Index: 213, Data shape: (505, 21)
+Index: 214, Data shape: (505, 21)
+Index: 215, Data shape: (505, 21)
+Buy: 0.0 shares at 223.72
+Index: 216, Data shape: (505, 21)
+Index: 217, Data shape: (505, 21)
+Buy: 0.0 shares at 211.01
+Index: 218, Data shape: (505, 21)
+Buy: 0.0 shares at 216.55
+Index: 219, Data shape: (505, 21)
+Sell: 0.0 shares at 215.44, Profit: 0.0
+Index: 220, Data shape: (505, 21)
+Sell: 0.0 shares at 216.51, Profit: 0.0
+Index: 221, Data shape: (505, 21)
+Buy: 0.0 shares at 217.23
+Index: 222, Data shape: (505, 21)
+Sell: 0.0 shares at 214.46, Profit: 0.0
+Index: 223, Data shape: (505, 21)
+Buy: 0.0 shares at 211.08
+Index: 224, Data shape: (505, 21)
+Index: 225, Data shape: (505, 21)
+Buy: 0.0 shares at 210.39
+Index: 226, Data shape: (505, 21)
+Sell: 0.0 shares at 210.11, Profit: 0.0
+Index: 227, Data shape: (505, 21)
+Index: 228, Data shape: (505, 21)
+Buy: 0.0 shares at 213.87
+Index: 229, Data shape: (505, 21)
+Index: 230, Data shape: (505, 21)
+1/1 [==============================] - 0s 39ms/step
+Buy: 0.0 shares at 214.07
+Index: 231, Data shape: (505, 21)
+Index: 232, Data shape: (505, 21)
+Index: 233, Data shape: (505, 21)
+Buy: 0.0 shares at 214.24
+Index: 234, Data shape: (505, 21)
+Sell: 0.0 shares at 214.36, Profit: 0.0
+Index: 235, Data shape: (505, 21)
+Index: 236, Data shape: (505, 21)
+Sell: 0.0 shares at 216.01, Profit: 0.0
+Index: 237, Data shape: (505, 21)
+Index: 238, Data shape: (505, 21)
+Sell: 0.0 shares at 210.52, Profit: -0.0
+Index: 239, Data shape: (505, 21)
+Index: 240, Data shape: (505, 21)
+Index: 241, Data shape: (505, 21)
+Sell: 0.0 shares at 214.13, Profit: -0.0
+Index: 242, Data shape: (505, 21)
+Buy: 0.0 shares at 219.28
+Index: 243, Data shape: (505, 21)
+Buy: 0.0 shares at 219.42
+Index: 244, Data shape: (505, 21)
+Index: 245, Data shape: (505, 21)
+Sell: 0.0 shares at 222.59, Profit: 0.0
+Index: 246, Data shape: (505, 21)
+Buy: 0.0 shares at 223.94
+Index: 247, Data shape: (505, 21)
+Buy: 0.0 shares at 221.02
+Index: 248, Data shape: (505, 21)
+Buy: 0.0 shares at 222.75
+Index: 249, Data shape: (505, 21)
+Index: 250, Data shape: (505, 21)
+Sell: 0.0 shares at 224.15, Profit: 0.0
+Index: 251, Data shape: (505, 21)
+Index: 252, Data shape: (505, 21)
+Buy: 0.0 shares at 222.42
+Index: 253, Data shape: (505, 21)
+Sell: 0.0 shares at 217.69, Profit: 0.0
+Index: 254, Data shape: (505, 21)
+Sell: 0.0 shares at 217.9, Profit: 0.0
+Index: 255, Data shape: (505, 21)
+Buy: 0.0 shares at 212.25
+Index: 256, Data shape: (505, 21)
+Buy: 0.0 shares at 218.29
+Index: 257, Data shape: (505, 21)
+Sell: 0.0 shares at 219.62, Profit: -0.0
+Index: 258, Data shape: (505, 21)
+Sell: 0.0 shares at 217.49, Profit: -0.0
+Index: 259, Data shape: (505, 21)
+Buy: 0.0 shares at 214.93
+Index: 260, Data shape: (505, 21)
+Buy: 0.0 shares at 216.34
+Index: 261, Data shape: (505, 21)
+Sell: 5745.831693005908 shares at 213.02, Profit: -107044.84444070005
+Index: 262, Data shape: (505, 21)
+Buy: 5755.829142930254 shares at 212.65
+Index: 263, Data shape: (505, 21)
+Buy: 0.0 shares at 216.44
+Index: 264, Data shape: (505, 21)
+Sell: 0.0 shares at 224.34, Profit: 0.0
+Index: 265, Data shape: (505, 21)
+Index: 266, Data shape: (505, 21)
+Index: 267, Data shape: (505, 21)
+Index: 268, Data shape: (505, 21)
+Sell: 0.0 shares at 232.33, Profit: 0.0
+Index: 269, Data shape: (505, 21)
+Buy: 0.0 shares at 232.9
+Index: 270, Data shape: (505, 21)
+Buy: 0.0 shares at 238.93
+Index: 271, Data shape: (505, 21)
+Buy: 0.0 shares at 231.96
+Index: 272, Data shape: (505, 21)
+Index: 273, Data shape: (505, 21)
+Buy: 0.0 shares at 239.51
+Index: 274, Data shape: (505, 21)
+Buy: 0.0 shares at 243.0
+Index: 275, Data shape: (505, 21)
+Sell: 0.0 shares at 242.01, Profit: 0.0
+Index: 276, Data shape: (505, 21)
+Index: 277, Data shape: (505, 21)
+Buy: 0.0 shares at 242.47
+Index: 278, Data shape: (505, 21)
+Buy: 0.0 shares at 243.77
+Index: 279, Data shape: (505, 21)
+Index: 280, Data shape: (505, 21)
+Sell: 0.0 shares at 244.49, Profit: 0.0
+Index: 281, Data shape: (505, 21)
+Sell: 0.0 shares at 244.99, Profit: 0.0
+Index: 282, Data shape: (505, 21)
+Sell: 0.0 shares at 243.7, Profit: 0.0
+Index: 283, Data shape: (505, 21)
+Buy: 0.0 shares at 244.2
+Index: 284, Data shape: (505, 21)
+Sell: 0.0 shares at 243.79, Profit: 0.0
+Index: 285, Data shape: (505, 21)
+Buy: 0.0 shares at 240.97
+Index: 286, Data shape: (505, 21)
+Index: 287, Data shape: (505, 21)
+Index: 288, Data shape: (505, 21)
+Sell: 0.0 shares at 234.55, Profit: 0.0
+Index: 289, Data shape: (505, 21)
+Buy: 0.0 shares at 228.99
+Index: 290, Data shape: (505, 21)
+Index: 291, Data shape: (505, 21)
+Buy: 0.0 shares at 236.94
+Index: 292, Data shape: (505, 21)
+Buy: 0.0 shares at 233.87
+Index: 293, Data shape: (505, 21)
+Sell: 0.0 shares at 227.56, Profit: 0.0
+Index: 294, Data shape: (505, 21)
+Sell: 0.0 shares at 226.73, Profit: 0.0
+Index: 295, Data shape: (505, 21)
+Index: 296, Data shape: (505, 21)
+Index: 297, Data shape: (505, 21)
+Index: 298, Data shape: (505, 21)
+Sell: 0.0 shares at 232.42, Profit: 0.0
+Index: 299, Data shape: (505, 21)
+Index: 300, Data shape: (505, 21)
+Sell: 0.0 shares at 235.75, Profit: 0.0
+Index: 301, Data shape: (505, 21)
+Index: 302, Data shape: (505, 21)
+Index: 303, Data shape: (505, 21)
+Buy: 0.0 shares at 237.04
+Index: 304, Data shape: (505, 21)
+Buy: 0.0 shares at 230.72
+Index: 305, Data shape: (505, 21)
+Index: 306, Data shape: (505, 21)
+Sell: 0.0 shares at 235.99, Profit: 0.0
+Index: 307, Data shape: (505, 21)
+Sell: 0.0 shares at 237.58, Profit: 0.0
+Index: 308, Data shape: (505, 21)
+Sell: 0.0 shares at 235.46, Profit: 0.0
+Index: 309, Data shape: (505, 21)
+Sell: 0.0 shares at 232.34, Profit: 0.0
+Index: 310, Data shape: (505, 21)
+Buy: 0.0 shares at 236.48
+Index: 311, Data shape: (505, 21)
+Buy: 0.0 shares at 235.24
+Index: 312, Data shape: (505, 21)
+Sell: 0.0 shares at 231.85, Profit: 0.0
+Index: 313, Data shape: (505, 21)
+Sell: 0.0 shares at 235.77, Profit: 0.0
+Index: 314, Data shape: (505, 21)
+Buy: 0.0 shares at 242.35
+Index: 315, Data shape: (505, 21)
+Sell: 0.0 shares at 249.07, Profit: 0.0
+Index: 316, Data shape: (505, 21)
+Buy: 0.0 shares at 247.86
+Index: 317, Data shape: (505, 21)
+Buy: 0.0 shares at 249.9
+Index: 318, Data shape: (505, 21)
+Sell: 0.0 shares at 253.25, Profit: 0.0
+Index: 319, Data shape: (505, 21)
+Index: 320, Data shape: (505, 21)
+Index: 321, Data shape: (505, 21)
+Sell: 0.0 shares at 258.49, Profit: 0.0
+Index: 322, Data shape: (505, 21)
+Index: 323, Data shape: (505, 21)
+Buy: 0.0 shares at 259.56
+Index: 324, Data shape: (505, 21)
+Index: 325, Data shape: (505, 21)
+Index: 326, Data shape: (505, 21)
+1/1 [==============================] - 0s 56ms/step
+Buy: 0.0 shares at 258.28
+Index: 327, Data shape: (505, 21)
+Index: 328, Data shape: (505, 21)
+Index: 329, Data shape: (505, 21)
+Sell: 0.0 shares at 261.15, Profit: 0.0
+Index: 330, Data shape: (505, 21)
+Buy: 0.0 shares at 261.55
+Index: 331, Data shape: (505, 21)
+Sell: 0.0 shares at 261.97, Profit: 0.0
+Index: 332, Data shape: (505, 21)
+Index: 333, Data shape: (505, 21)
+Buy: 0.0 shares at 252.51
+Index: 334, Data shape: (505, 21)
+Sell: 0.0 shares at 252.18, Profit: 0.0
+Index: 335, Data shape: (505, 21)
+1/1 [==============================] - 0s 34ms/step
+Buy: 0.0 shares at 251.86
+Index: 336, Data shape: (505, 21)
+Buy: 0.0 shares at 247.79
+Index: 337, Data shape: (505, 21)
+Index: 338, Data shape: (505, 21)
+1/1 [==============================] - 0s 38ms/step
+Buy: 0.0 shares at 249.71
+Index: 339, Data shape: (505, 21)
+Index: 340, Data shape: (505, 21)
+Sell: 0.0 shares at 247.18, Profit: 0.0
+Index: 341, Data shape: (505, 21)
+Sell: 0.0 shares at 246.23, Profit: 0.0
+Index: 342, Data shape: (505, 21)
+Sell: 0.0 shares at 239.03, Profit: 0.0
+Index: 343, Data shape: (505, 21)
+Index: 344, Data shape: (505, 21)
+Sell: 0.0 shares at 248.15, Profit: 0.0
+Index: 345, Data shape: (505, 21)
+Sell: 0.0 shares at 245.18, Profit: 0.0
+Index: 346, Data shape: (505, 21)
+Buy: 0.0 shares at 243.08
+Index: 347, Data shape: (505, 21)
+Buy: 0.0 shares at 243.12
+Index: 348, Data shape: (505, 21)
+Buy: 0.0 shares at 246.48
+Index: 349, Data shape: (505, 21)
+Index: 350, Data shape: (505, 21)
+Sell: 0.0 shares at 250.78, Profit: 0.0
+Index: 351, Data shape: (505, 21)
+Index: 352, Data shape: (505, 21)
+Sell: 0.0 shares at 251.49, Profit: 0.0
+Index: 353, Data shape: (505, 21)
+Buy: 0.0 shares at 249.31
+Index: 354, Data shape: (505, 21)
+Sell: 0.0 shares at 249.68, Profit: 0.0
+Index: 355, Data shape: (505, 21)
+Buy: 0.0 shares at 247.4
+Index: 356, Data shape: (505, 21)
+Buy: 0.0 shares at 247.3
+Index: 357, Data shape: (505, 21)
+Index: 358, Data shape: (505, 21)
+Buy: 0.0 shares at 250.79
+Index: 359, Data shape: (505, 21)
+Buy: 0.0 shares at 253.81
+Index: 360, Data shape: (505, 21)
+Sell: 0.0 shares at 252.57, Profit: 0.0
+Index: 361, Data shape: (505, 21)
+Index: 362, Data shape: (505, 21)
+Index: 363, Data shape: (505, 21)
+Sell: 0.0 shares at 257.89, Profit: 0.0
+Index: 364, Data shape: (505, 21)
+Sell: 0.0 shares at 259.89, Profit: 0.0
+Index: 365, Data shape: (505, 21)
+Index: 366, Data shape: (505, 21)
+Index: 367, Data shape: (505, 21)
+Index: 368, Data shape: (505, 21)
+Buy: 0.0 shares at 259.43
+Index: 369, Data shape: (505, 21)
+1/1 [==============================] - 0s 33ms/step
+Buy: 0.0 shares at 262.63
+Index: 370, Data shape: (505, 21)
+Index: 371, Data shape: (505, 21)
+Buy: 0.0 shares at 265.275
+Index: 372, Data shape: (505, 21)
+Sell: 0.0 shares at 266.69, Profit: 0.0
+Index: 373, Data shape: (505, 21)
+Sell: 0.0 shares at 265.02, Profit: 0.0
+Index: 374, Data shape: (505, 21)
+Index: 375, Data shape: (505, 21)
+Buy: 0.0 shares at 271.4
+Index: 376, Data shape: (505, 21)
+Index: 377, Data shape: (505, 21)
+Sell: 5755.829142930254 shares at 271.6, Profit: 339306.1279757386
+Index: 378, Data shape: (505, 21)
+Buy: 5630.409491157418 shares at 277.65
+Index: 379, Data shape: (505, 21)
+Index: 380, Data shape: (505, 21)
+Index: 381, Data shape: (505, 21)
+Sell: 0.0 shares at 277.42, Profit: 0.0
+Index: 382, Data shape: (505, 21)
+Index: 383, Data shape: (505, 21)
+Sell: 0.0 shares at 277.32, Profit: 0.0
+Index: 384, Data shape: (505, 21)
+Sell: 0.0 shares at 280.98, Profit: 0.0
+Index: 385, Data shape: (505, 21)
+Index: 386, Data shape: (505, 21)
+Sell: 0.0 shares at 281.03, Profit: 0.0
+Index: 387, Data shape: (505, 21)
+Sell: 0.0 shares at 280.75, Profit: 0.0
+Index: 388, Data shape: (505, 21)
+Sell: 0.0 shares at 277.01, Profit: 0.0
+Index: 389, Data shape: (505, 21)
+Index: 390, Data shape: (505, 21)
+Buy: 0.0 shares at 281.4
+Index: 391, Data shape: (505, 21)
+Sell: 0.0 shares at 286.14, Profit: 0.0
+Index: 392, Data shape: (505, 21)
+Index: 393, Data shape: (505, 21)
+Buy: 0.0 shares at 289.05
+Index: 394, Data shape: (505, 21)
+Sell: 0.0 shares at 286.54, Profit: 0.0
+Index: 395, Data shape: (505, 21)
+Index: 396, Data shape: (505, 21)
+Index: 397, Data shape: (505, 21)
+Index: 398, Data shape: (505, 21)
+Sell: 0.0 shares at 284.82, Profit: 0.0
+Index: 399, Data shape: (505, 21)
+Buy: 0.0 shares at 287.12
+Index: 400, Data shape: (505, 21)
+Sell: 0.0 shares at 286.51, Profit: 0.0
+Index: 401, Data shape: (505, 21)
+Index: 402, Data shape: (505, 21)
+Sell: 0.0 shares at 289.46, Profit: 0.0
+Index: 403, Data shape: (505, 21)
+Index: 404, Data shape: (505, 21)
+1/1 [==============================] - 0s 32ms/step
+Buy: 0.0 shares at 286.44
+Index: 405, Data shape: (505, 21)
+Sell: 0.0 shares at 286.95, Profit: 0.0
+Index: 406, Data shape: (505, 21)
+Buy: 0.0 shares at 289.81
+Index: 407, Data shape: (505, 21)
+Sell: 0.0 shares at 292.85, Profit: 0.0
+Index: 408, Data shape: (505, 21)
+Buy: 0.0 shares at 294.6
+Index: 409, Data shape: (505, 21)
+Sell: 0.0 shares at 293.08, Profit: 0.0
+Index: 410, Data shape: (505, 21)
+Sell: 0.0 shares at 290.73, Profit: 0.0
+Index: 411, Data shape: (505, 21)
+Index: 412, Data shape: (505, 21)
+Sell: 0.0 shares at 304.36, Profit: 0.0
+Index: 413, Data shape: (505, 21)
+Buy: 0.0 shares at 304.65
+Index: 414, Data shape: (505, 21)
+Sell: 0.0 shares at 302.62, Profit: 0.0
+Index: 415, Data shape: (505, 21)
+Sell: 0.0 shares at 302.01, Profit: 0.0
+Index: 416, Data shape: (505, 21)
+Sell: 0.0 shares at 299.09, Profit: 0.0
+Index: 417, Data shape: (505, 21)
+Sell: 0.0 shares at 299.72, Profit: 0.0
+Index: 418, Data shape: (505, 21)
+Index: 419, Data shape: (505, 21)
+Buy: 0.0 shares at 301.88
+Index: 420, Data shape: (505, 21)
+Index: 421, Data shape: (505, 21)
+Sell: 0.0 shares at 301.15, Profit: 0.0
+Index: 422, Data shape: (505, 21)
+Index: 423, Data shape: (505, 21)
+Index: 424, Data shape: (505, 21)
+1/1 [==============================] - 0s 32ms/step
+Buy: 0.0 shares at 300.21
+Index: 425, Data shape: (505, 21)
+1/1 [==============================] - 0s 34ms/step
+Buy: 0.0 shares at 297.25
+Index: 426, Data shape: (505, 21)
+Sell: 0.0 shares at 295.71, Profit: 0.0
+Index: 427, Data shape: (505, 21)
+Index: 428, Data shape: (505, 21)
+Sell: 0.0 shares at 299.79, Profit: 0.0
+Index: 429, Data shape: (505, 21)
+Buy: 0.0 shares at 304.82
+Index: 430, Data shape: (505, 21)
+Index: 431, Data shape: (505, 21)
+Buy: 0.0 shares at 299.87
+Index: 432, Data shape: (505, 21)
+Index: 433, Data shape: (505, 21)
+Sell: 0.0 shares at 294.8, Profit: 0.0
+Index: 434, Data shape: (505, 21)
+Sell: 0.0 shares at 298.58, Profit: 0.0
+Index: 435, Data shape: (505, 21)
+Buy: 0.0 shares at 299.56
+Index: 436, Data shape: (505, 21)
+Index: 437, Data shape: (505, 21)
+Sell: 0.0 shares at 294.17, Profit: 0.0
+Index: 438, Data shape: (505, 21)
+Index: 439, Data shape: (505, 21)
+Buy: 0.0 shares at 284.0
+Index: 440, Data shape: (505, 21)
+Index: 441, Data shape: (505, 21)
+Sell: 0.0 shares at 289.1, Profit: 0.0
+Index: 442, Data shape: (505, 21)
+Buy: 0.0 shares at 283.11
+Index: 443, Data shape: (505, 21)
+Sell: 0.0 shares at 288.76, Profit: 0.0
+Index: 444, Data shape: (505, 21)
+Index: 445, Data shape: (505, 21)
+1/1 [==============================] - 0s 38ms/step
+Buy: 0.0 shares at 294.85
+Index: 446, Data shape: (505, 21)
+Index: 447, Data shape: (505, 21)
+Sell: 0.0 shares at 294.23, Profit: 0.0
+Index: 448, Data shape: (505, 21)
+Index: 449, Data shape: (505, 21)
+Sell: 0.0 shares at 296.31, Profit: 0.0
+Index: 450, Data shape: (505, 21)
+Sell: 0.0 shares at 302.75, Profit: 0.0
+Index: 451, Data shape: (505, 21)
+Buy: 0.0 shares at 304.21
+Index: 452, Data shape: (505, 21)
+Sell: 0.0 shares at 307.29, Profit: 0.0
+Index: 453, Data shape: (505, 21)
+Buy: 0.0 shares at 308.23
+Index: 454, Data shape: (505, 21)
+Index: 455, Data shape: (505, 21)
+Index: 456, Data shape: (505, 21)
+Index: 457, Data shape: (505, 21)
+Sell: 0.0 shares at 308.13, Profit: 0.0
+Index: 458, Data shape: (505, 21)
+Sell: 0.0 shares at 310.11, Profit: 0.0
+Index: 459, Data shape: (505, 21)
+Sell: 0.0 shares at 323.17, Profit: 0.0
+Index: 460, Data shape: (505, 21)
+Sell: 0.0 shares at 324.35, Profit: 0.0
+Index: 461, Data shape: (505, 21)
+Sell: 0.0 shares at 331.62, Profit: 0.0
+Index: 462, Data shape: (505, 21)
+1/1 [==============================] - 0s 33ms/step
+Buy: 0.0 shares at 329.37
+Index: 463, Data shape: (505, 21)
+Buy: 0.0 shares at 333.13
+Index: 464, Data shape: (505, 21)
+Index: 465, Data shape: (505, 21)
+Buy: 0.0 shares at 336.44
+Index: 466, Data shape: (505, 21)
+Sell: 0.0 shares at 336.06, Profit: 0.0
+Index: 467, Data shape: (505, 21)
+Sell: 0.0 shares at 336.99, Profit: 0.0
+Index: 468, Data shape: (505, 21)
+Sell: 5630.409491157418 shares at 335.95, Profit: 328252.87333447754
+Index: 469, Data shape: (505, 21)
+Buy: 5718.0655034895235 shares at 330.8
+Index: 470, Data shape: (505, 21)
+Index: 471, Data shape: (505, 21)
+Buy: 6.914666300008007e-13 shares at 336.72
+Index: 472, Data shape: (505, 21)
+Buy: 0.0 shares at 336.07
+Index: 473, Data shape: (505, 21)
+Buy: 0.0 shares at 339.51
+Index: 474, Data shape: (505, 21)
+Buy: 0.0 shares at 339.12
+Index: 475, Data shape: (505, 21)
+Index: 476, Data shape: (505, 21)
+Index: 477, Data shape: (505, 21)
+Index: 478, Data shape: (505, 21)
+Index: 479, Data shape: (505, 21)
+Buy: 0.0 shares at 337.91
+Index: 480, Data shape: (505, 21)
+Buy: 0.0 shares at 329.68
+Index: 481, Data shape: (505, 21)
+Index: 482, Data shape: (505, 21)
+Sell: 0.0 shares at 330.59, Profit: 0.0
+Index: 483, Data shape: (505, 21)
+Index: 484, Data shape: (505, 21)
+Index: 485, Data shape: (505, 21)
+Buy: 0.0 shares at 323.01
+Index: 486, Data shape: (505, 21)
+Buy: 0.0 shares at 326.19
+Index: 487, Data shape: (505, 21)
+Sell: 0.0 shares at 334.92, Profit: 0.0
+Index: 488, Data shape: (505, 21)
+Buy: 0.0 shares at 334.97
+Index: 489, Data shape: (505, 21)
+Sell: 0.0 shares at 333.1, Profit: 0.0
+Index: 490, Data shape: (505, 21)
+Buy: 0.0 shares at 342.54
+Index: 491, Data shape: (505, 21)
+Buy: 0.0 shares at 339.4
+Index: 492, Data shape: (505, 21)
+Index: 493, Data shape: (505, 21)
+1/1 [==============================] - 0s 30ms/step
+Buy: 0.0 shares at 334.65
+Index: 494, Data shape: (505, 21)
+Sell: 0.0 shares at 324.9, Profit: 0.0
+Index: 495, Data shape: (505, 21)
+Sell: 0.0 shares at 323.8, Profit: 0.0
+Index: 496, Data shape: (505, 21)
+Buy: 0.0 shares at 319.91
+Index: 497, Data shape: (505, 21)
+Index: 498, Data shape: (505, 21)
+Index: 499, Data shape: (505, 21)
+Sell: 0.0 shares at 334.69, Profit: 0.0
+Index: 500, Data shape: (505, 21)
+Buy: 0.0 shares at 342.45
+Index: 501, Data shape: (505, 21)
+Index: 502, Data shape: (505, 21)
+Index: 503, Data shape: (505, 21)
+Buy: 0.0 shares at 339.32
+Index: 504, Data shape: (505, 21)
+Index: 505, Data shape: (505, 21)
+1/1 [==============================] - 0s 38ms/step
+1/1 [==============================] - 0s 36ms/step
+1/1 [==============================] - 0s 31ms/step
+1/1 [==============================] - 0s 33ms/step
+1/1 [==============================] - 0s 35ms/step
+1/1 [==============================] - 0s 31ms/step
+1/1 [==============================] - 0s 30ms/step
+1/1 [==============================] - 0s 43ms/step
+1/1 [==============================] - 0s 44ms/step
+1/1 [==============================] - 0s 38ms/step
+1/1 [==============================] - 0s 38ms/step
+1/1 [==============================] - 0s 51ms/step
+1/1 [==============================] - 0s 42ms/step
+1/1 [==============================] - 0s 43ms/step
+1/1 [==============================] - 0s 54ms/step
+1/1 [==============================] - 0s 35ms/step
+1/1 [==============================] - 0s 53ms/step
+1/1 [==============================] - 0s 35ms/step
+1/1 [==============================] - 0s 37ms/step
+1/1 [==============================] - 0s 45ms/step
+1/1 [==============================] - 0s 38ms/step
+1/1 [==============================] - 0s 47ms/step
+1/1 [==============================] - 0s 40ms/step
+1/1 [==============================] - 0s 37ms/step
+1/1 [==============================] - 0s 36ms/step
+1/1 [==============================] - 0s 36ms/step
+1/1 [==============================] - 0s 40ms/step
+1/1 [==============================] - 0s 33ms/step
+1/1 [==============================] - 0s 36ms/step
+1/1 [==============================] - 0s 37ms/step
+1/1 [==============================] - 0s 42ms/step
+1/1 [==============================] - 0s 40ms/step
+1/1 [==============================] - 0s 39ms/step
+1/1 [==============================] - 0s 26ms/step
+1/1 [==============================] - 0s 26ms/step
+1/1 [==============================] - 0s 25ms/step
+1/1 [==============================] - 0s 23ms/step
+1/1 [==============================] - 0s 24ms/step
+1/1 [==============================] - 0s 35ms/step
+1/1 [==============================] - 0s 34ms/step
+1/1 [==============================] - 0s 26ms/step
+1/1 [==============================] - 0s 23ms/step
+1/1 [==============================] - 0s 25ms/step
+1/1 [==============================] - 0s 23ms/step
+1/1 [==============================] - 0s 22ms/step
+1/1 [==============================] - 0s 26ms/step
+1/1 [==============================] - 0s 22ms/step
+1/1 [==============================] - 0s 27ms/step
+1/1 [==============================] - 0s 34ms/step
+1/1 [==============================] - 0s 28ms/step
+1/1 [==============================] - 0s 27ms/step
+1/1 [==============================] - 0s 24ms/step
+1/1 [==============================] - 0s 29ms/step
+1/1 [==============================] - 0s 26ms/step
+1/1 [==============================] - 0s 26ms/step
+1/1 [==============================] - 0s 27ms/step
+1/1 [==============================] - 0s 29ms/step
+1/1 [==============================] - 0s 28ms/step
+1/1 [==============================] - 0s 33ms/step
+1/1 [==============================] - 0s 24ms/step
+1/1 [==============================] - 0s 25ms/step
+1/1 [==============================] - 0s 28ms/step
+1/1 [==============================] - 0s 25ms/step
+1/1 [==============================] - 0s 22ms/step
+1/1 [==============================] - 0s 24ms/step
+1/1 [==============================] - 0s 23ms/step
+1/1 [==============================] - 0s 23ms/step
+1/1 [==============================] - 0s 22ms/step
+1/1 [==============================] - 0s 28ms/step
+1/1 [==============================] - 0s 22ms/step
+1/1 [==============================] - 0s 22ms/step
+1/1 [==============================] - 0s 26ms/step
+1/1 [==============================] - 0s 26ms/step
+1/1 [==============================] - 0s 29ms/step
+1/1 [==============================] - 0s 31ms/step
+1/1 [==============================] - 0s 35ms/step
+1/1 [==============================] - 0s 29ms/step
+1/1 [==============================] - 0s 24ms/step
+1/1 [==============================] - 0s 29ms/step
+1/1 [==============================] - 0s 26ms/step
+1/1 [==============================] - 0s 26ms/step
+1/1 [==============================] - 0s 28ms/step
+1/1 [==============================] - 0s 27ms/step
+1/1 [==============================] - 0s 24ms/step
+1/1 [==============================] - 0s 24ms/step
+1/1 [==============================] - 0s 27ms/step
+1/1 [==============================] - 0s 23ms/step
+1/1 [==============================] - 0s 23ms/step
+1/1 [==============================] - 0s 22ms/step
+1/1 [==============================] - 0s 26ms/step
+1/1 [==============================] - 0s 30ms/step
+1/1 [==============================] - 0s 25ms/step
+1/1 [==============================] - 0s 23ms/step
+1/1 [==============================] - 0s 28ms/step
+1/1 [==============================] - 0s 29ms/step
+1/1 [==============================] - 0s 26ms/step
+1/1 [==============================] - 0s 28ms/step
+1/1 [==============================] - 0s 31ms/step
+1/1 [==============================] - 0s 40ms/step
+1/1 [==============================] - 0s 26ms/step
+1/1 [==============================] - 0s 29ms/step
+1/1 [==============================] - 0s 27ms/step
+1/1 [==============================] - 0s 25ms/step
+1/1 [==============================] - 0s 26ms/step
+1/1 [==============================] - 0s 30ms/step
+1/1 [==============================] - 0s 27ms/step
+1/1 [==============================] - 0s 26ms/step
+1/1 [==============================] - 0s 26ms/step
+1/1 [==============================] - 0s 27ms/step
+1/1 [==============================] - 0s 29ms/step
+1/1 [==============================] - 0s 30ms/step
+1/1 [==============================] - 0s 27ms/step
+1/1 [==============================] - 0s 25ms/step
+1/1 [==============================] - 0s 26ms/step
+1/1 [==============================] - 0s 27ms/step
+1/1 [==============================] - 0s 22ms/step
+1/1 [==============================] - 0s 23ms/step
+1/1 [==============================] - 0s 24ms/step
+1/1 [==============================] - 0s 24ms/step
+1/1 [==============================] - 0s 27ms/step
+1/1 [==============================] - 0s 23ms/step
+1/1 [==============================] - 0s 22ms/step
+1/1 [==============================] - 0s 22ms/step
+1/1 [==============================] - 0s 23ms/step
+1/1 [==============================] - 0s 22ms/step
+1/1 [==============================] - 0s 27ms/step
+1/1 [==============================] - 0s 23ms/step
 Data:
-                             open      high      low   close     volume  \
-timestamp                                                                 
-2021-01-04 05:00:00+00:00  133.52  133.6116  126.760  129.41  143302685   
-2021-01-05 05:00:00+00:00  128.89  131.7400  128.430  131.01   97666310   
-2021-01-06 05:00:00+00:00  127.72  131.0499  126.382  126.66  155088164   
-2021-01-07 05:00:00+00:00  128.36  131.6300  127.860  130.92  109578109   
-2021-01-08 05:00:00+00:00  132.43  132.6300  130.230  132.05  105158275   
+                             open    high     low   close    volume  \
+timestamp                                                             
+2022-01-03 05:00:00+00:00  335.35  338.00  329.78  334.75  28899988   
+2022-01-04 05:00:00+00:00  334.83  335.20  326.12  329.01  32663003   
+2022-01-05 05:00:00+00:00  325.86  326.07  316.00  316.38  39731813   
+2022-01-06 05:00:00+00:00  313.15  318.70  311.49  313.88  39788894   
+2022-01-07 05:00:00+00:00  314.15  316.50  310.09  314.04  32686013   
 
                            trade_count        vwap   returns  sma  ema  ...  \
 timestamp                                                               ...   
-2021-01-04 05:00:00+00:00      1310227  129.732580       NaN  NaN  NaN  ...   
-2021-01-05 05:00:00+00:00       707581  130.717947  0.012364  NaN  NaN  ...   
-2021-01-06 05:00:00+00:00      1202577  128.350213 -0.033204  NaN  NaN  ...   
-2021-01-07 05:00:00+00:00       718358  130.153869  0.033633  NaN  NaN  ...   
-2021-01-08 05:00:00+00:00       800070  131.565744  0.008631  NaN  NaN  ...   
+2022-01-03 05:00:00+00:00       394908  333.380091       NaN  NaN  NaN  ...   
+2022-01-04 05:00:00+00:00       517781  329.447177 -0.017147  NaN  NaN  ...   
+2022-01-05 05:00:00+00:00       637313  320.053335 -0.038388  NaN  NaN  ...   
+2022-01-06 05:00:00+00:00       626724  315.214676 -0.007902  NaN  NaN  ...   
+2022-01-07 05:00:00+00:00       499166  313.782097  0.000510  NaN  NaN  ...   
 
                            middle_bb  lower_bb  rsi  stoch_k  stoch_d  macd  \
 timestamp                                                                     
-2021-01-04 05:00:00+00:00        NaN       NaN  NaN      NaN      NaN   NaN   
-2021-01-05 05:00:00+00:00        NaN       NaN  NaN      NaN      NaN   NaN   
-2021-01-06 05:00:00+00:00        NaN       NaN  NaN      NaN      NaN   NaN   
-2021-01-07 05:00:00+00:00        NaN       NaN  NaN      NaN      NaN   NaN   
-2021-01-08 05:00:00+00:00        NaN       NaN  NaN      NaN      NaN   NaN   
+2022-01-03 05:00:00+00:00        NaN       NaN  NaN      NaN      NaN   NaN   
+2022-01-04 05:00:00+00:00        NaN       NaN  NaN      NaN      NaN   NaN   
+2022-01-05 05:00:00+00:00        NaN       NaN  NaN      NaN      NaN   NaN   
+2022-01-06 05:00:00+00:00        NaN       NaN  NaN      NaN      NaN   NaN   
+2022-01-07 05:00:00+00:00        NaN       NaN  NaN      NaN      NaN   NaN   
 
                            macd_signal  macd_histogram  adx  atr  
 timestamp                                                         
-2021-01-04 05:00:00+00:00          NaN             NaN  0.0  0.0  
-2021-01-05 05:00:00+00:00          NaN             NaN  0.0  0.0  
-2021-01-06 05:00:00+00:00          NaN             NaN  0.0  0.0  
-2021-01-07 05:00:00+00:00          NaN             NaN  0.0  0.0  
-2021-01-08 05:00:00+00:00          NaN             NaN  0.0  0.0  
+2022-01-03 05:00:00+00:00          NaN             NaN  0.0  0.0  
+2022-01-04 05:00:00+00:00          NaN             NaN  0.0  0.0  
+2022-01-05 05:00:00+00:00          NaN             NaN  0.0  0.0  
+2022-01-06 05:00:00+00:00          NaN             NaN  0.0  0.0  
+2022-01-07 05:00:00+00:00          NaN             NaN  0.0  0.0  
 
 [5 rows x 21 columns]
 Creating TradingEnvironment...
-Index: 0, Data shape: (252, 21)
+Index: 0, Data shape: (251, 21)
 Observation shape: (24,)
 State shape: (21,)
 Observation space: Box(-inf, inf, (24,), float32)
@@ -238,210 +2341,766 @@ State shape: (21,)
 Observation space: Box(-inf, inf, (24,), float32)
 Action space: Discrete(3)
 Creating TradingEnvironment...
-Index: 0, Data shape: (252, 21)
+Index: 0, Data shape: (251, 21)
 Observation shape: (24,)
 State shape: (21,)
 Observation space: Box(-inf, inf, (24,), float32)
 Action space: Discrete(3)
-Index: 0, Data shape: (252, 21)
+Index: 0, Data shape: (251, 21)
 Observation shape: (24,)
-Initial observation shape: (24,)
-State shape: (21,)
-Observation space: Box(-inf, inf, (24,), float32)
-Action space: Discrete(3)
-Observation space shape: (24,)
-Index: 0, Data shape: (252, 21)
-Observation shape: (24,)
-Index: 0, Data shape: (252, 21)
-Index: 0, Data shape: (252, 21)
-Observation shape: (24,)
-Index: 1, Data shape: (252, 21)
-Index: 1, Data shape: (252, 21)
-Index: 0, Data shape: (252, 21)
-Observation shape: (24,)
-Index: 1, Data shape: (252, 21)
-Index: 2, Data shape: (252, 21)
-Index: 3, Data shape: (252, 21)
-Index: 4, Data shape: (252, 21)
-Index: 5, Data shape: (252, 21)
-Index: 5, Data shape: (252, 21)
-Index: 0, Data shape: (252, 21)
-Observation shape: (24,)
-Index: 1, Data shape: (252, 21)
-Index: 2, Data shape: (252, 21)
-Index: 3, Data shape: (252, 21)
-Index: 4, Data shape: (252, 21)
-Index: 5, Data shape: (252, 21)
-Index: 6, Data shape: (252, 21)
-Index: 7, Data shape: (252, 21)
-Index: 8, Data shape: (252, 21)
-Index: 9, Data shape: (252, 21)
-Index: 10, Data shape: (252, 21)
-Index: 11, Data shape: (252, 21)
-Index: 12, Data shape: (252, 21)
-Index: 13, Data shape: (252, 21)
-Index: 14, Data shape: (252, 21)
-Index: 15, Data shape: (252, 21)
-Index: 16, Data shape: (252, 21)
-Index: 17, Data shape: (252, 21)
-Index: 18, Data shape: (252, 21)
-Index: 19, Data shape: (252, 21)
-Index: 20, Data shape: (252, 21)
-Index: 21, Data shape: (252, 21)
-Index: 22, Data shape: (252, 21)
-Index: 23, Data shape: (252, 21)
-Index: 24, Data shape: (252, 21)
-Index: 25, Data shape: (252, 21)
-Index: 26, Data shape: (252, 21)
-Index: 27, Data shape: (252, 21)
-Index: 28, Data shape: (252, 21)
-Index: 29, Data shape: (252, 21)
-Index: 30, Data shape: (252, 21)
-Index: 31, Data shape: (252, 21)
-Index: 32, Data shape: (252, 21)
-Index: 32, Data shape: (252, 21)
-Index: 0, Data shape: (252, 21)
-Observation shape: (24,)
-Index: 1, Data shape: (252, 21)
-Index: 2, Data shape: (252, 21)
-1/1 [==============================] - 0s 83ms/step
-Index: 3, Data shape: (252, 21)
-Index: 4, Data shape: (252, 21)
-Index: 5, Data shape: (252, 21)
-Index: 5, Data shape: (252, 21)
-Training complete.
-Model saved.
-dense_3
-Weights shape: (27, 32)
-Biases shape: (32,)
-dense_4
-Weights shape: (32, 16)
-Biases shape: (16,)
-dense_5
-Weights shape: (16, 3)
-Biases shape: (3,)
-Input data shape: (756, 16)
-
----------------------------------------------------------------------------
-
-InvalidArgumentError                      Traceback (most recent call last)
-
-<ipython-input-12-cafa6a9a5764> in <cell line: 397>()
-    396 
-    397 if __name__ == '__main__':
---> 398     main()
-
-2 frames
-
-/usr/local/lib/python3.9/dist-packages/tensorflow/python/eager/execute.py in quick_execute(op_name, num_outputs, inputs, attrs, ctx, name)
-     50   try:
-     51     ctx.ensure_initialized()
----> 52     tensors = pywrap_tfe.TFE_Py_Execute(ctx._handle, device_name, op_name,
-     53                                         inputs, attrs, num_outputs)
-     54   except core._NotOkStatusException as e:
-
-InvalidArgumentError: Graph execution error:
-
-Detected at node 'sequential_1/dense_3/Relu' defined at (most recent call last):
-    File "/usr/lib/python3.9/runpy.py", line 197, in _run_module_as_main
-      return _run_code(code, main_globals, None,
-    File "/usr/lib/python3.9/runpy.py", line 87, in _run_code
-      exec(code, run_globals)
-    File "/usr/local/lib/python3.9/dist-packages/ipykernel_launcher.py", line 16, in <module>
-      app.launch_new_instance()
-    File "/usr/local/lib/python3.9/dist-packages/traitlets/config/application.py", line 992, in launch_instance
-      app.start()
-    File "/usr/local/lib/python3.9/dist-packages/ipykernel/kernelapp.py", line 619, in start
-      self.io_loop.start()
-    File "/usr/local/lib/python3.9/dist-packages/tornado/platform/asyncio.py", line 215, in start
-      self.asyncio_loop.run_forever()
-    File "/usr/lib/python3.9/asyncio/base_events.py", line 601, in run_forever
-      self._run_once()
-    File "/usr/lib/python3.9/asyncio/base_events.py", line 1905, in _run_once
-      handle._run()
-    File "/usr/lib/python3.9/asyncio/events.py", line 80, in _run
-      self._context.run(self._callback, *self._args)
-    File "/usr/local/lib/python3.9/dist-packages/tornado/ioloop.py", line 687, in <lambda>
-      lambda f: self._run_callback(functools.partial(callback, future))
-    File "/usr/local/lib/python3.9/dist-packages/tornado/ioloop.py", line 740, in _run_callback
-      ret = callback()
-    File "/usr/local/lib/python3.9/dist-packages/tornado/gen.py", line 821, in inner
-      self.ctx_run(self.run)
-    File "/usr/local/lib/python3.9/dist-packages/tornado/gen.py", line 782, in run
-      yielded = self.gen.send(value)
-    File "/usr/local/lib/python3.9/dist-packages/ipykernel/kernelbase.py", line 361, in process_one
-      yield gen.maybe_future(dispatch(*args))
-    File "/usr/local/lib/python3.9/dist-packages/tornado/gen.py", line 234, in wrapper
-      yielded = ctx_run(next, result)
-    File "/usr/local/lib/python3.9/dist-packages/ipykernel/kernelbase.py", line 261, in dispatch_shell
-      yield gen.maybe_future(handler(stream, idents, msg))
-    File "/usr/local/lib/python3.9/dist-packages/tornado/gen.py", line 234, in wrapper
-      yielded = ctx_run(next, result)
-    File "/usr/local/lib/python3.9/dist-packages/ipykernel/kernelbase.py", line 539, in execute_request
-      self.do_execute(
-    File "/usr/local/lib/python3.9/dist-packages/tornado/gen.py", line 234, in wrapper
-      yielded = ctx_run(next, result)
-    File "/usr/local/lib/python3.9/dist-packages/ipykernel/ipkernel.py", line 302, in do_execute
-      res = shell.run_cell(code, store_history=store_history, silent=silent)
-    File "/usr/local/lib/python3.9/dist-packages/ipykernel/zmqshell.py", line 539, in run_cell
-      return super(ZMQInteractiveShell, self).run_cell(*args, **kwargs)
-    File "/usr/local/lib/python3.9/dist-packages/IPython/core/interactiveshell.py", line 2975, in run_cell
-      result = self._run_cell(
-    File "/usr/local/lib/python3.9/dist-packages/IPython/core/interactiveshell.py", line 3030, in _run_cell
-      return runner(coro)
-    File "/usr/local/lib/python3.9/dist-packages/IPython/core/async_helpers.py", line 78, in _pseudo_sync_runner
-      coro.send(None)
-    File "/usr/local/lib/python3.9/dist-packages/IPython/core/interactiveshell.py", line 3257, in run_cell_async
-      has_raised = await self.run_ast_nodes(code_ast.body, cell_name,
-    File "/usr/local/lib/python3.9/dist-packages/IPython/core/interactiveshell.py", line 3473, in run_ast_nodes
-      if (await self.run_code(code, result,  async_=asy)):
-    File "/usr/local/lib/python3.9/dist-packages/IPython/core/interactiveshell.py", line 3553, in run_code
-      exec(code_obj, self.user_global_ns, self.user_ns)
-    File "<ipython-input-12-cafa6a9a5764>", line 398, in <cell line: 397>
-      main()
-    File "<ipython-input-12-cafa6a9a5764>", line 394, in main
-      predictions = model.predict(x)
-    File "/usr/local/lib/python3.9/dist-packages/keras/utils/traceback_utils.py", line 65, in error_handler
-      return fn(*args, **kwargs)
-    File "/usr/local/lib/python3.9/dist-packages/keras/engine/training.py", line 2382, in predict
-      tmp_batch_outputs = self.predict_function(iterator)
-    File "/usr/local/lib/python3.9/dist-packages/keras/engine/training.py", line 2169, in predict_function
-      return step_function(self, iterator)
-    File "/usr/local/lib/python3.9/dist-packages/keras/engine/training.py", line 2155, in step_function
-      outputs = model.distribute_strategy.run(run_step, args=(data,))
-    File "/usr/local/lib/python3.9/dist-packages/keras/engine/training.py", line 2143, in run_step
-      outputs = model.predict_step(data)
-    File "/usr/local/lib/python3.9/dist-packages/keras/engine/training.py", line 2111, in predict_step
-      return self(x, training=False)
-    File "/usr/local/lib/python3.9/dist-packages/keras/utils/traceback_utils.py", line 65, in error_handler
-      return fn(*args, **kwargs)
-    File "/usr/local/lib/python3.9/dist-packages/keras/engine/training.py", line 558, in __call__
-      return super().__call__(*args, **kwargs)
-    File "/usr/local/lib/python3.9/dist-packages/keras/utils/traceback_utils.py", line 65, in error_handler
-      return fn(*args, **kwargs)
-    File "/usr/local/lib/python3.9/dist-packages/keras/engine/base_layer.py", line 1145, in __call__
-      outputs = call_fn(inputs, *args, **kwargs)
-    File "/usr/local/lib/python3.9/dist-packages/keras/utils/traceback_utils.py", line 96, in error_handler
-      return fn(*args, **kwargs)
-    File "/usr/local/lib/python3.9/dist-packages/keras/engine/sequential.py", line 412, in call
-      return super().call(inputs, training=training, mask=mask)
-    File "/usr/local/lib/python3.9/dist-packages/keras/engine/functional.py", line 512, in call
-      return self._run_internal_graph(inputs, training=training, mask=mask)
-    File "/usr/local/lib/python3.9/dist-packages/keras/engine/functional.py", line 669, in _run_internal_graph
-      outputs = node.layer(*args, **kwargs)
-    File "/usr/local/lib/python3.9/dist-packages/keras/utils/traceback_utils.py", line 65, in error_handler
-      return fn(*args, **kwargs)
-    File "/usr/local/lib/python3.9/dist-packages/keras/engine/base_layer.py", line 1145, in __call__
-      outputs = call_fn(inputs, *args, **kwargs)
-    File "/usr/local/lib/python3.9/dist-packages/keras/utils/traceback_utils.py", line 96, in error_handler
-      return fn(*args, **kwargs)
-    File "/usr/local/lib/python3.9/dist-packages/keras/layers/core/dense.py", line 255, in call
-      outputs = self.activation(outputs)
-    File "/usr/local/lib/python3.9/dist-packages/keras/activations.py", line 317, in relu
-      return backend.relu(
-    File "/usr/local/lib/python3.9/dist-packages/keras/backend.py", line 5396, in relu
-      x = tf.nn.relu(x)
-Node: 'sequential_1/dense_3/Relu'
-Matrix size-incompatible: In[0]: [32,16], In[1]: [27,32]
-	 [[{{node sequential_1/dense_3/Relu}}]] [Op:__inference_predict_function_937160]
-
+1/1 [==============================] - 0s 25ms/step
+Buy: 2987.303958177745 shares at 334.75
+Index: 1, Data shape: (251, 21)
+1/1 [==============================] - 0s 23ms/step
+Buy: -3.538352081302538e-13 shares at 329.01
+Index: 2, Data shape: (251, 21)
+1/1 [==============================] - 0s 23ms/step
+Buy: -4.0851814498833865e-29 shares at 316.38
+Index: 3, Data shape: (251, 21)
+1/1 [==============================] - 0s 22ms/step
+Buy: 0.0 shares at 313.88
+Index: 4, Data shape: (251, 21)
+1/1 [==============================] - 0s 22ms/step
+Buy: 0.0 shares at 314.04
+Index: 5, Data shape: (251, 21)
+1/1 [==============================] - 0s 23ms/step
+Buy: 0.0 shares at 314.27
+Index: 6, Data shape: (251, 21)
+1/1 [==============================] - 0s 23ms/step
+Buy: 0.0 shares at 314.98
+Index: 7, Data shape: (251, 21)
+1/1 [==============================] - 0s 26ms/step
+Buy: 0.0 shares at 318.27
+Index: 8, Data shape: (251, 21)
+1/1 [==============================] - 0s 25ms/step
+Buy: 0.0 shares at 304.8
+Index: 9, Data shape: (251, 21)
+1/1 [==============================] - 0s 25ms/step
+Buy: 0.0 shares at 310.2
+Index: 10, Data shape: (251, 21)
+1/1 [==============================] - 0s 25ms/step
+Buy: 0.0 shares at 302.65
+Index: 11, Data shape: (251, 21)
+1/1 [==============================] - 0s 25ms/step
+Buy: 0.0 shares at 303.33
+Index: 12, Data shape: (251, 21)
+1/1 [==============================] - 0s 22ms/step
+Buy: 0.0 shares at 301.6
+Index: 13, Data shape: (251, 21)
+1/1 [==============================] - 0s 36ms/step
+Buy: 0.0 shares at 296.03
+Index: 14, Data shape: (251, 21)
+1/1 [==============================] - 0s 38ms/step
+Buy: 0.0 shares at 296.37
+Index: 15, Data shape: (251, 21)
+1/1 [==============================] - 0s 38ms/step
+Buy: 0.0 shares at 288.49
+Index: 16, Data shape: (251, 21)
+1/1 [==============================] - 0s 56ms/step
+Buy: 0.0 shares at 296.71
+Index: 17, Data shape: (251, 21)
+1/1 [==============================] - 0s 45ms/step
+Buy: 0.0 shares at 299.84
+Index: 18, Data shape: (251, 21)
+1/1 [==============================] - 0s 38ms/step
+Buy: 0.0 shares at 308.26
+Index: 19, Data shape: (251, 21)
+1/1 [==============================] - 0s 52ms/step
+Buy: 0.0 shares at 310.98
+Index: 20, Data shape: (251, 21)
+1/1 [==============================] - 0s 42ms/step
+Buy: 0.0 shares at 308.76
+Index: 21, Data shape: (251, 21)
+1/1 [==============================] - 0s 38ms/step
+Buy: 0.0 shares at 313.46
+Index: 22, Data shape: (251, 21)
+1/1 [==============================] - 0s 37ms/step
+Buy: 0.0 shares at 301.25
+Index: 23, Data shape: (251, 21)
+1/1 [==============================] - 0s 49ms/step
+Buy: 0.0 shares at 305.94
+Index: 24, Data shape: (251, 21)
+1/1 [==============================] - 0s 40ms/step
+Buy: 0.0 shares at 300.95
+Index: 25, Data shape: (251, 21)
+1/1 [==============================] - 0s 37ms/step
+Buy: 0.0 shares at 304.56
+Index: 26, Data shape: (251, 21)
+1/1 [==============================] - 0s 38ms/step
+Buy: 0.0 shares at 311.21
+Index: 27, Data shape: (251, 21)
+1/1 [==============================] - 0s 40ms/step
+Buy: 0.0 shares at 302.38
+Index: 28, Data shape: (251, 21)
+1/1 [==============================] - 0s 49ms/step
+Buy: 0.0 shares at 295.04
+Index: 29, Data shape: (251, 21)
+1/1 [==============================] - 0s 31ms/step
+Buy: 0.0 shares at 295.0
+Index: 30, Data shape: (251, 21)
+1/1 [==============================] - 0s 36ms/step
+Buy: 0.0 shares at 300.47
+Index: 31, Data shape: (251, 21)
+1/1 [==============================] - 0s 36ms/step
+Buy: 0.0 shares at 299.5
+Index: 32, Data shape: (251, 21)
+1/1 [==============================] - 0s 47ms/step
+Buy: 0.0 shares at 290.73
+Index: 33, Data shape: (251, 21)
+1/1 [==============================] - 0s 36ms/step
+Buy: 0.0 shares at 287.93
+Index: 34, Data shape: (251, 21)
+1/1 [==============================] - 0s 41ms/step
+Buy: 0.0 shares at 287.72
+Index: 35, Data shape: (251, 21)
+1/1 [==============================] - 0s 42ms/step
+Buy: 0.0 shares at 280.34
+Index: 36, Data shape: (251, 21)
+1/1 [==============================] - 0s 49ms/step
+Buy: 0.0 shares at 294.59
+Index: 37, Data shape: (251, 21)
+1/1 [==============================] - 0s 39ms/step
+Buy: 0.0 shares at 297.31
+Index: 38, Data shape: (251, 21)
+1/1 [==============================] - 0s 44ms/step
+Buy: 0.0 shares at 298.79
+Index: 39, Data shape: (251, 21)
+1/1 [==============================] - 0s 24ms/step
+Buy: 0.0 shares at 294.95
+Index: 40, Data shape: (251, 21)
+1/1 [==============================] - 0s 25ms/step
+Buy: 0.0 shares at 300.19
+Index: 41, Data shape: (251, 21)
+1/1 [==============================] - 0s 34ms/step
+Buy: 0.0 shares at 295.92
+Index: 42, Data shape: (251, 21)
+1/1 [==============================] - 0s 25ms/step
+Buy: 0.0 shares at 289.86
+Index: 43, Data shape: (251, 21)
+1/1 [==============================] - 0s 26ms/step
+Buy: 0.0 shares at 278.91
+Index: 44, Data shape: (251, 21)
+1/1 [==============================] - 0s 30ms/step
+Buy: 0.0 shares at 275.85
+Index: 45, Data shape: (251, 21)
+1/1 [==============================] - 0s 25ms/step
+Buy: 0.0 shares at 288.5
+Index: 46, Data shape: (251, 21)
+1/1 [==============================] - 0s 26ms/step
+Buy: 0.0 shares at 285.59
+Index: 47, Data shape: (251, 21)
+1/1 [==============================] - 0s 30ms/step
+Buy: 0.0 shares at 280.07
+Index: 48, Data shape: (251, 21)
+1/1 [==============================] - 0s 31ms/step
+Buy: 0.0 shares at 276.44
+Index: 49, Data shape: (251, 21)
+1/1 [==============================] - 0s 26ms/step
+Buy: 0.0 shares at 287.15
+Index: 50, Data shape: (251, 21)
+1/1 [==============================] - 0s 24ms/step
+Buy: 0.0 shares at 294.39
+Index: 51, Data shape: (251, 21)
+1/1 [==============================] - 0s 25ms/step
+Buy: 0.0 shares at 295.22
+Index: 52, Data shape: (251, 21)
+1/1 [==============================] - 0s 25ms/step
+Buy: 0.0 shares at 300.43
+Index: 53, Data shape: (251, 21)
+1/1 [==============================] - 0s 22ms/step
+Buy: 0.0 shares at 299.16
+Index: 54, Data shape: (251, 21)
+1/1 [==============================] - 0s 23ms/step
+Buy: 0.0 shares at 304.06
+Index: 55, Data shape: (251, 21)
+1/1 [==============================] - 0s 22ms/step
+Buy: 0.0 shares at 299.49
+Index: 56, Data shape: (251, 21)
+1/1 [==============================] - 0s 26ms/step
+Buy: 0.0 shares at 304.1
+Index: 57, Data shape: (251, 21)
+1/1 [==============================] - 0s 23ms/step
+Buy: 0.0 shares at 303.68
+Index: 58, Data shape: (251, 21)
+1/1 [==============================] - 0s 22ms/step
+Buy: 0.0 shares at 310.7
+Index: 59, Data shape: (251, 21)
+1/1 [==============================] - 0s 28ms/step
+Buy: 0.0 shares at 315.41
+Index: 60, Data shape: (251, 21)
+1/1 [==============================] - 0s 23ms/step
+Buy: 0.0 shares at 313.86
+Index: 61, Data shape: (251, 21)
+1/1 [==============================] - 0s 27ms/step
+Buy: 0.0 shares at 308.31
+Index: 62, Data shape: (251, 21)
+1/1 [==============================] - 0s 27ms/step
+Buy: 0.0 shares at 309.42
+Index: 63, Data shape: (251, 21)
+1/1 [==============================] - 0s 26ms/step
+Buy: 0.0 shares at 314.97
+Index: 64, Data shape: (251, 21)
+1/1 [==============================] - 0s 24ms/step
+Buy: 0.0 shares at 310.88
+Index: 65, Data shape: (251, 21)
+1/1 [==============================] - 0s 27ms/step
+Buy: 0.0 shares at 299.4
+Index: 66, Data shape: (251, 21)
+1/1 [==============================] - 0s 25ms/step
+Buy: 0.0 shares at 301.37
+Index: 67, Data shape: (251, 21)
+1/1 [==============================] - 0s 28ms/step
+Buy: 0.0 shares at 296.97
+Index: 68, Data shape: (251, 21)
+1/1 [==============================] - 0s 32ms/step
+Buy: 0.0 shares at 285.26
+Index: 69, Data shape: (251, 21)
+1/1 [==============================] - 0s 30ms/step
+Buy: 0.0 shares at 282.06
+Index: 70, Data shape: (251, 21)
+1/1 [==============================] - 0s 30ms/step
+Buy: 0.0 shares at 287.62
+Index: 71, Data shape: (251, 21)
+1/1 [==============================] - 0s 29ms/step
+Buy: 0.0 shares at 279.83
+Index: 72, Data shape: (251, 21)
+1/1 [==============================] - 0s 37ms/step
+Buy: 0.0 shares at 280.52
+Index: 73, Data shape: (251, 21)
+1/1 [==============================] - 0s 25ms/step
+Buy: 0.0 shares at 285.3
+Index: 74, Data shape: (251, 21)
+1/1 [==============================] - 0s 32ms/step
+Buy: 0.0 shares at 286.36
+Index: 75, Data shape: (251, 21)
+1/1 [==============================] - 0s 28ms/step
+Buy: 0.0 shares at 280.81
+Index: 76, Data shape: (251, 21)
+1/1 [==============================] - 0s 27ms/step
+Buy: 0.0 shares at 274.03
+Index: 77, Data shape: (251, 21)
+1/1 [==============================] - 0s 27ms/step
+Buy: 0.0 shares at 280.72
+Index: 78, Data shape: (251, 21)
+1/1 [==============================] - 0s 38ms/step
+Buy: 0.0 shares at 270.22
+Index: 79, Data shape: (251, 21)
+1/1 [==============================] - 0s 28ms/step
+Buy: 0.0 shares at 283.22
+Index: 80, Data shape: (251, 21)
+1/1 [==============================] - 0s 27ms/step
+Buy: 0.0 shares at 289.63
+Index: 81, Data shape: (251, 21)
+1/1 [==============================] - 0s 31ms/step
+Buy: 0.0 shares at 277.52
+Index: 82, Data shape: (251, 21)
+1/1 [==============================] - 0s 26ms/step
+Buy: 0.0 shares at 284.47
+Index: 83, Data shape: (251, 21)
+1/1 [==============================] - 0s 27ms/step
+Buy: 0.0 shares at 281.78
+Index: 84, Data shape: (251, 21)
+1/1 [==============================] - 0s 25ms/step
+Buy: 0.0 shares at 289.98
+Index: 85, Data shape: (251, 21)
+1/1 [==============================] - 0s 26ms/step
+Buy: 0.0 shares at 277.35
+Index: 86, Data shape: (251, 21)
+1/1 [==============================] - 0s 27ms/step
+Buy: 0.0 shares at 274.73
+Index: 87, Data shape: (251, 21)
+1/1 [==============================] - 0s 31ms/step
+Buy: 0.0 shares at 264.58
+Index: 88, Data shape: (251, 21)
+1/1 [==============================] - 0s 29ms/step
+Buy: 0.0 shares at 269.5
+Index: 89, Data shape: (251, 21)
+1/1 [==============================] - 0s 41ms/step
+Buy: 0.0 shares at 260.55
+Index: 90, Data shape: (251, 21)
+1/1 [==============================] - 0s 30ms/step
+Buy: 0.0 shares at 255.35
+Index: 91, Data shape: (251, 21)
+1/1 [==============================] - 0s 29ms/step
+Buy: 0.0 shares at 261.12
+Index: 92, Data shape: (251, 21)
+1/1 [==============================] - 0s 25ms/step
+Buy: 0.0 shares at 261.5
+Index: 93, Data shape: (251, 21)
+1/1 [==============================] - 0s 22ms/step
+Buy: 0.0 shares at 266.86
+Index: 94, Data shape: (251, 21)
+1/1 [==============================] - 0s 31ms/step
+Buy: 0.0 shares at 254.08
+Index: 95, Data shape: (251, 21)
+1/1 [==============================] - 0s 25ms/step
+Buy: 0.0 shares at 253.14
+Index: 96, Data shape: (251, 21)
+1/1 [==============================] - 0s 28ms/step
+Buy: 0.0 shares at 252.56
+Index: 97, Data shape: (251, 21)
+1/1 [==============================] - 0s 25ms/step
+Buy: 0.0 shares at 260.65
+Index: 98, Data shape: (251, 21)
+1/1 [==============================] - 0s 24ms/step
+Buy: 0.0 shares at 259.62
+Index: 99, Data shape: (251, 21)
+1/1 [==============================] - 0s 24ms/step
+Buy: 0.0 shares at 262.52
+Index: 100, Data shape: (251, 21)
+1/1 [==============================] - 0s 22ms/step
+Buy: 0.0 shares at 265.9
+Index: 101, Data shape: (251, 21)
+1/1 [==============================] - 0s 23ms/step
+Buy: 0.0 shares at 273.24
+Index: 102, Data shape: (251, 21)
+1/1 [==============================] - 0s 25ms/step
+Buy: 0.0 shares at 271.87
+Index: 103, Data shape: (251, 21)
+1/1 [==============================] - 0s 28ms/step
+Buy: 0.0 shares at 272.42
+Index: 104, Data shape: (251, 21)
+1/1 [==============================] - 0s 24ms/step
+Buy: 0.0 shares at 274.58
+Index: 105, Data shape: (251, 21)
+1/1 [==============================] - 0s 24ms/step
+Buy: 0.0 shares at 270.04
+Index: 106, Data shape: (251, 21)
+1/1 [==============================] - 0s 27ms/step
+Buy: 0.0 shares at 268.75
+Index: 107, Data shape: (251, 21)
+1/1 [==============================] - 0s 28ms/step
+Buy: 0.0 shares at 272.5
+Index: 108, Data shape: (251, 21)
+1/1 [==============================] - 0s 25ms/step
+Buy: 0.0 shares at 270.41
+Index: 109, Data shape: (251, 21)
+1/1 [==============================] - 0s 25ms/step
+Buy: 0.0 shares at 264.79
+Index: 110, Data shape: (251, 21)
+1/1 [==============================] - 0s 25ms/step
+Buy: 0.0 shares at 252.99
+Index: 111, Data shape: (251, 21)
+1/1 [==============================] - 0s 24ms/step
+Buy: 0.0 shares at 242.26
+Index: 112, Data shape: (251, 21)
+1/1 [==============================] - 0s 24ms/step
+Buy: 0.0 shares at 244.49
+Index: 113, Data shape: (251, 21)
+1/1 [==============================] - 0s 24ms/step
+Buy: 0.0 shares at 251.76
+Index: 114, Data shape: (251, 21)
+1/1 [==============================] - 0s 25ms/step
+Buy: 0.0 shares at 244.97
+Index: 115, Data shape: (251, 21)
+1/1 [==============================] - 0s 24ms/step
+Buy: 0.0 shares at 247.65
+Index: 116, Data shape: (251, 21)
+1/1 [==============================] - 0s 24ms/step
+Buy: 0.0 shares at 253.74
+Index: 117, Data shape: (251, 21)
+1/1 [==============================] - 0s 24ms/step
+Buy: 0.0 shares at 253.13
+Index: 118, Data shape: (251, 21)
+1/1 [==============================] - 0s 26ms/step
+Buy: 0.0 shares at 258.86
+Index: 119, Data shape: (251, 21)
+1/1 [==============================] - 0s 22ms/step
+Buy: 0.0 shares at 267.7
+Index: 120, Data shape: (251, 21)
+1/1 [==============================] - 0s 24ms/step
+Buy: 0.0 shares at 264.89
+Index: 121, Data shape: (251, 21)
+1/1 [==============================] - 0s 23ms/step
+Buy: 0.0 shares at 256.48
+Index: 122, Data shape: (251, 21)
+1/1 [==============================] - 0s 25ms/step
+Buy: 0.0 shares at 260.26
+Index: 123, Data shape: (251, 21)
+1/1 [==============================] - 0s 24ms/step
+Buy: 0.0 shares at 256.83
+Index: 124, Data shape: (251, 21)
+1/1 [==============================] - 0s 24ms/step
+Buy: 0.0 shares at 259.58
+Index: 125, Data shape: (251, 21)
+1/1 [==============================] - 0s 24ms/step
+Buy: 0.0 shares at 262.85
+Index: 126, Data shape: (251, 21)
+1/1 [==============================] - 0s 26ms/step
+Buy: 0.0 shares at 266.21
+Index: 127, Data shape: (251, 21)
+1/1 [==============================] - 0s 24ms/step
+Buy: 0.0 shares at 268.4
+Index: 128, Data shape: (251, 21)
+1/1 [==============================] - 0s 22ms/step
+Buy: 0.0 shares at 267.66
+Index: 129, Data shape: (251, 21)
+1/1 [==============================] - 0s 22ms/step
+Buy: 0.0 shares at 264.51
+Index: 130, Data shape: (251, 21)
+1/1 [==============================] - 0s 22ms/step
+Buy: 0.0 shares at 253.67
+Index: 131, Data shape: (251, 21)
+1/1 [==============================] - 0s 23ms/step
+Buy: 0.0 shares at 252.72
+Index: 132, Data shape: (251, 21)
+1/1 [==============================] - 0s 24ms/step
+Buy: 0.0 shares at 254.08
+Index: 133, Data shape: (251, 21)
+1/1 [==============================] - 0s 28ms/step
+Buy: 0.0 shares at 256.72
+Index: 134, Data shape: (251, 21)
+1/1 [==============================] - 0s 30ms/step
+Buy: 0.0 shares at 254.25
+Index: 135, Data shape: (251, 21)
+1/1 [==============================] - 0s 27ms/step
+Buy: 0.0 shares at 259.53
+Index: 136, Data shape: (251, 21)
+1/1 [==============================] - 0s 36ms/step
+Buy: 0.0 shares at 262.27
+Index: 137, Data shape: (251, 21)
+1/1 [==============================] - 0s 33ms/step
+Buy: 0.0 shares at 264.84
+Index: 138, Data shape: (251, 21)
+1/1 [==============================] - 0s 35ms/step
+Buy: 0.0 shares at 260.36
+Index: 139, Data shape: (251, 21)
+1/1 [==============================] - 0s 32ms/step
+Buy: 0.0 shares at 258.83
+Index: 140, Data shape: (251, 21)
+1/1 [==============================] - 0s 26ms/step
+Buy: 0.0 shares at 251.9
+Index: 141, Data shape: (251, 21)
+1/1 [==============================] - 0s 51ms/step
+Buy: 0.0 shares at 268.74
+Index: 142, Data shape: (251, 21)
+1/1 [==============================] - 0s 57ms/step
+Buy: 0.0 shares at 276.41
+Index: 143, Data shape: (251, 21)
+1/1 [==============================] - 0s 45ms/step
+Buy: 0.0 shares at 280.74
+Index: 144, Data shape: (251, 21)
+1/1 [==============================] - 0s 42ms/step
+Buy: 0.0 shares at 278.01
+Index: 145, Data shape: (251, 21)
+1/1 [==============================] - 0s 37ms/step
+Buy: 0.0 shares at 274.82
+Index: 146, Data shape: (251, 21)
+1/1 [==============================] - 0s 37ms/step
+Buy: 0.0 shares at 282.47
+Index: 147, Data shape: (251, 21)
+1/1 [==============================] - 0s 36ms/step
+Buy: 0.0 shares at 283.65
+Index: 148, Data shape: (251, 21)
+1/1 [==============================] - 0s 44ms/step
+Buy: 0.0 shares at 282.91
+Index: 149, Data shape: (251, 21)
+1/1 [==============================] - 0s 36ms/step
+Buy: 0.0 shares at 280.32
+Index: 150, Data shape: (251, 21)
+1/1 [==============================] - 0s 48ms/step
+Buy: 0.0 shares at 282.3
+Index: 151, Data shape: (251, 21)
+1/1 [==============================] - 0s 35ms/step
+Buy: 0.0 shares at 289.16
+Index: 152, Data shape: (251, 21)
+1/1 [==============================] - 0s 64ms/step
+Buy: 0.0 shares at 287.02
+Index: 153, Data shape: (251, 21)
+1/1 [==============================] - 0s 43ms/step
+Buy: 0.0 shares at 291.91
+Index: 154, Data shape: (251, 21)
+1/1 [==============================] - 0s 50ms/step
+Buy: 0.0 shares at 293.47
+Index: 155, Data shape: (251, 21)
+1/1 [==============================] - 0s 37ms/step
+Buy: 0.0 shares at 292.71
+Index: 156, Data shape: (251, 21)
+1/1 [==============================] - 0s 40ms/step
+Buy: 0.0 shares at 291.32
+Index: 157, Data shape: (251, 21)
+1/1 [==============================] - 0s 40ms/step
+Buy: 0.0 shares at 290.17
+Index: 158, Data shape: (251, 21)
+1/1 [==============================] - 0s 45ms/step
+Buy: 0.0 shares at 286.15
+Index: 159, Data shape: (251, 21)
+1/1 [==============================] - 0s 61ms/step
+Buy: 0.0 shares at 277.75
+Index: 160, Data shape: (251, 21)
+1/1 [==============================] - 0s 35ms/step
+Buy: 0.0 shares at 276.44
+Index: 161, Data shape: (251, 21)
+1/1 [==============================] - 0s 64ms/step
+Buy: 0.0 shares at 275.79
+Index: 162, Data shape: (251, 21)
+1/1 [==============================] - 0s 37ms/step
+Buy: 0.0 shares at 278.85
+Index: 163, Data shape: (251, 21)
+1/1 [==============================] - 0s 41ms/step
+Buy: 0.0 shares at 268.09
+Index: 164, Data shape: (251, 21)
+1/1 [==============================] - 0s 39ms/step
+Buy: 0.0 shares at 265.23
+Index: 165, Data shape: (251, 21)
+1/1 [==============================] - 0s 44ms/step
+Buy: 0.0 shares at 262.97
+Index: 166, Data shape: (251, 21)
+1/1 [==============================] - 0s 34ms/step
+Buy: 0.0 shares at 261.47
+Index: 167, Data shape: (251, 21)
+1/1 [==============================] - 0s 34ms/step
+Buy: 0.0 shares at 260.4
+Index: 168, Data shape: (251, 21)
+1/1 [==============================] - 0s 38ms/step
+Buy: 0.0 shares at 256.06
+Index: 169, Data shape: (251, 21)
+1/1 [==============================] - 0s 41ms/step
+Buy: 0.0 shares at 253.25
+Index: 170, Data shape: (251, 21)
+1/1 [==============================] - 0s 27ms/step
+Buy: 0.0 shares at 258.09
+Index: 171, Data shape: (251, 21)
+1/1 [==============================] - 0s 28ms/step
+Buy: 0.0 shares at 258.52
+Index: 172, Data shape: (251, 21)
+1/1 [==============================] - 0s 25ms/step
+Buy: 0.0 shares at 264.46
+Index: 173, Data shape: (251, 21)
+1/1 [==============================] - 0s 30ms/step
+Buy: 0.0 shares at 266.65
+Index: 174, Data shape: (251, 21)
+1/1 [==============================] - 0s 23ms/step
+Buy: 0.0 shares at 251.99
+Index: 175, Data shape: (251, 21)
+1/1 [==============================] - 0s 25ms/step
+Buy: 0.0 shares at 252.22
+Index: 176, Data shape: (251, 21)
+1/1 [==============================] - 0s 22ms/step
+Buy: 0.0 shares at 245.38
+Index: 177, Data shape: (251, 21)
+1/1 [==============================] - 0s 29ms/step
+Buy: 0.0 shares at 244.74
+Index: 178, Data shape: (251, 21)
+1/1 [==============================] - 0s 23ms/step
+Buy: 0.0 shares at 244.52
+Index: 179, Data shape: (251, 21)
+1/1 [==============================] - 0s 22ms/step
+Buy: 0.0 shares at 242.45
+Index: 180, Data shape: (251, 21)
+1/1 [==============================] - 0s 23ms/step
+Buy: 0.0 shares at 238.95
+Index: 181, Data shape: (251, 21)
+1/1 [==============================] - 0s 23ms/step
+Buy: 0.0 shares at 240.98
+Index: 182, Data shape: (251, 21)
+1/1 [==============================] - 0s 25ms/step
+Buy: 0.0 shares at 237.92
+Index: 183, Data shape: (251, 21)
+1/1 [==============================] - 0s 23ms/step
+Buy: 0.0 shares at 237.45
+Index: 184, Data shape: (251, 21)
+1/1 [==============================] - 0s 24ms/step
+Buy: 0.0 shares at 236.41
+Index: 185, Data shape: (251, 21)
+1/1 [==============================] - 0s 22ms/step
+Buy: 0.0 shares at 241.07
+Index: 186, Data shape: (251, 21)
+1/1 [==============================] - 0s 24ms/step
+Buy: 0.0 shares at 237.5
+Index: 187, Data shape: (251, 21)
+1/1 [==============================] - 0s 23ms/step
+Buy: 0.0 shares at 232.9
+Index: 188, Data shape: (251, 21)
+1/1 [==============================] - 0s 23ms/step
+Buy: 0.0 shares at 240.74
+Index: 189, Data shape: (251, 21)
+1/1 [==============================] - 0s 22ms/step
+Buy: 0.0 shares at 248.88
+Index: 190, Data shape: (251, 21)
+1/1 [==============================] - 0s 23ms/step
+Buy: 0.0 shares at 249.2
+Index: 191, Data shape: (251, 21)
+1/1 [==============================] - 0s 29ms/step
+Buy: 0.0 shares at 246.79
+Index: 192, Data shape: (251, 21)
+1/1 [==============================] - 0s 23ms/step
+Buy: 0.0 shares at 234.24
+Index: 193, Data shape: (251, 21)
+1/1 [==============================] - 0s 22ms/step
+Buy: 0.0 shares at 229.25
+Index: 194, Data shape: (251, 21)
+1/1 [==============================] - 0s 22ms/step
+Buy: 0.0 shares at 225.41
+Index: 195, Data shape: (251, 21)
+1/1 [==============================] - 0s 25ms/step
+Buy: 0.0 shares at 225.75
+Index: 196, Data shape: (251, 21)
+1/1 [==============================] - 0s 24ms/step
+Buy: 0.0 shares at 234.24
+Index: 197, Data shape: (251, 21)
+1/1 [==============================] - 0s 25ms/step
+Buy: 0.0 shares at 228.56
+Index: 198, Data shape: (251, 21)
+1/1 [==============================] - 0s 30ms/step
+Buy: 0.0 shares at 237.53
+Index: 199, Data shape: (251, 21)
+1/1 [==============================] - 0s 24ms/step
+Buy: 0.0 shares at 238.5
+Index: 200, Data shape: (251, 21)
+1/1 [==============================] - 0s 23ms/step
+Buy: 0.0 shares at 236.48
+Index: 201, Data shape: (251, 21)
+1/1 [==============================] - 0s 24ms/step
+Buy: 0.0 shares at 236.15
+Index: 202, Data shape: (251, 21)
+1/1 [==============================] - 0s 24ms/step
+Buy: 0.0 shares at 242.12
+Index: 203, Data shape: (251, 21)
+1/1 [==============================] - 0s 23ms/step
+Buy: 0.0 shares at 247.25
+Index: 204, Data shape: (251, 21)
+1/1 [==============================] - 0s 29ms/step
+Buy: 0.0 shares at 250.66
+Index: 205, Data shape: (251, 21)
+1/1 [==============================] - 0s 24ms/step
+Buy: 0.0 shares at 231.32
+Index: 206, Data shape: (251, 21)
+1/1 [==============================] - 0s 23ms/step
+Buy: 0.0 shares at 226.75
+Index: 207, Data shape: (251, 21)
+1/1 [==============================] - 0s 23ms/step
+Buy: 0.0 shares at 235.87
+Index: 208, Data shape: (251, 21)
+1/1 [==============================] - 0s 25ms/step
+Buy: 0.0 shares at 232.13
+Index: 209, Data shape: (251, 21)
+1/1 [==============================] - 0s 27ms/step
+Buy: 0.0 shares at 228.17
+Index: 210, Data shape: (251, 21)
+1/1 [==============================] - 0s 31ms/step
+Buy: 0.0 shares at 220.1
+Index: 211, Data shape: (251, 21)
+1/1 [==============================] - 0s 32ms/step
+Buy: 0.0 shares at 214.25
+Index: 212, Data shape: (251, 21)
+1/1 [==============================] - 0s 33ms/step
+Buy: 0.0 shares at 221.39
+Index: 213, Data shape: (251, 21)
+1/1 [==============================] - 0s 28ms/step
+Buy: 0.0 shares at 227.87
+Index: 214, Data shape: (251, 21)
+1/1 [==============================] - 0s 36ms/step
+Buy: 0.0 shares at 228.87
+Index: 215, Data shape: (251, 21)
+1/1 [==============================] - 0s 35ms/step
+Buy: 0.0 shares at 224.51
+Index: 216, Data shape: (251, 21)
+1/1 [==============================] - 0s 28ms/step
+Buy: 0.0 shares at 242.98
+Index: 217, Data shape: (251, 21)
+1/1 [==============================] - 0s 28ms/step
+Buy: 0.0 shares at 247.11
+Index: 218, Data shape: (251, 21)
+1/1 [==============================] - 0s 33ms/step
+Buy: 0.0 shares at 241.55
+Index: 219, Data shape: (251, 21)
+1/1 [==============================] - 0s 23ms/step
+Buy: 0.0 shares at 241.97
+Index: 220, Data shape: (251, 21)
+1/1 [==============================] - 0s 22ms/step
+Buy: 0.0 shares at 241.73
+Index: 221, Data shape: (251, 21)
+1/1 [==============================] - 0s 23ms/step
+Buy: 0.0 shares at 241.68
+Index: 222, Data shape: (251, 21)
+1/1 [==============================] - 0s 25ms/step
+Buy: 0.0 shares at 241.22
+Index: 223, Data shape: (251, 21)
+1/1 [==============================] - 0s 25ms/step
+Buy: 0.0 shares at 242.05
+Index: 224, Data shape: (251, 21)
+1/1 [==============================] - 0s 24ms/step
+Buy: 0.0 shares at 245.03
+Index: 225, Data shape: (251, 21)
+1/1 [==============================] - 0s 24ms/step
+Buy: 0.0 shares at 247.58
+Index: 226, Data shape: (251, 21)
+1/1 [==============================] - 0s 23ms/step
+Buy: 0.0 shares at 247.49
+Index: 227, Data shape: (251, 21)
+1/1 [==============================] - 0s 23ms/step
+Buy: 0.0 shares at 241.76
+Index: 228, Data shape: (251, 21)
+1/1 [==============================] - 0s 26ms/step
+Buy: 0.0 shares at 240.33
+Index: 229, Data shape: (251, 21)
+1/1 [==============================] - 0s 30ms/step
+Buy: 0.0 shares at 255.14
+Index: 230, Data shape: (251, 21)
+1/1 [==============================] - 0s 32ms/step
+Buy: 0.0 shares at 254.69
+Index: 231, Data shape: (251, 21)
+1/1 [==============================] - 0s 45ms/step
+Buy: 0.0 shares at 255.02
+Index: 232, Data shape: (251, 21)
+1/1 [==============================] - 0s 33ms/step
+Buy: 0.0 shares at 250.2
+Index: 233, Data shape: (251, 21)
+1/1 [==============================] - 0s 30ms/step
+Buy: 0.0 shares at 245.12
+Index: 234, Data shape: (251, 21)
+1/1 [==============================] - 0s 28ms/step
+Buy: 0.0 shares at 244.37
+Index: 235, Data shape: (251, 21)
+1/1 [==============================] - 0s 27ms/step
+Buy: 0.0 shares at 247.4
+Index: 236, Data shape: (251, 21)
+1/1 [==============================] - 0s 25ms/step
+Buy: 0.0 shares at 245.42
+Index: 237, Data shape: (251, 21)
+1/1 [==============================] - 0s 26ms/step
+Buy: 0.0 shares at 252.51
+Index: 238, Data shape: (251, 21)
+1/1 [==============================] - 0s 27ms/step
+Buy: 0.0 shares at 256.92
+Index: 239, Data shape: (251, 21)
+1/1 [==============================] - 0s 30ms/step
+Buy: 0.0 shares at 257.22
+Index: 240, Data shape: (251, 21)
+1/1 [==============================] - 0s 33ms/step
+Buy: 0.0 shares at 249.01
+Index: 241, Data shape: (251, 21)
+1/1 [==============================] - 0s 30ms/step
+Buy: 0.0 shares at 244.69
+Index: 242, Data shape: (251, 21)
+1/1 [==============================] - 0s 33ms/step
+Buy: 0.0 shares at 240.45
+Index: 243, Data shape: (251, 21)
+1/1 [==============================] - 0s 31ms/step
+Buy: 0.0 shares at 241.8
+Index: 244, Data shape: (251, 21)
+1/1 [==============================] - 0s 30ms/step
+Buy: 0.0 shares at 244.43
+Index: 245, Data shape: (251, 21)
+1/1 [==============================] - 0s 29ms/step
+Buy: 0.0 shares at 238.19
+Index: 246, Data shape: (251, 21)
+1/1 [==============================] - 0s 25ms/step
+Buy: 0.0 shares at 238.73
+Index: 247, Data shape: (251, 21)
+1/1 [==============================] - 0s 28ms/step
+Buy: 0.0 shares at 236.96
+Index: 248, Data shape: (251, 21)
+1/1 [==============================] - 0s 30ms/step
+Buy: 0.0 shares at 234.53
+Index: 249, Data shape: (251, 21)
+1/1 [==============================] - 0s 30ms/step
+Buy: 0.0 shares at 241.01
+Index: 250, Data shape: (251, 21)
+1/1 [==============================] - 0s 31ms/step
+Buy: 0.0 shares at 239.82
+Index: 251, Data shape: (251, 21)
+Test results:
+Final equity: 716415.2352501866
+Total profit: 0
