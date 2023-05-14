@@ -327,50 +327,41 @@ def create_env(data, strategy):
     
     return env
 
+from collections import deque
+
 def train_model(x, model, episodes, batch_size, env):
+    state_size = env.observation_space.shape[0]
     action_size = env.action_space.n
-    epsilon = 500
-    epsilon_min = 0.09
-    epsilon_decay = 0.099
-    gamma = 0.9
-    memory = deque(maxlen=100000)
-    for episode in range(episodes):
+    action_space = np.arange(action_size)
+    np.random.seed(123)
+    
+    state_buffer = deque(maxlen=60)  # buffer for the last 60 states
+
+    for e in range(episodes):
+        # reset the environment
         state = env.reset()
-        state_size = x.shape[1] + 4
-        state = np.concatenate(([env.shares, env.balance, env.equity], state))
-        state = state.reshape((1, -1)) 
+        state_buffer.append(state)  # add the initial state to the buffer
         done = False
+        i = 0
         while not done:
-            if np.random.rand() <= epsilon:
+            if len(state_buffer) < 60:
+                # if the buffer is not full yet, choose a random action
                 action = np.random.randint(0, action_size)
             else:
-                action = np.argmax(model.predict(state)[0])
+                # if the buffer is full, reshape it to match the model's input shape and make a prediction
+                state_input = np.reshape(np.array(state_buffer), (-1, 60, state_size))
+                action = np.argmax(model.predict(state_input)[0])
             next_state, reward, done, _ = env.step(action)
+            state_buffer.append(next_state)  # add the new state to the buffer
+            
             next_state = np.concatenate(([env.shares, env.balance, env.equity], next_state)) # add the account information to the next_state
-            next_state = next_state.reshape((1, -1)) # add an extra dimension to the next_state variable
-            memory.append((state, action, reward, next_state, done))
-            state = next_state
-
-        if len(memory) >= batch_size:
-            minibatch = random.sample(memory, batch_size)
-            X_state = []
-            X_target = []
-            for state, action, reward, next_state, done in minibatch:
-                if done:
-                    target = reward
-                else:
-                    target = reward + gamma * np.amax(model.predict(next_state)[0])
-                target_f = model.predict(state)
-                target_f[0][action] = target
-                X_state.append(state.reshape((1, -1)))
-                X_target.append(target_f.reshape((1, -1)))
-            X_state = np.concatenate(X_state, axis=0)
-            X_target = np.concatenate(X_target, axis=0)
-            model.fit(X_state, X_target, epochs=1, verbose=0)
-
-        if epsilon > epsilon_min:
-            epsilon *= epsilon_decay
-
+            
+            if done:
+                print("episode: {}/{}, score: {}, e: {:.2}".format(e, episodes, i, 0.01))
+                break
+            if len(state_buffer) == 60:
+                model.fit(x, batch_size=batch_size, verbose=0)
+            i += 1
     return model
 
 def moving_average_strategy(data, buy_threshold=0.02, sell_threshold=0.01):
