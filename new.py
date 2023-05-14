@@ -169,7 +169,7 @@ def preprocess_data(data):
 
 def define_model(input_shape, output_shape):  
     model = keras.Sequential([  
-    layers.LSTM(32, activation='relu', input_shape=(60, 27)),  
+    layers.LSTM(32, activation='relu', input_shape=(60, 24)),  
     layers.Dense(16, activation='relu'),  
     layers.Dense(output_shape, activation='linear')  
     ])  
@@ -177,14 +177,13 @@ def define_model(input_shape, output_shape):
     model.compile(loss='mse', optimizer='adam')  
     return model
 
-
 def create_env(data, strategy):
     class TradingEnvironment(gym.Env):
         def __init__(self, data):
             self.data = data
             self.action_space = gym.spaces.Discrete(3)
             self.observation_space = gym.spaces.Box(
-                low=-np.inf, high=np.inf, shape=(data.shape[1] + 3,), dtype=np.float32)
+                low=-np.inf, high=np.inf, shape=(data.shape[1],), dtype=np.float32)
             self.trades_log = []
             self.stop_loss = None
             self.last_action = None
@@ -326,15 +325,15 @@ def create_env(data, strategy):
 
 from collections import deque
 
-def train_model(x, model, episodes, batch_size, env):
-    state_size = env.observation_space.shape[0]
-    action_size = env.action_space.n
-    action_space = np.arange(action_size)
-    np.random.seed(123)
-    total_size = x.shape[0] * x.shape[1]
-    truncated_size = (total_size // (60 * state_size)) * (60 * state_size)
-    x = x.flatten()[:truncated_size]
-    x = np.reshape(x, (-1, 60, state_size))
+def train_model(x, model, episodes, batch_size, env):  
+    state_size = env.observation_space.shape[0]  
+    action_size = env.action_space.n  
+    action_space = np.arange(action_size)  
+    np.random.seed(123)  
+    total_size = x.shape[0] * x.shape[1] * x.shape[2]  # adjusted for 3D shape
+    truncated_size = (total_size // (60 * state_size)) * (60 * state_size)  
+    x = x.flatten()[:truncated_size]  
+    x = np.reshape(x, (-1, 60, state_size)) 
     
     state_buffer = deque(maxlen=60)  # buffer for the last 60 states
 
@@ -350,7 +349,7 @@ def train_model(x, model, episodes, batch_size, env):
                 action = np.random.randint(0, action_size)
             else:
                 # if the buffer is full, reshape it to match the model's input shape and make a prediction
-                state_input = np.reshape(np.array(state_buffer), (-1, 60, state_size))
+                state_input = np.reshape(np.array(state_buffer), (-1, 60, 24))
                 action = np.argmax(model.predict(state_input)[0])
             next_state, reward, done, _ = env.step(action)
             state_buffer.append(next_state)  # add the new state to the buffer
