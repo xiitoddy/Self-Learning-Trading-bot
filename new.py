@@ -403,9 +403,21 @@ def main():
     
     model = define_model(env.observation_space.shape, env.action_space.n)  # Corrected line
 
+    state_size = env.observation_space.shape[0]  
+
+    model = define_model(env.observation_space.shape, env.action_space.n)
+
     episodes = 20
     batch_size = 32
+
+    total_size = x.shape[0] * x.shape[1]
+    truncated_size = (total_size // (60 * state_size)) * (60 * state_size)
+    x = x.flatten()[:truncated_size]
+    x = np.reshape(x, (-1, 60, state_size))
+
+
     model = train_model(x, model, episodes, batch_size, env)
+
 
     model.save('trained_model.h5')
     env.save_trades("trades.csv")
