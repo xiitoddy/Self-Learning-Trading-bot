@@ -167,19 +167,16 @@ def preprocess_data(data):
 
     return x, y
 
-def define_model(input_shape, output_shape):
-    model = keras.Sequential([
-        layers.LSTM(50, return_sequences=True, input_shape=(60, 27)),
-        layers.Dropout(0.2),
-        layers.LSTM(50, return_sequences=True),
-        layers.Dropout(0.2),
-        layers.LSTM(50),
-        layers.Dropout(0.2),
-        layers.Dense(output_shape, activation='linear')
-    ])
+def define_model(input_shape, output_shape):  
+    model = keras.Sequential([  
+    layers.LSTM(32, activation='relu', input_shape=(60, 27)),  
+    layers.Dense(16, activation='relu'),  
+    layers.Dense(output_shape, activation='linear')  
+    ])  
 
-    model.compile(loss='mse', optimizer='adam')
+    model.compile(loss='mse', optimizer='adam')  
     return model
+
 
 def create_env(data, strategy):
     class TradingEnvironment(gym.Env):
