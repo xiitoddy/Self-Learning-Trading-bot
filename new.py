@@ -347,18 +347,16 @@ def train_model(x, model, episodes, batch_size, env):
   done = False  
   i = 0  
   while not done:
-    if len(state_buffer) < 60:  
-  # if the buffer is not full yet, choose a random action 
-      print("Current index: ", env.index) # Assuming your environment has an index attribute 
-      action = np.random.randint(0, action_size)  
-  else:  
-  # if the buffer is full, reshape it to match the model's input shape and make a prediction  
-    state_input = np.reshape(np.array(state_buffer), (-1, 60, state_size))  
-    action = np.argmax(model.predict(state_input)[0])  
-    next_state, reward, done, _ = env.step(action)  
-    state_buffer.append(next_state) # add the new state to the buffer  
-
-  next_state = np.concatenate(([env.shares, env.balance, env.equity], next_state)) # add the account information to the next_state  
+    if len(state_buffer) < 60:
+      print("Current index: ", env.index)
+      action = np.random.randint(0, action_size)   
+    else:   
+      state_input = np.reshape(np.array(state_buffer), (-1, 60, state_size))   
+      action = np.argmax(model.predict(state_input)[0])
+  
+    next_state, reward, done, _ = env.step(action)
+    state_buffer.append(next_state)  
+    next_state = np.concatenate(([env.shares, env.balance, env.equity], next_state)) # add the account information to the next_state  
 
   if done:
     print("episode: {}/{}, score: {}, e: {:.2}".format(e, episodes, i, 0.01))
