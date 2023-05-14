@@ -348,7 +348,8 @@ def train_model(x, model, episodes, batch_size, env):
   i = 0  
   while not done:
     if len(state_buffer) < 60:  
-  # if the buffer is not full yet, choose a random action  
+  # if the buffer is not full yet, choose a random action 
+      print("Current index: ", env.index) # Assuming your environment has an index attribute 
       action = np.random.randint(0, action_size)  
   else:  
   # if the buffer is full, reshape it to match the model's input shape and make a prediction  
