@@ -18,8 +18,8 @@ from ta.trend import ADXIndicator
 from ta.volatility import AverageTrueRange
 from ta.trend import MACD
 from collections import deque
-from sklearn.preprocessing import MinMaxScaler
 import os
+
 import warnings
 warnings.filterwarnings('ignore', category=RuntimeWarning)
 
@@ -108,6 +108,8 @@ def get_data(symbol, start, end):
 
     return data
 
+# technical indicators helper functions
+
 def calculate_fibonacci_retracement_levels(data):
     max_price = data['high'].max()
     min_price = data['low'].min()
@@ -117,6 +119,7 @@ def calculate_fibonacci_retracement_levels(data):
     retracement_levels = [(max_price - l * diff) for l in levels]
 
     return retracement_levels
+
 
 def calculate_fibonacci_extension_levels(data):
     max_price = data['high'].max()
@@ -145,18 +148,21 @@ def preprocess_data(data):
     # Drop the 'returns' column
     data = data.drop(['returns'], axis=1)
 
+    # Check for missing or invalid values
     print("Missing values in the data:")
     print(data.isna().sum())
 
     print("Infinite values in the data:")
     print(np.isinf(data).sum())
 
+    # Handle missing or invalid values
     data = data.fillna(method='ffill')  # Forward-fill missing values
     data = data.fillna(method='bfill')  # Back-fill any remaining missing values
 
-    scaler = MinMaxScaler()
-    data = pd.DataFrame(scaler.fit_transform(data), columns=data.columns)
+    # Drop last 4 columns and take the first 20 columns
+    data = data.iloc[:, :-4]
 
+    # Convert to NumPy arrays
     x = data.values
     y = np.where(x[:, -1] > 0, 1, 0)
     data = data.fillna(method='ffill')
@@ -167,27 +173,31 @@ def preprocess_data(data):
 
     return x, y
 
-def define_model(input_shape, output_shape):  
-    model = keras.Sequential([  
-    layers.LSTM(32, activation='relu', input_shape=(60, 24)),  
-    layers.Dense(16, activation='relu'),  
-    layers.Dense(output_shape, activation='linear')  
-    ])  
+def define_model(input_shape, output_shape):
+    model = keras.Sequential([
+        layers.Dense(32, activation='relu', input_shape=(27,)),
+        layers.Dense(16, activation='relu'),
+        layers.Dense(output_shape, activation='linear')
+    ])
 
-    model.compile(loss='mse', optimizer='adam')  
+    model.compile(loss='mse', optimizer='adam')
     return model
+
 
 def create_env(data, strategy):
     class TradingEnvironment(gym.Env):
         def __init__(self, data):
+            print("Creating TradingEnvironment...")
             self.data = data
             self.action_space = gym.spaces.Discrete(3)
             self.observation_space = gym.spaces.Box(
-                low=-np.inf, high=np.inf, shape=(data.shape[1],), dtype=np.float32)
-            self.trades_log = []
-            self.stop_loss = None
-            self.last_action = None
+                low=-np.inf, high=np.inf, shape=(data.shape[1] + 3,), dtype=np.float32)
             self.reset()
+            self.trades_log = []
+            print('State shape:', self.data.iloc[0].values.shape)
+            print('Observation space:', self.observation_space)
+            print('Action space:', self.action_space)
+
 
         def reset(self):
             self.index = 0
@@ -199,68 +209,49 @@ def create_env(data, strategy):
             self.equity = self.balance + self.shares * self.data.iloc[self.index]['close']
             self.done = False
             observation = self._get_observation()
+            print("Observation shape:", observation.shape)
             return observation
 
         def step(self, action):
-          
             if self.done:
                 raise Exception("Trading environment is done, please reset.")
 
-            if hasattr(self, 'waiting_for_sell_prediction') and self.waiting_for_sell_prediction and action != 1:
-                return self._get_observation(), 0, self.done, {}  # Skip the step if waiting for a sell prediction
-
             close_price = self.data.iloc[self.index]['close']
-            reward = 9
+            reward = 0
             done = False
             info = {}
-            TRANSACTION_COST = 0.0005
-            long_position_penalty = 0.009
-            action_penalty = 0.0010
-            MAX_LOSS_PERCENT = 0.02  # Maximum 2% loss per trade
-            RISK_PERCENTAGE = 0.1  # Use only 10% of the balance for each trade           
+                       
 
             if action == 0:  # Buy
-                shares_to_buy = (self.balance * RISK_PERCENTAGE) / close_price
-                risk_per_share = close_price * MAX_LOSS_PERCENT
-                stop_loss_price = close_price - risk_per_share
-                shares_to_buy = min(shares_to_buy, self.balance // risk_per_share)
-
-                if shares_to_buy > 0:
-                    self.shares += shares_to_buy
-                    self.balance -= shares_to_buy * close_price * (1 - TRANSACTION_COST)
-                    self.positions.append((self.index, shares_to_buy))
-                    self.stop_loss = stop_loss_price
-                    info['action'] = 'buy'
-                    print(f"Buy: {shares_to_buy} shares at {close_price}")
-                    print(f"Updated Balance: {self.balance}")
-                    trade = {
-                        "action": "buy",
-                        "shares": shares_to_buy,
-                        "price": close_price,
-                        "timestamp": self.data.index[self.index]
-                    }
-                    self.trades_log.append(trade)
-                    self.waiting_for_sell_prediction = True
-
-                else:
-                  reward -= action_penalty
+                shares_to_buy = self.balance / close_price
+                self.shares += shares_to_buy
+                self.balance -= shares_to_buy * close_price
+                self.positions.append((self.index, shares_to_buy))
+                info['action'] = 'buy'
+                print(f"Buy: {shares_to_buy} shares at {close_price}")
+                
+                trade = {
+                    "action": "buy",
+                    "shares": shares_to_buy,
+                    "price": close_price,
+                    "timestamp": self.data.index[self.index]
+                }
+                self.trades_log.append(trade)
             
             elif action == 1:  # Sell
-                if len(self.positions) == 0 or close_price <= self.stop_loss:
+                if len(self.positions) == 0:
                     self.done = True
                     return self._get_observation(), reward, self.done, info
 
                 position = self.positions.pop(0)
                 shares_to_sell = position[1]
                 self.shares -= shares_to_sell
-                self.balance += shares_to_sell * close_price * (1 - TRANSACTION_COST)
+                self.balance += shares_to_sell * close_price
                 profit = (close_price - self.data.iloc[position[0]]['close']) * shares_to_sell
                 self.profits.append(profit)
-                reward = profit  # Modify this line to use profit as a reward
                 info['action'] = 'sell'
                 info['profit'] = profit
                 print(f"Sell: {shares_to_sell} shares at {close_price}, Profit: {profit}")
-                print(f"Updated Balance: {self.balance}")
                 # Log the trade
                 trade = {
                     "action": "sell",
@@ -270,34 +261,19 @@ def create_env(data, strategy):
                     "profit": profit
                 }
                 self.trades_log.append(trade)
-                self.waiting_for_sell_prediction = False
-            else:
-                reward -= action_penalty
-                
+
             if self.index == len(self.data) - 1:
                 self.done = True
 
-            for position in self.positions:
-              if self.index - position[0] > 5:
-                reward -= long_position_penalty
-
-            returns = np.array(self.profits)
-            sharpe_ratio = np.mean(returns) / np.std(returns) if np.std(returns) != 0 else 0
-
-            # Calculate the profit factor
-            gross_profit = np.sum(returns[returns > 0])
-            gross_loss = np.abs(np.sum(returns[returns < 0]))
-            profit_factor = gross_profit / gross_loss if gross_loss != 0 else 0
+            self.equity = self.balance + self.shares * close_price
+            reward = (self.equity - self.baseline_profit) / self.baseline_profit
 
             self.index += 1
             observation = self._get_observation()
-
-            self.equity = self.balance + self.shares * close_price
-            reward = (self.equity - self.baseline_profit) / self.baseline_profit + sharpe_ratio + profit_factor
-
             return observation, reward, self.done, info
 
         def _get_observation(self):
+          print(f"Index: {self.index}, Data shape: {self.data.shape}")
           if self.index >= len(self.data):
             self.done = True
             return np.zeros((self.observation_space.shape[0],))
@@ -309,13 +285,16 @@ def create_env(data, strategy):
           state = np.concatenate(([self.shares, self.balance, self.equity], state))
           return state
 
-       
+        
         def save_trades(self, filepath):
           trades_df = pd.DataFrame(self.trades_log)
-          trades_df['balance'] = self.balance
           trades_df.to_csv(filepath, index=False)
 
+    # The following block should be indented at the same level as the class definition
     env = TradingEnvironment(data)
+    print('State shape:', env.data.iloc[0].values.shape)
+    print('Observation space:', env.observation_space)
+    print('Action space:', env.action_space)
     action_space = gym.spaces.Discrete(3)
     observation_space = gym.spaces.Box(low=-np.inf, high=np.inf, shape=(data.shape[1] + 2,), dtype=np.float32)
     env = TradingEnvironment(data)
@@ -323,59 +302,61 @@ def create_env(data, strategy):
     
     return env
 
-from collections import deque
 
-def train_model(x, model, episodes, batch_size, env):   
-  state_size = env.observation_space.shape[0]   
-  action_size = env.action_space.n  
-  action_space = np.arange(action_size)   
-  np.random.seed(123) 
+def train_model(x, model, episodes, batch_size, env):
+    action_size = env.action_space.n
+    epsilon = 10.0
+    epsilon_min = 0.01
+    epsilon_decay = 0.550
+    gamma = 0.50
 
-  # Adjust for different dimensions of x
-  total_size = np.prod(x.shape) if len(x.shape) > 2 else x.shape[0] * x.shape[1]
-    
-  truncated_size = (total_size // (60 * state_size)) * (60 * state_size)   
-  x = x.flatten()[:truncated_size]   
-  x = np.reshape(x, (-1, 60, state_size))   
+    memory = deque(maxlen=4000)
 
-  state_buffer = deque(maxlen=60) # buffer for the last 60 states  
+    for episode in range(episodes):
+        state = env.reset()
+        state_size = x.shape[1] + 4
+        state = np.concatenate(([env.shares, env.balance, env.equity], state)) # add the account information to the state
+        state = state.reshape((1, -1)) # add an extra dimension to the state variable
+        done = False
+        while not done:
+            if np.random.rand() <= epsilon:
+                action = np.random.randint(0, action_size)
+            else:
+                action = np.argmax(model.predict(state)[0])
+            next_state, reward, done, _ = env.step(action)
+            next_state = np.concatenate(([env.shares, env.balance, env.equity], next_state)) # add the account information to the next_state
+            next_state = next_state.reshape((1, -1)) # add an extra dimension to the next_state variable
+            memory.append((state, action, reward, next_state, done))
+            state = next_state
 
-  for e in range(episodes):  
-  # reset the environment  
-      state = env.reset()  
-  state_buffer.append(state) # add the initial state to the buffer  
-  done = False  
-  i = 0  
-  while not done:
-    if len(state_buffer) < 60:
-      print("Current index: ", env.index)
-      action = np.random.randint(0, action_size)   
-    else:   
-      state_input = np.reshape(np.array(state_buffer), (-1, 60, state_size))   
-      action = np.argmax(model.predict(state_input)[0])
-  
-    next_state, reward, done, _ = env.step(action)
-    state_buffer.append(next_state)  
-    next_state = np.concatenate(([env.shares, env.balance, env.equity], next_state)) # add the account information to the next_state  
+        if len(memory) >= batch_size:
+            minibatch = random.sample(memory, batch_size)
+            X_state = []
+            X_target = []
+            for state, action, reward, next_state, done in minibatch:
+                if done:
+                    target = reward
+                else:
+                    target = reward + gamma * np.amax(model.predict(next_state)[0])
+                target_f = model.predict(state)
+                target_f[0][action] = target
+                X_state.append(state.reshape((1, -1)))
+                X_target.append(target_f.reshape((1, -1)))
+            X_state = np.concatenate(X_state, axis=0)
+            X_target = np.concatenate(X_target, axis=0)
+            model.fit(X_state, X_target, epochs=1, verbose=0)
 
-  if done:
-    print("episode: {}/{}, score: {}, e: {:.2}".format(e, episodes, i, 0.01))
+        if epsilon > epsilon_min:
+            epsilon *= epsilon_decay
 
-  if len(state_buffer) == 60:
-    model.fit(x, batch_size=batch_size, verbose=0)
-    i += 1  
+    return model
 
-  return model
-
-
-def moving_average_strategy(data, buy_threshold=0.02, sell_threshold=0.01):
+def moving_average_strategy(data, buy_threshold=0.02, sell_threshold=0.02):
     action = 0
     if data['close'] > data['sma'] * (1 + buy_threshold):
         action = 0  # Buy
     elif data['close'] < data['sma'] * (1 - sell_threshold):
         action = 1  # Sell
-    else:
-        action = 2  # Hold
     return action
 
 def save_trades_to_csv(trades, filepath):
@@ -386,9 +367,9 @@ def save_trades_to_csv(trades, filepath):
         for trade in trades:
             writer.writerow(trade)
 
+
 def main():
     symbol = 'MSFT'
-    '15Min',
     start_date = '2019-01-01'
     end_date = '2022-12-30'
     data = get_data(symbol, start_date, end_date)
@@ -403,23 +384,24 @@ def main():
     print("X:", x[:5])
     print("Y:", y[:5])
 
-    env = create_env(data, strategy=moving_average_strategy)
+    env = create_env(data, moving_average_strategy)
     
-    print("Original x shape:", x.shape)
+    print("Original x shape:", x.shape)    
+    print("Original y shape:", y.shape)
+    print("Environment's observation space:", env.observation_space.shape)
     print("Model's input shape:", env.observation_space.shape)
     
     model = define_model(env.observation_space.shape, env.action_space.n)  # Corrected line
 
-    episodes = 20
-    batch_size = 32
-
+    episodes = 50
+    batch_size = 63
     model = train_model(x, model, episodes, batch_size, env)
-
 
     model.save('trained_model.h5')
     env.save_trades("trades.csv")
 
-    test_data = get_data('MSFT', '2019-01-01', '2022-12-30')
+    # Test the model
+    test_data = get_data('MSFT', '2023-01-01', '2023-3-31')
     test_env = create_env(test_data, moving_average_strategy)
     state = test_env.reset()
     done = False
