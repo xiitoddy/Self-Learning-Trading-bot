@@ -18,6 +18,8 @@ from ta.trend import ADXIndicator
 from ta.volatility import AverageTrueRange
 from ta.trend import MACD
 from collections import deque
+from mcts import MCTS
+
 import os
 
 import warnings
@@ -320,9 +322,9 @@ def train_model(x, model, episodes, batch_size, env):
         done = False
         while not done:
             if np.random.rand() <= epsilon:
-                action = np.random.randint(0, action_size)
-            else:
-                action = np.argmax(model.predict(state)[0])
+                action = np.random.randint(0, action_size)  
+            else:  
+                action = MCTS(state, model, env, iterations=1000) # you may want to adjust the number of iterations
             next_state, reward, done, _ = env.step(action)
             next_state = np.concatenate(([env.shares, env.balance, env.equity], next_state)) # add the account information to the next_state
             next_state = next_state.reshape((1, -1)) # add an extra dimension to the next_state variable
